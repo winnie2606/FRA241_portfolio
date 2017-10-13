@@ -22,4 +22,3 @@ def checkPerson():
 	return redirect(url_for('static', filename=person))
 
 app.run(debug=True)
-#TTTTTTTTTTTTTTTTTTTTTTTTTTTTklkgnljnjnsjl
