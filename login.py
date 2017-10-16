@@ -3,14 +3,14 @@ from flask import render_template
 from flask import request
 from flask import redirect, url_for
 
-app = Flask(__name__)
+login = Flask(__name__)
 
-@app.route('/')
+@login.route('/')
 
 def html():
 	return render_template('login.html')
 
-@app.route('/checkPerson', methods=['POST'])
+@login.route('/checkPerson', methods=['POST'])
 def checkPerson():
 	idPass = dict(request.form.items())
 	getID = idPass.get('id', None)
@@ -19,7 +19,7 @@ def checkPerson():
 	else:
 		who = 'teacherofficer'
 	person = str(who) + '.html'
+	#print(idPass)
 	return redirect(url_for('static', filename=person))
 
-app.run(debug=True)
-#PopTest
+login.run(debug=True)
