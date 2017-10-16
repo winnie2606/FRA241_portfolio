@@ -2,6 +2,8 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import redirect, url_for
+import sqlite3
+import sys
 
 login = Flask(__name__)
 
@@ -14,18 +16,42 @@ def html():
 def checkPerson():
 	idPass = dict(request.form.items())
 	getID = idPass.get('id', None)
-	if getID[0:5] == '59340':
+	getPassword = idPass.get('pass', None)
+
+	conn = sqlite3.connect('studentIDPass.db')
+	countID = 0
+	countPass = 0
+	atRow = 0
+	with conn:
+		cur = conn.cursor()
+		cur.execute("SELECT * FROM SAVEONE")
+		rows = cur.fetchall()
+		countRow = 0
+		for row in rows:
+			countRow += 1
+		for i in range(countRow):
+			for row in rows[i]:
+				if str(row) == getID:
+					countID += 1
+					atRow = i
+					break;
+				else:
+					countID += 0
+		for row in rows[atRow]:
+			if str(row) == getPassword:
+				countPass += 1
+				break;
+			else:
+				countPass += 0
+	if countID == 1 and countPass == 1:
 		who = 'student'
+	elif countID == 1 and countPass == 0:
+		who = 'incorrect'
+		print('your password is incorrect')
 	else:
 		who = 'teacherofficer'
 	person = str(who) + '.html'
-	#print(idPass)
+	conn.close()
 	return redirect(url_for('static', filename=person))
 
 login.run(debug=True)
-'''<<<<<<< HEAD
-login.run(debug=True)
-=======
-app.run(debug=True)
-#pairtest #PopTest
->>>>>>> 63bd0866ddf7c5fa2dcec8351d7b7ca9af1abd07'''
