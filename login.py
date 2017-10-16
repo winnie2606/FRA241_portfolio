@@ -22,9 +22,10 @@ def checkPerson():
 	#print(idPass)
 	return redirect(url_for('static', filename=person))
 
-<<<<<<< HEAD
+login.run(debug=True)
+'''<<<<<<< HEAD
 login.run(debug=True)
 =======
 app.run(debug=True)
 #pairtest #PopTest
->>>>>>> 63bd0866ddf7c5fa2dcec8351d7b7ca9af1abd07
+>>>>>>> 63bd0866ddf7c5fa2dcec8351d7b7ca9af1abd07'''
