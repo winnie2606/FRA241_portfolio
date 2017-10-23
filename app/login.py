@@ -46,14 +46,16 @@ def checkPerson():
 	print(countID)
 	print(countPass)
 	if countID == 2 and countPass == 1:
-		who = 'student'
+		who = 'homeStudent'
 	elif countID == 2 and countPass == 0:
 		who = 'incorrect'
 		print('your password is incorrect')
 	else:
-		who = 'teacherofficer'
+		who = 'homeTeacherofficer'
 	person = str(who) + '.html'
 	conn.close()
 	return redirect(url_for('static', filename=person))
+
+
 
 login.run(debug=True)
