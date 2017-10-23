@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import redirect, url_for
+from Profile import Profile
 import sqlite3
 import sys
 
@@ -48,15 +49,22 @@ def checkPerson():
 	#print(countID)
 	#print(countPass)
 	if countID > 1 and countPass == 1:
-		who = 'homeStudent'
+		pro = Profile('{}.db'.format(getID))
+		conne = pro.conne()
+		conne.row_factory = sqlite3.Row
+		cursor = conne.cursor()
+		cursor.execute("SELECT * FROM PROFILE")
+		roww = cursor.fetchone()
+		findname = pro.name(roww)
+		return render_template('homeStudent.html', id_user = getID, name_user = findname)
 	elif countID == 2 and countPass == 0:
 		who = 'incorrect'
 		print('your password is incorrect')
 	else:
-		who = 'homeTeacherofficer'
-	person = str(who) + '.html'
+		return render_template('homeTeacherofficer.html', id_user = getID)
+	#person = str(who) + '.html'
 	conn.close()
 
-	return render_template('homeStudent.html', id_user = getID)
+	#return render_template('homeStudent.html', id_user = getID)
 
 app.run(debug=True)
