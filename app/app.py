@@ -11,11 +11,14 @@ app = Flask(__name__)
 def html():
 	return render_template('login.html')
 
+@app.route('/getIDPass', methods=['POST'])
+def getIDPass():
+	idPass = dict(request.form.items())
+	return(idPass)
 @app.route('/checkPerson', methods=['POST'])
 def checkPerson():
-	idPass = dict(request.form.items())
-	getID = idPass.get('id', None)
-	getPassword = idPass.get('pass', None)
+	getID = getIDPass().get('id', None)
+	getPassword = getIDPass().get('pass', None)
 
 	conn = sqlite3.connect('IDPassStudent.db')
 	countID = 0
@@ -54,6 +57,5 @@ def checkPerson():
 	person = str(who) + '.html'
 	conn.close()
 	return redirect(url_for('static', filename=person))
-
 
 app.run(debug=True)
