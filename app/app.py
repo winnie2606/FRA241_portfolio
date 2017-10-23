@@ -42,9 +42,9 @@ def checkPerson():
 					break;
 				else:
 					countPass += 0
-	print(countID)
-	print(countPass)
-	if countID < 1 and countPass == 1:
+	#print(countID)
+	#print(countPass)
+	if countID > 1 and countPass == 1:
 		who = 'homeStudent'
 	elif countID == 2 and countPass == 0:
 		who = 'incorrect'
