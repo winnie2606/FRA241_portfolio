@@ -56,6 +56,7 @@ def checkPerson():
 		who = 'homeTeacherofficer'
 	person = str(who) + '.html'
 	conn.close()
-	return redirect(url_for('static', filename=person))
+
+	return render_template('homeStudent.html', id_user = getID)
 
 app.run(debug=True)
