@@ -3,8 +3,8 @@ body {
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-size: 100% 100%;
-  background-attachment: fixed;
-  font-family: "Open Sans Condensed";
+    background-attachment: fixed;
+    font-family: "Open Sans Condensed";
 }
 
 .in1 {
@@ -41,20 +41,6 @@ body {
 	width: 350px;
 }
 
-.bar{
-	margin: -8px;
-	height: 50px;
-	background-color:#000014;
-}
-
-.link{
-	text-decoration: none;
-	color: #FFF;
-}
-.link:hover , .link:active{
-	background-color: #000014;
-	color: #40494e;
-}
 .link1{
 	text-decoration: none;
 	color: #FFF;
@@ -80,7 +66,21 @@ body {
 	color: #9c790f;
 }
 
+.bar{
+	margin: -8px;
+	height: 50px;
+	background-color:#000014;
+}
 
+.link{
+	text-decoration: none;
+	color: #FFF;
+}
+
+.link:hover , .link:active{
+	background-color: #000014;
+	color: #40494e;
+}
 
 .bar-in{
 	font-size: 25px;
@@ -99,6 +99,24 @@ body {
 	margin-right: 20px;
 }
 
+.profileleft{
+
+	margin-top: -250px;
+	margin-left: 100px;
+	color: #FFF;
+}
+
+.profileright{
+
+	margin-top: -285px;
+	margin-left: 900px;
+	color: #FFF;
+}
+
+.pic2{
+	z-index: 3;
+}
+
 .Edityourinfomation{
 	margin: 20px;
 	font-size: 30px;
@@ -115,8 +133,23 @@ body {
 	color: #FFF;
 }
 
+.leftcolumn{
+	position: absolute;
+	margin: 20px;
+	width: 350px;
+}
 
+.centercolumn{
+	color: #FFF;
+	margin-top: 60px;
+	margin-left: 400px;
+}
+
+.centercolumnlink{
+	color: #FFF;
+}
 /*TEACHER*/
+/*
 .SI{
 	float:left;
 	margin-top:100px;
@@ -142,7 +175,9 @@ body {
 	color:#FFF;
 	cursor:pointer;
 	}
-	.pic {
+*/
+
+.pic {
 	float: left;
 	margin-left:300px;
 	margin-top:150px;
