@@ -8,3 +8,7 @@ import sys
 homeStudent = Flask(__name__)
 
 @homeStudent.route('/')
+
+print('eiei')
+
+homeStudent.run(debug=True)

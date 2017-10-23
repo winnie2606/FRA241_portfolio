@@ -5,14 +5,13 @@ from flask import redirect, url_for
 import sqlite3
 import sys
 
-login = Flask(__name__)
+app = Flask(__name__)
 
-@login.route('/')
-
+@app.route('/')
 def html():
 	return render_template('login.html')
 
-@login.route('/checkPerson', methods=['POST'])
+@app.route('/checkPerson', methods=['POST'])
 def checkPerson():
 	idPass = dict(request.form.items())
 	getID = idPass.get('id', None)
@@ -57,5 +56,4 @@ def checkPerson():
 	return redirect(url_for('static', filename=person))
 
 
-
-login.run(debug=True)
+app.run(debug=True)
