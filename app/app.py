@@ -66,5 +66,7 @@ def checkPerson():
 	conn.close()
 
 	#return render_template('homeStudent.html', id_user = getID)
-
+@app.route('/proflies', methods=['POST'])
+def profiles():
+	return render_template('profile.html')
 app.run(debug=True)

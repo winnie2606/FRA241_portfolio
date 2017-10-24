@@ -8,6 +8,7 @@ class Profile:
 
     def idstudent(self,row):
         print("ID = ",row[0])
+        return row[0]
 
     def name(self,row):
         print("name = ",row[1])
@@ -15,30 +16,39 @@ class Profile:
 
     def date(self,row):
         print(" Date of birth = ",row[2])
+        return row[2]
 
     def birthplace(self,row):
         print("Birthplace = ",row[3])
+        return row[3]
 
     def nation(self,row):
         print("Nationality = ",row[4])
+        return row[4]
 
     def education(self,row):
         print("Education = ",row[5])
+        return row[5]
 
     def disease(self,row):
         print("Disease = ",row[6])
+        return row[6]
 
     def relative(self,row):
         print("Relative = ",row[7])
+        return row[7]
 
     def phone(self,row):
         print("Phone = ",row[8])
+        return row[8]
 
     def address(self,row):
         print("Address = ",row[9])
+        return row[9]
 
     def email(self,row):
         print("E-maill = ",row[10])
+        return [10]
 
     def alldata(self,row):
         for item in row:
