@@ -4,8 +4,10 @@ from flask import request
 from flask import redirect, url_for
 import sqlite3
 import sys
+from keepID import *
 
 app = Flask(__name__)
+keepID = keepID()
 
 @app.route('/')
 def html():
@@ -19,17 +21,21 @@ def getIDPass():
 @app.route('/getID', methods=['POST'])
 def getID():
 	getID = getIDPass().get('id', None)
+	#keepID.ID = getID
 	return(getID)
 
 @app.route('/getPass', methods=['POST'])
 def getPass():
 	getPassword = getIDPass().get('pass', None)
+	#keepID.Password = getPassword
 	return(getPassword)
 
 @app.route('/checkPerson', methods=['POST'])
 def checkPerson():
 	getID = getIDPass().get('id', None)
 	getPassword = getIDPass().get('pass', None)
+	keepID.ID = getID
+	keepID.Password = getPassword
 
 	conn = sqlite3.connect('IDPassStudent.db')
 	countID = 0
@@ -70,6 +76,9 @@ def checkPerson():
 def menubar():
 	getMenubar = request.form['click']
 	print(getMenubar)
+	getID = keepID.ID
+	#keepID.Print_ID()
+
 	if getMenubar == 'PROFILE':
 		return render_template('profile.html')
 	if getMenubar == 'ACADEMIC':
@@ -77,7 +86,7 @@ def menubar():
 	if getMenubar == 'WORK&EXPERIENCE':
 		return render_template('activity.html')
 	if getMenubar == 'home_icon':
-		return render_template('homeStudent.html')
+		return render_template('homeStudent.html', id_user = getID )
 
 @app.route('/printer', methods=['POST'])
 def test():
