@@ -108,6 +108,12 @@ def moreinfo():
 	if getMoreinfo == 'MORE INFO>>':
 		return render_template('dataactivity.html')
 
+@app.route('/editInfo', methods=['POST'])
+def editInfo():
+	getEditInfo = request.form['click']
+	if getEditInfo == 'EDIT':
+		return render_template('edit-your-infomation.html')
+
 @app.route('/editAc', methods=['POST'])
 def editAc():
 	getEditAc = request.form['click']
