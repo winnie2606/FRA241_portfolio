@@ -67,7 +67,7 @@ def checkPerson():
 	conn.close()
 
 @app.route('/menubar', methods=['POST'])
-def menubarL():
+def menubar():
 	getMenubar = request.form['click']
 	print(getMenubar)
 	if getMenubar == 'PROFILE':
@@ -76,12 +76,18 @@ def menubarL():
 		return render_template('AcademicStudent.html')
 	if getMenubar == 'WORK&EXPERIENCE':
 		return render_template('activity.html')
-
+	if getMenubar == 'home_icon':
+		return render_template('homeStudent.html')
 
 @app.route('/printer', methods=['POST'])
 def test():
 	printer = request.form['click']
 	print(printer)
+
+@app.route('/selectTerm', methods=['POST'])
+def selectTerm():
+	getSelectTerm = request.form['click']
+	print(getSelectTerm)
 
 '''@app.route('/test', methods=['POST'])
 def test():
