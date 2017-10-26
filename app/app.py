@@ -66,27 +66,17 @@ def checkPerson():
 		return render_template('homeTeacherofficer.html')
 	conn.close()
 
-@app.route('/menubarL', methods=['POST'])
+@app.route('/menubar', methods=['POST'])
 def menubarL():
-	getMenubarL = request.form['click']
-	print(getMenubarL)
-	if getMenubarL == 'PROFILE':
+	getMenubar = request.form['click']
+	print(getMenubar)
+	if getMenubar == 'PROFILE':
 		return render_template('profile.html')
-	if getMenubarL == 'ACADEMIC':
+	if getMenubar == 'ACADEMIC':
 		return render_template('AcademicStudent.html')
-	if getMenubarL == 'WORK&EXPERIENCE':
+	if getMenubar == 'WORK&EXPERIENCE':
 		return render_template('activity.html')
 
-'''@app.route('/menubarR', methods=['POST'])
-def menubar():
-	getMenubarR = request.form['click']
-	print(getMenubar)
-	if getMenubarR == 'home':
-		return render_template('homeStudent.html')
-	if getMenubarR == 'printer':
-		print('printer')
-	if getMenubarR == 'WORK&EXPERIENCE':
-		return render_template('activity.html')'''
 
 @app.route('/printer', methods=['POST'])
 def test():
