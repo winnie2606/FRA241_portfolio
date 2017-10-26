@@ -2,7 +2,6 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import redirect, url_for
-from Profile import Profile
 import sqlite3
 import sys
 
@@ -67,16 +66,27 @@ def checkPerson():
 		return render_template('homeTeacherofficer.html')
 	conn.close()
 
-@app.route('/menubar', methods=['POST'])
-def menubar():
-	getMenubar = request.form['click']
-	print(getMenubar)
-	if getMenubar == 'PROFILE':
+@app.route('/menubarL', methods=['POST'])
+def menubarL():
+	getMenubarL = request.form['click']
+	print(getMenubarL)
+	if getMenubarL == 'PROFILE':
 		return render_template('profile.html')
-	if getMenubar == 'ACADEMIC':
+	if getMenubarL == 'ACADEMIC':
 		return render_template('AcademicStudent.html')
-	if getMenubar == 'WORK&EXPERIENCE':
+	if getMenubarL == 'WORK&EXPERIENCE':
 		return render_template('activity.html')
+
+'''@app.route('/menubarR', methods=['POST'])
+def menubar():
+	getMenubarR = request.form['click']
+	print(getMenubar)
+	if getMenubarR == 'home':
+		return render_template('homeStudent.html')
+	if getMenubarR == 'printer':
+		print('printer')
+	if getMenubarR == 'WORK&EXPERIENCE':
+		return render_template('activity.html')'''
 
 @app.route('/printer', methods=['POST'])
 def test():
