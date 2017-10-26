@@ -2,11 +2,12 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import redirect, url_for
-from Profile import Profile
 import sqlite3
 import sys
+from keepID import *
 
 app = Flask(__name__)
+keepID = keepID()
 
 @app.route('/')
 def html():
@@ -20,17 +21,21 @@ def getIDPass():
 @app.route('/getID', methods=['POST'])
 def getID():
 	getID = getIDPass().get('id', None)
+	#keepID.ID = getID
 	return(getID)
 
 @app.route('/getPass', methods=['POST'])
 def getPass():
 	getPassword = getIDPass().get('pass', None)
+	#keepID.Password = getPassword
 	return(getPassword)
 
 @app.route('/checkPerson', methods=['POST'])
 def checkPerson():
 	getID = getIDPass().get('id', None)
 	getPassword = getIDPass().get('pass', None)
+	keepID.ID = getID
+	keepID.Password = getPassword
 
 	conn = sqlite3.connect('IDPassStudent.db')
 	countID = 0
@@ -71,17 +76,43 @@ def checkPerson():
 def menubar():
 	getMenubar = request.form['click']
 	print(getMenubar)
+	getID = keepID.ID
+	#keepID.Print_ID()
+
 	if getMenubar == 'PROFILE':
 		return render_template('profile.html')
 	if getMenubar == 'ACADEMIC':
 		return render_template('AcademicStudent.html')
 	if getMenubar == 'WORK&EXPERIENCE':
 		return render_template('activity.html')
+	if getMenubar == 'home_icon':
+		return render_template('homeStudent.html', id_user = getID )
+	if getMenubar == 'print_icon':
+		print(getMenubar)
+	if getMenubar == 'loguot_icon':
+		print(getMenubar)
 
 @app.route('/printer', methods=['POST'])
 def test():
 	printer = request.form['click']
 	print(printer)
+
+@app.route('/selectTerm', methods=['POST'])
+def selectTerm():
+	getSelectTerm = request.form['click']
+	print(getSelectTerm)
+
+@app.route('/moreinfo', methods=['POST'])
+def moreinfo():
+	getMoreinfo = request.form['click']
+	if getMoreinfo == 'MORE INFO>>':
+		return render_template('dataactivity.html')
+
+@app.route('/editAc', methods=['POST'])
+def editAc():
+	getEditAc = request.form['click']
+	if getEditAc == 'EDIT':
+		return render_template('edit-activity.html')
 
 '''@app.route('/test', methods=['POST'])
 def test():

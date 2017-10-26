@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -7,18 +8,20 @@
 		<title>Profile</title>
 
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='profile.css')}}" />
-		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='backgound.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='background.css')}}" />
+
+		<!--<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans+Condensed"-->
 
 	</head>
 
 	<body>
-
+		<form id="contact-form" action="/menubar", method="POST">
 		<div class="bar">
 
 			<div class="bar-in">
 
 				<div class="L">
-					<form id="contact-form" action="/menubar", method="POST">
+
 					<input type="image" name="click" src="static/back_icon.jpg" width="4.5%">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="PROFILE" class="link">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="ACADEMIC" class="link">&nbsp;&nbsp;&nbsp;
@@ -30,15 +33,16 @@
 				<div class="R">
 
 					USERNAME&nbsp;&nbsp;&nbsp;
-					<input name="click" type="image" value="home" src="static/home_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
-					<input name="click" type="image" value="picPrinter" src="static/print_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
-					<input name="click" type="image" value="logout" src="static/logout_icon.jpg" width="8.5%">
+					<input name="click" type="image" value="home_icon" src="static/home_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
+					<input name="click" type="image" value="print_icon" src="static/print_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
+					<input name="click" type="image" value="logout_icon" src="static/logout_icon.jpg" width="8.5%">
 
 				</div>
+
 			</div>
 
 		</div>
-
+	  </form>
 		<div align="center" class="pic2">
 
 			<img src="static/student.png" width="15%" height="15%">
@@ -48,7 +52,7 @@
 		<div align="left" class="profile">
 
 			<div class="nationality">NATIONALITI : XXXXXXXXXX</div>
-			<div class="congenital-disease">CONGENITAL DISEASE :</div>
+			<div class="congenital-disease">CONGENITAL DISEASE : XXXXXXXXXXX</div>
 			<div class="data-contact">DATA CONTACT : XXXXXXXXXX</div>
 			<div class="name">NAME : XXXXXXXXXX</div>
 			<div class="date-of-birth">DATE OF BIRTH : XXXXXXXXXX</div>

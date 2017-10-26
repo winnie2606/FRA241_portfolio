@@ -6,9 +6,8 @@
 
 		<title>Academic</title>
 
-		<link rel="stylesheet" type="text/css" href="hs.css" />
-
-		<link rel="stylesheet" type="text/css" href="login-context.css" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='AcademicStudent.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='background.css')}}" />
 
 
 
@@ -19,48 +18,48 @@
 	</head>
 
 	<body>
-
+		<form id="contact-form" action="/menubar", method="POST">
 		<div class="bar">
 
 			<div class="bar-in">
 
 				<div class="L">
 
-					<form id="contact-form" action="/academic", method="POST">
-					<a href="student.html"><img src="back_icon.jpg" width="25"></a>&nbsp;&nbsp;&nbsp;
-					<input type="submit" name="PopTest" value="PopTest1">
-					<input type="submit" name="PopTest" value="PopTest2">
-					<a href="profile.html" class="link">PROFILE</a>&nbsp;&nbsp;&nbsp;
-					<a href="student.html" class="link">ACADEMIC</a>&nbsp;&nbsp;&nbsp;
-					<a href="student.html" class="link">WORK&EXPERIENCE</a>
-					</form>
+					<input type="image" name="click" src="static/back_icon.jpg" width="4.5%">&nbsp;&nbsp;&nbsp;
+					<input type="submit" name="click" value="PROFILE" class="link">&nbsp;&nbsp;&nbsp;
+					<input type="submit" name="click" value="ACADEMIC" class="link">&nbsp;&nbsp;&nbsp;
+					<input type="submit" name="click" value="WORK&EXPERIENCE" class="link">
 
 				</div>
 
 				<div class="R">
 
 					USERNAME&nbsp;&nbsp;&nbsp;
-					<a href="student.html"><image src="home_icon.jpg"></a>&nbsp;&nbsp;&nbsp;
-					<a href="student.html"><image src="print_icon.jpg"></a>&nbsp;&nbsp;&nbsp;
-					<a href="student.html"><image src="logout_icon.jpg"></a>
+					<input name="click" type="image" value="home_icon" src="static/home_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
+					<input name="click" type="image" value="print_icon" src="static/print_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
+					<input name="click" type="image" value="logout_icon" src="static/logout_icon.jpg" width="8.5%">
 
 				</div>
 
 			</div>
 
 		</div>
+	</form>
 		<div class="Academic">
 
 			<p><u>ACADEMIC</u> : GRADE</p>
 
 		</div>
 		<div class="selectbar">
-			<select id="section" name ="section" size="1" style="width:400px; font-size:25px;height:30px;color:#46445c; ">
-
-					<option value="1/59">1/2559</option>
-					<option value="2/59">2/2559</option>
-					<option value="1/60">1/2560</option>
-					<option value="2/60">2/2560</option>
+					<form id="contact-form" action="/selectTerm", method="POST">
+						<select id="section"  name = "click" size="1" style="width:400px; font-size:25px;height:30px;color:#46445c; " >
+							<option value="1/59">1/2559</option>
+							<option value="2/59">2/2559</option>
+							<option value="1/60">1/2560</option>
+							<option value="2/60">2/2560</option>
+						</select>
+						<input type="submit" value="select">
+					</form>
 
 			</select>
 		</div>
@@ -73,45 +72,45 @@
 					<th style="background-color: #46445c; border-color:#000014;font-size:20px;">ACADEMIC RECORD</th>
 				</tr>
 				<tr>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td>A1</td>
+					<td>B1</td>
+					<td>C1</td>
+					<td>D1</td>
 
 				</tr>
 				<tr>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td>A2</td>
+					<td>B2</td>
+					<td>C2</td>
+					<td>D2</td>
 
 				</tr>
 				<tr>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td>A3</td>
+					<td>B3</td>
+					<td>C3</td>
+					<td>D3</td>
 
 				</tr>
 				<tr>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td>A4</td>
+					<td>B4</td>
+					<td>C4</td>
+					<td>D4</td>
 
 				</tr>
 				<tr>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td>A5</td>
+					<td>B5</td>
+					<td>C5</td>
+					<td>D5</td>
 
 				</tr>
 				<tr>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td>A6</td>
+					<td>B6</td>
+					<td>C6</td>
+					<td>D6</td>
 
 				</tr>
 
@@ -128,15 +127,15 @@
 				</tr>
 				<tr>
 					<td style=" border-color:#000014;font-size:20px;">THIS SEMESTER</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td>E1</td>
+					<td>F1</td>
 
 
 				</tr>
 				<tr>
 					<td style=" border-color:#000014;font-size:20px;">CUMULATIVE</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td>E2</td>
+					<td>F2</td>
 				</tr>
 
 				</div>
