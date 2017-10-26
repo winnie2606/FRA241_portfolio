@@ -14,14 +14,13 @@
 	</head>
 
 	<body>
-
+		<form id="contact-form" action="/menubar", method="POST">
 		<div class="bar">
 
 			<div class="bar-in">
 
 				<div class="L">
 
-					<form id="contact-form" action="/menubar", method="POST">
 					<input type="image" name="click" src="static/back_icon.jpg" width="4.5%">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="PROFILE" class="link">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="ACADEMIC" class="link">&nbsp;&nbsp;&nbsp;
@@ -33,28 +32,31 @@
 				<div class="R">
 
 					USERNAME&nbsp;&nbsp;&nbsp;
-					<input name="click" type="image" value="home" src="static/home_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
-					<input name="click" type="image" value="picPrinter" src="static/print_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
-					<input name="click" type="image" value="logout" src="static/logout_icon.jpg" width="8.5%">
+					<input name="click" type="image" value="home_icon" src="static/home_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
+					<input name="click" type="image" value="print_icon" src="static/print_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
+					<input name="click" type="image" value="logout_icon" src="static/logout_icon.jpg" width="8.5%">
 
 				</div>
 
 			</div>
 
 		</div>
+		</form>
 
+			<form id="contact-form" action="/moreinfo", method="POST">
 			<image src="static/en1.png" width="30%" class="en1">
 			<image src="static/activity.png" width="75%" class="activity-picture">
 			<div class="name-of-activity">NAME OF ACTIVITY</div>
 			<div class="advisor">ADVISOR :<input id="chkad" type="checkbox" value="ad" class="cheak"></div>
 			<div class="date-duration">DATE/DURATION</div>
 			<u><div class="more-info"><input type="submit" name="click" value="MORE INFO>>" class="more-info-link"></div><u/>
+			</form>
 
-		<div align="right" class="activity-clk">
+			<div align="right" class="activity-clk">
 
-			<input type = "submit" value = "ADD" class = "in2" >
+				<input type = "submit" value = "ADD" class = "in2" >
 
-		</div>
+			</div>
 
 	</body>
 

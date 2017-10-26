@@ -87,6 +87,10 @@ def menubar():
 		return render_template('activity.html')
 	if getMenubar == 'home_icon':
 		return render_template('homeStudent.html', id_user = getID )
+	if getMenubar == 'print_icon':
+		print(getMenubar)
+	if getMenubar == 'loguot_icon':
+		print(getMenubar)
 
 @app.route('/printer', methods=['POST'])
 def test():
@@ -97,6 +101,18 @@ def test():
 def selectTerm():
 	getSelectTerm = request.form['click']
 	print(getSelectTerm)
+
+@app.route('/moreinfo', methods=['POST'])
+def moreinfo():
+	getMoreinfo = request.form['click']
+	if getMoreinfo == 'MORE INFO>>':
+		return render_template('dataactivity.html')
+
+@app.route('/editAc', methods=['POST'])
+def editAc():
+	getEditAc = request.form['click']
+	if getEditAc == 'EDIT':
+		return render_template('edit-activity.html')
 
 '''@app.route('/test', methods=['POST'])
 def test():

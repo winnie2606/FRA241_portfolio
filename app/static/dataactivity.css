@@ -21,7 +21,7 @@
 	margin-left: 25%;
 }
 
-.activity-clk{
+.dataactivity-clk{
 	margin-top: 3%;
 	margin-right: 5%;
 }
@@ -36,7 +36,6 @@
 	color: #FFF;
 	margin-top: -37%;
 	margin-left: 35%;
-
 }
 
 .advisor{
@@ -44,36 +43,27 @@
 	color: #FFF;
 	margin-top: 1%;
 	margin-left: 35%;
-
 }
 
-.date-duration{
+.type{
 	font-size: 30px;
 	color: #FFF;
 	margin-top: 1%;
 	margin-left: 35%;
-
 }
 
-.more-info{
-	font-size: 25px;
+.description{
+	font-size: 30px;
 	color: #FFF;
-	margin-top: 2%;
+	margin-top: 1%;
 	margin-left: 35%;
-
 }
 
-.more-info-link{
+.flies{
+	font-size: 30px;
 	color: #FFF;
-  border-radius:20px;
-	border: 5px;
-  background-color:hsla(290,100%,100%,0);
-  font-size: 24px;
-  text-decoration: underline;
-}
-
-.more-info-link:hover , .more-info-link:active{
-	color: #40494e;
+	margin-top: 1%;
+	margin-left: 35%;
 }
 
 .cheak{
