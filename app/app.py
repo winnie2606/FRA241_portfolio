@@ -16,6 +16,17 @@ def html():
 def getIDPass():
 	idPass = dict(request.form.items())
 	return(idPass)
+
+@app.route('/getID', methods=['POST'])
+def getID():
+	getID = getIDPass().get('id', None)
+	return(getID)
+
+@app.route('/getPass', methods=['POST'])
+def getPass():
+	getPassword = getIDPass().get('pass', None)
+	return(getPassword)
+
 @app.route('/checkPerson', methods=['POST'])
 def checkPerson():
 	getID = getIDPass().get('id', None)
@@ -49,24 +60,32 @@ def checkPerson():
 	#print(countID)
 	#print(countPass)
 	if countID > 1 and countPass == 1:
-		pro = Profile('{}.db'.format(getID))
-		conne = pro.conne()
-		conne.row_factory = sqlite3.Row
-		cursor = conne.cursor()
-		cursor.execute("SELECT * FROM PROFILE")
-		roww = cursor.fetchone()
-		findname = pro.name(roww)
-		return render_template('homeStudent.html', id_user = getID, name_user = findname)
+		return render_template('homeStudent.html', id_user = getID)
 	elif countID == 2 and countPass == 0:
-		who = 'incorrect'
 		print('your password is incorrect')
 	else:
-		return render_template('homeTeacherofficer.html', id_user = getID)
-	#person = str(who) + '.html'
+		return render_template('homeTeacherofficer.html')
 	conn.close()
 
-	#return render_template('homeStudent.html', id_user = getID)
-@app.route('/proflies', methods=['POST'])
-def profiles():
-	return render_template('profile.html')
+@app.route('/menubar', methods=['POST'])
+def menubar():
+	getMenubar = request.form['click']
+	print(getMenubar)
+	if getMenubar == 'PROFILE':
+		return render_template('profile.html')
+	if getMenubar == 'ACADEMIC':
+		return render_template('AcademicStudent.html')
+	if getMenubar == 'WORK&EXPERIENCE':
+		return render_template('activity.html')
+
+@app.route('/printer', methods=['POST'])
+def test():
+	printer = request.form['click']
+	print(printer)
+
+'''@app.route('/test', methods=['POST'])
+def test():
+	getTest = request.form['click']
+	print(getTest)'''
+
 app.run(debug=True)

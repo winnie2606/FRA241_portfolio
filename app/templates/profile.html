@@ -6,9 +6,8 @@
 
 		<title>Profile</title>
 
-		<link rel="stylesheet" type="text/css" href="login-context.css" />
-
-		<!--<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans+Condensed"-->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='profile.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='backgound.css')}}" />
 
 	</head>
 
@@ -18,23 +17,26 @@
 
 			<div class="bar-in">
 
+				<form id="contact-form" action="/menubar", method="POST">
 				<div class="L">
 
-					<a href="HomeStudent.html"><img src="back_icon.jpg" width="25"></a>&nbsp;&nbsp;&nbsp;
-					<a href="profile.html" class="link">PROFILE</a>&nbsp;&nbsp;&nbsp;
-					<a href="AcademicStudent.html" class="link">ACADEMIC</a>&nbsp;&nbsp;&nbsp;
-					<a href="student.html" class="link">WORK&EXPERIENCE</a>
+					<input type="submit" name="click" value="back-icon" class="link">&nbsp;&nbsp;&nbsp;
+					<input type="submit" name="click" value="PROFILE" class="link">&nbsp;&nbsp;&nbsp;
+					<input type="submit" name="click" value="ACADEMIC" class="link">&nbsp;&nbsp;&nbsp;
+					<input type="submit" name="click" value="WORK&EXPERIENCE" class="link">
+
 
 				</div>
 
 				<div class="R">
 
 					USERNAME&nbsp;&nbsp;&nbsp;
-					<a href="student.html"><image src="home_icon.jpg"></a>&nbsp;&nbsp;&nbsp;
-					<a href="student.html"><image src="print_icon.jpg"></a>&nbsp;&nbsp;&nbsp;
-					<a href="student.html"><image src="logout_icon.jpg"></a>
+					<input type="submit" name="click" value="home_icon" class="link">&nbsp;&nbsp;&nbsp;
+					<input type="submit" name="click" value="print_icon" class="link">&nbsp;&nbsp;&nbsp;
+					<input type="submit" name="click" value="logout_icon" class="link">
 
 				</div>
+			</form>
 
 			</div>
 
@@ -42,30 +44,25 @@
 
 		<div align="center" class="pic2">
 
-			<br><br><br><br><br><br><br><img src="student.png" width="15%" height="15%">
+			<img src="static/student.png" width="15%" height="15%">
 
 		</div>
 
-		<div align="left" class="profileleft">
+		<div align="left" class="profile">
 
-			NATIONALITI :<br><br><br><br><br><br><br><br>
-			CONGENITAL DISEASE :<br><br><br><br>
-			DATA CONTACT :
-
-		</div>
-
-		<div align="left" class="profileright">
-
-			NAME :<br><br><br><br>
-			DATE OF BIRTH :<br><br><br><br>
-			BIRTHOLACE :<br><br><br><br>
-			CONTACT :
+			<div class="nationality">NATIONALITI : XXXXXXXXXX</div>
+			<div class="congenital-disease">CONGENITAL DISEASE :</div>
+			<div class="data-contact">DATA CONTACT : XXXXXXXXXX</div>
+			<div class="name">NAME : XXXXXXXXXX</div>
+			<div class="date-of-birth">DATE OF BIRTH : XXXXXXXXXX</div>
+			<div class="birtholace">BIRTHOLACE : XXXXXXXXXX</div>
+			<div class="contact">CONTACT : XXXXXXXXXX</div>
 
 		</div>
 
-		<div align="right" class="R">
+		<div align="right" class="profineclk">
 
-			<br><br><br><br><br><a href="edit-your-infomation.html"><input type = "submit" value = "EDIT" class = "in2" ></a>
+			<input type = "submit" name="click" value = "EDIT" class = "in2" >
 
 		</div>
 
