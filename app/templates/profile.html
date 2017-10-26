@@ -32,7 +32,7 @@
 
 				<div class="R">
 
-					USERNAME&nbsp;&nbsp;&nbsp;
+					{{name_user}}&nbsp;&nbsp;&nbsp;
 					<input name="click" type="image" value="home_icon" src="static/home_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
 					<input name="click" type="image" value="print_icon" src="static/print_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
 					<input name="click" type="image" value="logout_icon" src="static/logout_icon.jpg" width="8.5%">
@@ -51,13 +51,13 @@
 
 		<div align="left" class="profile">
 
-			<div class="nationality">NATIONALITI : XXXXXXXXXX</div>
-			<div class="congenital-disease">CONGENITAL DISEASE : XXXXXXXXXXX</div>
-			<div class="data-contact">DATA CONTACT : XXXXXXXXXX</div>
-			<div class="name">NAME : XXXXXXXXXX</div>
-			<div class="date-of-birth">DATE OF BIRTH : XXXXXXXXXX</div>
-			<div class="birtholace">BIRTHOLACE : XXXXXXXXXX</div>
-			<div class="contact">CONTACT : XXXXXXXXXX</div>
+			<div class="nationality">NATIONALITI : {{nation}}</div>
+			<div class="congenital-disease">CONGENITAL DISEASE : {{dis}}</div>
+			<div class="data-contact">DATA CONTACT : {{relative}} {{phoneEmer}}</div>
+			<div class="name">NAME : {{name_user}}</div>
+			<div class="date-of-birth">DATE OF BIRTH : {{birthD}}</div>
+			<div class="birtholace">BIRTHOLACE : {{birthP}}</div>
+			<div class="contact">CONTACT : {{cont}} <br> {{address}} <br> {{email}}</div>
 
 		</div>
 

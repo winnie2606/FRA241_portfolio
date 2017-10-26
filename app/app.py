@@ -4,9 +4,14 @@ from flask import request
 from flask import redirect, url_for
 import sqlite3
 import sys
+from sqlalchemy import *
+from sqlalchemy.orm import *
+from sqlalchemy.ext.declarative import declarative_base
 from keepID import *
+from FunctionAdd import Method
 
 app = Flask(__name__)
+
 keepID = keepID()
 
 @app.route('/')
@@ -65,7 +70,10 @@ def checkPerson():
 	#print(countID)
 	#print(countPass)
 	if countID > 1 and countPass == 1:
-		return render_template('homeStudent.html', id_user = getID)
+		m = Method(getID)
+		name = m.cp_name()
+		print(name)
+		return render_template('homeStudent.html', id_user = getID, name_user = name )
 	elif countID == 2 and countPass == 0:
 		print('your password is incorrect')
 	else:
@@ -80,7 +88,20 @@ def menubar():
 	#keepID.Print_ID()
 
 	if getMenubar == 'PROFILE':
-		return render_template('profile.html')
+		m = Method(getID)
+		name = m.cp_name()
+		birthD = m.cp_date()
+		birthP = m.cp_birth()
+		nation = m.cp_nation()
+		edu = m.cp_edu()
+		dis = m.cp_disease()
+		relative = m.cp_relative()
+		phoneEmer = m.cp_PhforEmer()
+		cont = m.cp_Phstu()
+		address = m.cp_address()
+		email = m.cp_email()
+
+		return render_template('profile.html', name_user=name, nation=nation, dis=dis, relative=relative, phoneEmer=phoneEmer, birthD=birthD, birthP=birthP, cont=cont, address=address, email=email)
 	if getMenubar == 'ACADEMIC':
 		return render_template('AcademicStudent.html')
 	if getMenubar == 'WORK&EXPERIENCE':
