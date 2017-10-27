@@ -86,28 +86,27 @@ def menubar():
 	print(getMenubar)
 	getID = keepID.ID
 	#keepID.Print_ID()
+	m = Method(getID)
+	name = m.cp_name()
+	birthD = m.cp_date()
+	birthP = m.cp_birth()
+	nation = m.cp_nation()
+	edu = m.cp_edu()
+	dis = m.cp_disease()
+	relative = m.cp_relative()
+	phoneEmer = m.cp_PhforEmer()
+	cont = m.cp_Phstu()
+	address = m.cp_address()
+	email = m.cp_email()
 
 	if getMenubar == 'PROFILE':
-		m = Method(getID)
-		name = m.cp_name()
-		birthD = m.cp_date()
-		birthP = m.cp_birth()
-		nation = m.cp_nation()
-		edu = m.cp_edu()
-		dis = m.cp_disease()
-		relative = m.cp_relative()
-		phoneEmer = m.cp_PhforEmer()
-		cont = m.cp_Phstu()
-		address = m.cp_address()
-		email = m.cp_email()
-
 		return render_template('profile.html', name_user=name, nation=nation, dis=dis, relative=relative, phoneEmer=phoneEmer, birthD=birthD, birthP=birthP, cont=cont, address=address, email=email)
 	if getMenubar == 'ACADEMIC':
-		return render_template('AcademicStudent.html')
+		return render_template('AcademicStudent.html', name_user=name)
 	if getMenubar == 'WORK&EXPERIENCE':
-		return render_template('activity.html')
+		return render_template('activity.html', name_user=name)
 	if getMenubar == 'home_icon':
-		return render_template('homeStudent.html', id_user = getID )
+		return render_template('homeStudent.html', id_user = getID, name_user=name )
 	if getMenubar == 'print_icon':
 		print(getMenubar)
 	if getMenubar == 'loguot_icon':
@@ -126,20 +125,29 @@ def selectTerm():
 @app.route('/moreinfo', methods=['POST'])
 def moreinfo():
 	getMoreinfo = request.form['click']
+	getID = keepID.ID
+	m = Method(getID)
+	name = m.cp_name()
 	if getMoreinfo == 'MORE INFO>>':
-		return render_template('dataactivity.html')
+		return render_template('dataactivity.html', name_user=name)
 
 @app.route('/editInfo', methods=['POST'])
 def editInfo():
 	getEditInfo = request.form['click']
+	getID = keepID.ID
+	m = Method(getID)
+	name = m.cp_name()
 	if getEditInfo == 'EDIT':
-		return render_template('edit-your-infomation.html')
+		return render_template('edit-your-infomation.html', name_user=name)
 
 @app.route('/editAc', methods=['POST'])
 def editAc():
 	getEditAc = request.form['click']
+	getID = keepID.ID
+	m = Method(getID)
+	name = m.cp_name()
 	if getEditAc == 'EDIT':
-		return render_template('edit-activity.html')
+		return render_template('edit-activity.html', name_user=name)
 
 '''@app.route('/test', methods=['POST'])
 def test():
