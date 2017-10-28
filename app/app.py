@@ -111,6 +111,9 @@ def menubar():
 		print(getMenubar)
 	if getMenubar == 'loguot_icon':
 		print(getMenubar)
+	if getMenubar == 'back':
+		print(getMenubar)
+
 
 @app.route('/printer', methods=['POST'])
 def test():
