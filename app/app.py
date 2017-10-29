@@ -110,6 +110,7 @@ def menubar():
 		return render_template('homeStudent.html', id_user=getID, name_user=name )
 	if getMenubar == 'print_icon':
 		print(getMenubar)
+		return render_template('print_choose.html', name_user=name)
 	if getMenubar == 'loguot_icon':
 		print(getMenubar)
 	if getMenubar == 'back':
@@ -120,7 +121,12 @@ def menubar():
 @app.route('/printer', methods=['POST'])
 def test():
 	printer = request.form['click']
+	getID = keepID.ID
+	#keepID.Print_ID()
+	m = Method(getID)
+	name = m.cp_name()
 	print(printer)
+	return render_template('print_choose.html', name_user=name)
 
 @app.route('/selectTerm', methods=['POST'])
 def selectTerm():
@@ -173,6 +179,30 @@ def getEditAc():
 	m = Method(getID)
 	name = m.cp_name()
 	return render_template('activity.html', name_user=name, page=pullData.activity(getID))
+
+@app.route('/checkBox', methods=['POST'])
+def getCheckBox():
+	getCheck = dict(request.form.items())
+	print(getCheck)
+	getCheckBox = request.form['click']
+	print(getCheckBox)
+
+	if getCheck.get('NAME') == 'on':
+		print('select name')
+	if getCheck.get('date of birth') == 'on':
+		print('select date of birth')
+	if getCheck.get('gpax') == 'on':
+		print('select gpax')
+	if getCheck.get('contact') == 'on':
+		print('select contact')
+	if getCheck.get('congenital disease') == 'on':
+		print('select congenital disease')
+	if getCheck.get('nationality') == 'on':
+		print('select nationality')
+	if getCheck.get('birthplace') == 'on':
+		print('select birthplace')
+	if getCheck.get('data contact') == 'on':
+		print('select data contact')
 
 '''@app.route('/test', methods=['POST'])
 def test():
