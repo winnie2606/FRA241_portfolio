@@ -14,6 +14,7 @@
 	</head>
 
 	<body>
+	{%for activity in page %}
 		<form id="contact-form" action="/menubar", method="POST">
 		<div class="bar">
 
@@ -56,7 +57,7 @@
 				<input type = "submit" value = "ADD" class = "in2" >
 
 			</div>
-
+	{% endfor %}
 	</body>
 
 </html>

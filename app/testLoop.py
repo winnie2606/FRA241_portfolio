@@ -5,8 +5,9 @@ from flask import redirect, url_for
 
 test = Flask(__name__)
 
-activity = {'name1':['advisor1', 'date1', 'type1', 'des1', 'file1'],
-            'name2':['advisor2', 'date2', 'type2', 'des2', 'file2']}
+activity = [{'nameAc':'activity1', 'advisor':'advisor1', 'date':'date1', 'type':'type1', 'des':'des1', 'file':'file1'},
+            {'nameAc':'activity2', 'advisor':'advisor2', 'date':'date2', 'type':'type2', 'des':'des2', 'file':'file2'},
+            {'nameAc':'activity3', 'advisor':'advisor3', 'date':'date3', 'type':'type3', 'des':'des3', 'file':'file3'}]
 
 @test.route('/')
 def html():

@@ -6,8 +6,13 @@
 	<div>
 		<p>
 			Test page!
-			{%for name in activity.items()%}
-				<br>{{name}}<br>
+			{%for activity in activity %}
+				<br>{{activity.nameAc}}<br>
+				<br>{{activity.advisor}}<br>
+				<br>{{activity.date}}<br>
+				<br>{{activity.type}}<br>
+				<br>{{activity.des}}<br>
+				<br>{{activity.file}}<br>
 			{% endfor %}
 		</p>
 	<div>

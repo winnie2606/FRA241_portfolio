@@ -9,10 +9,13 @@ from sqlalchemy.orm import *
 from sqlalchemy.ext.declarative import declarative_base
 from keepID import *
 from FunctionAdd import Method
+from Node_web import *
+from keepHistory import *
 
 app = Flask(__name__)
 
 keepID = keepID()
+keepHistory = keepHistory()
 
 @app.route('/')
 def html():
@@ -73,7 +76,8 @@ def checkPerson():
 		m = Method(getID)
 		name = m.cp_name()
 		print(name)
-		return render_template('homeStudent.html', id_user = getID, name_user = name )
+		keepHistory.keep_page('homeStudent.html', None)
+		return render_template('homeStudent.html', id_user=getID, name_user=name )
 	elif countID == 2 and countPass == 0:
 		print('your password is incorrect')
 	else:
@@ -88,7 +92,7 @@ def menubar():
 	#keepID.Print_ID()
 	m = Method(getID)
 	name = m.cp_name()
-	birthD = m.cp_date()
+	'''birthD = m.cp_date()
 	birthP = m.cp_birth()
 	nation = m.cp_nation()
 	edu = m.cp_edu()
@@ -97,23 +101,33 @@ def menubar():
 	phoneEmer = m.cp_PhforEmer()
 	cont = m.cp_Phstu()
 	address = m.cp_address()
-	email = m.cp_email()
+	email = m.cp_email()'''
+
+	profile = [{'name':m.cp_name(),'birthD':m.cp_date(),'birthP':m.cp_birth(),'nation':m.cp_nation(),'edu':m.cp_edu(),'dis':m.cp_disease(),'relative':m.cp_relative(),'phoneEmer':m.cp_PhforEmer(),'cont':m.cp_Phstu(),'address':m.cp_address(),'email':m.cp_email()}]
+	academic = [None]
+	activity = [None]
 
 	if getMenubar == 'PROFILE':
-		return render_template('profile.html', name_user=name, nation=nation, dis=dis, relative=relative, phoneEmer=phoneEmer, birthD=birthD, birthP=birthP, cont=cont, address=address, email=email)
+		keepHistory.keep_page('profile.html', profile)
+		#return render_template('profile.html', name_user=name, nation=nation, dis=dis, relative=relative, phoneEmer=phoneEmer, birthD=birthD, birthP=birthP, cont=cont, address=address, email=email)
+		return render_template('profile.html', name_user=name, page=profile)
 	if getMenubar == 'ACADEMIC':
-		return render_template('AcademicStudent.html', name_user=name)
+		keepHistory.keep_page('AcademicStudent.html', academic)
+		return render_template('AcademicStudent.html', name_user=name, page=academic)
 	if getMenubar == 'WORK&EXPERIENCE':
-		return render_template('activity.html', name_user=name)
+		keepHistory.keep_page('activity.html', activity)
+		return render_template('activity.html', name_user=name, page=activity)
 	if getMenubar == 'home_icon':
-		return render_template('homeStudent.html', id_user = getID, name_user=name )
+		keepHistory.keep_page('homeStudent.html', None)
+		return render_template('homeStudent.html', id_user=getID, name_user=name )
 	if getMenubar == 'print_icon':
 		print(getMenubar)
 	if getMenubar == 'loguot_icon':
 		print(getMenubar)
 	if getMenubar == 'back':
 		print(getMenubar)
-
+		keepHistory.print_listPage()
+		return render_template(keepHistory.history(),id_user=getID, name_user=name, page=keepHistory.Value_page())
 
 @app.route('/printer', methods=['POST'])
 def test():
