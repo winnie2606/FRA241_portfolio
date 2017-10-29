@@ -1,6 +1,6 @@
 class keepID():
 
-    def __init__(self, ID = None,Password = None):
+    def __init__(self, ID=None, Password=None):
         self.ID = ID
         self.Password = Password
 

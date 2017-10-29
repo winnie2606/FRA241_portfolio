@@ -11,11 +11,13 @@ from keepID import *
 from FunctionAdd import Method
 from Node_web import *
 from keepHistory import *
+from pullData import *
 
 app = Flask(__name__)
 
 keepID = keepID()
 keepHistory = keepHistory()
+pullData = pullData()
 
 @app.route('/')
 def html():
@@ -92,21 +94,17 @@ def menubar():
 	#keepID.Print_ID()
 	m = Method(getID)
 	name = m.cp_name()
-
-	profile = [{'name':m.cp_name(),'birthD':m.cp_date(),'birthP':m.cp_birth(),'nation':m.cp_nation(),'edu':m.cp_edu(),'dis':m.cp_disease(),'relative':m.cp_relative(),'phoneEmer':m.cp_PhforEmer(),'cont':m.cp_Phstu(),'address':m.cp_address(),'email':m.cp_email()}]
-	academic = [None]
-	activity = [None]
+	profile = pullData.Profile(getID)
 
 	if getMenubar == 'PROFILE':
-		keepHistory.keep_page('profile.html', profile)
-		#return render_template('profile.html', name_user=name, nation=nation, dis=dis, relative=relative, phoneEmer=phoneEmer, birthD=birthD, birthP=birthP, cont=cont, address=address, email=email)
-		return render_template('profile.html', name_user=name, page=profile)
+		keepHistory.keep_page('profile.html', pullData.Profile(getID))
+		return render_template('profile.html', name_user=name, page=pullData.Profile(getID))
 	if getMenubar == 'ACADEMIC':
-		keepHistory.keep_page('AcademicStudent.html', academic)
-		return render_template('AcademicStudent.html', name_user=name, page=academic)
+		keepHistory.keep_page('AcademicStudent.html', pullData.Academic(getID))
+		return render_template('AcademicStudent.html', name_user=name, page=pullData.Academic(getID))
 	if getMenubar == 'WORK&EXPERIENCE':
-		keepHistory.keep_page('activity.html', activity)
-		return render_template('activity.html', name_user=name, page=activity)
+		keepHistory.keep_page('activity.html', pullData.Activity(getID))
+		return render_template('activity.html', name_user=name, page=pullData.Activity(getID))
 	if getMenubar == 'home_icon':
 		keepHistory.keep_page('homeStudent.html', None)
 		return render_template('homeStudent.html', id_user=getID, name_user=name )
@@ -136,7 +134,7 @@ def moreinfo():
 	m = Method(getID)
 	name = m.cp_name()
 	if getMoreinfo == 'MORE INFO>>':
-		return render_template('dataactivity.html', name_user=name)
+		return render_template('dataactivity.html', name_user=name, page=pullData.dataActivity(getID))
 
 @app.route('/editInfo', methods=['POST'])
 def editInfo():
@@ -155,6 +153,26 @@ def editAc():
 	name = m.cp_name()
 	if getEditAc == 'EDIT':
 		return render_template('edit-activity.html', name_user=name)
+
+@app.route('/getEditInfo', methods=['POST'])
+def getEditInfo():
+	getEditInfo = dict(request.form.items())
+	print(getEditInfo)
+	getID = keepID.ID
+	#keepID.Print_ID()
+	m = Method(getID)
+	name = m.cp_name()
+	return render_template('profile.html', name_user=name, page=pullData.Profile(getID))
+
+@app.route('/getEditAc', methods=['POST'])
+def getEditAc():
+	getEditAc = dict(request.form.items())
+	print(getEditAc)
+	getID = keepID.ID
+	#keepID.Print_ID()
+	m = Method(getID)
+	name = m.cp_name()
+	return render_template('activity.html', name_user=name, page=pullData.activity(getID))
 
 '''@app.route('/test', methods=['POST'])
 def test():
