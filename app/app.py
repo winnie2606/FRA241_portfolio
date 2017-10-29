@@ -109,6 +109,7 @@ def menubar():
 		keepHistory.keep_page('homeStudent.html', None)
 		return render_template('homeStudent.html', id_user=getID, name_user=name )
 	if getMenubar == 'print_icon':
+		keepHistory.keep_page('print_choose.html', None)
 		print(getMenubar)
 		return render_template('print_choose.html', name_user=name)
 	if getMenubar == 'loguot_icon':
@@ -119,12 +120,13 @@ def menubar():
 		return render_template(keepHistory.history(),id_user=getID, name_user=name, page=keepHistory.Value_page())
 
 @app.route('/printer', methods=['POST'])
-def test():
+def printer():
 	printer = request.form['click']
 	getID = keepID.ID
 	#keepID.Print_ID()
 	m = Method(getID)
 	name = m.cp_name()
+	keepHistory.keep_page('print_choose.html', None)
 	print(printer)
 	return render_template('print_choose.html', name_user=name)
 
@@ -178,7 +180,7 @@ def getEditAc():
 	#keepID.Print_ID()
 	m = Method(getID)
 	name = m.cp_name()
-	return render_template('activity.html', name_user=name, page=pullData.activity(getID))
+	return render_template('activity.html', name_user=name, page=pullData.Activity(getID))
 
 @app.route('/checkBox', methods=['POST'])
 def getCheckBox():
@@ -214,6 +216,16 @@ def selectall():
 		return render_template('print_choose_selectall.html', name_user=name)
 	if getSelectall == 'UNSELECTALL':
 		return render_template('print_choose.html', name_user=name)
+
+@app.route('/getAddAc', methods=['POST'])
+def getAddAc():
+	getAddAc = request.form['click']
+	print(getAddAc)
+	getID = keepID.ID
+	m = Method(getID)
+	name = m.cp_name()
+	return render_template('edit-activity.html', name_user=name)
+
 
 
 '''@app.route('/test', methods=['POST'])
