@@ -5,7 +5,10 @@
 <body>
 	<div>
 		<p>
-			You are a student.
+			Test page!
+			{%for name in activity.items()%}
+				<br>{{name}}<br>
+			{% endfor %}
 		</p>
 	<div>
 </body>
