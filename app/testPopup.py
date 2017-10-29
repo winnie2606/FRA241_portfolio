@@ -12,6 +12,6 @@ def html():
 
 @test.route('/getPopup', methods=['POST'])
 def getPopup():
-    getPopup = request.form['OK']
+    getPopup = request.form['demo']
     print(getPopup)
 test.run(debug=True)
