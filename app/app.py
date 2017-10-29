@@ -92,16 +92,6 @@ def menubar():
 	#keepID.Print_ID()
 	m = Method(getID)
 	name = m.cp_name()
-	'''birthD = m.cp_date()
-	birthP = m.cp_birth()
-	nation = m.cp_nation()
-	edu = m.cp_edu()
-	dis = m.cp_disease()
-	relative = m.cp_relative()
-	phoneEmer = m.cp_PhforEmer()
-	cont = m.cp_Phstu()
-	address = m.cp_address()
-	email = m.cp_email()'''
 
 	profile = [{'name':m.cp_name(),'birthD':m.cp_date(),'birthP':m.cp_birth(),'nation':m.cp_nation(),'edu':m.cp_edu(),'dis':m.cp_disease(),'relative':m.cp_relative(),'phoneEmer':m.cp_PhforEmer(),'cont':m.cp_Phstu(),'address':m.cp_address(),'email':m.cp_email()}]
 	academic = [None]
