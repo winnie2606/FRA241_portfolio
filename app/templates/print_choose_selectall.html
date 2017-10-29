@@ -22,7 +22,7 @@
 
 				<div class="L">
 
-					<input type="image" name="click" value="back" src="static/back_icon.jpg" width="4.5%">&nbsp;&nbsp;&nbsp;
+					<input type="image" name="click" src="static/back_icon.jpg" width="4.5%">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="PROFILE" class="link">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="ACADEMIC" class="link">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="WORK&EXPERIENCE" class="link">
@@ -47,8 +47,9 @@
 		</div><!--barPrint-->
 
 		<div align="right" ><!--button-->
-			<form id="contact-form" action="/selectall", method="POST">
-			<input type = "submit" name="click" value = "UNSELECT ALL" class = "button12" >
+
+      <form id="contact-form" action="/selectall", method="POST">
+			<input type = "submit" name="click" value = "UNSELECTALL" class = "button12" >
 			<input type = "submit" name="click" value = "SELECTALL" class = "button12" >
 			</form>
 
@@ -62,13 +63,13 @@
 
 			<div class="alphabet-P">
 
-				NAME <label><div class="box"><input type="checkbox" name="NAME" ></div><br></label>
-				DATE OF BIRTH<label><div class="box"><input type="checkbox" name="date of birth" ></div><br></label>
-				BIRTHPLACE<label><div class="box"><input type="checkbox" name="birthplace" ></div><br></label>
-				NATIONALITY<label><div class="box"><input type="checkbox" name="nationality" ></div><br></label>
-				CONGENITAL DISEASE<label><div class="box"><input type="checkbox" name="congenital disease" ></div><br></label>
-				CONTACT<label><div class="box"><input type="checkbox" name="contact"></div><br></label>
-				DATA CONTACT<label><div class="box"><input type="checkbox" name="data contact" ></div><br></label>
+				NAME <label><div class="box"><input type="checkbox" name="NAME" checked></div><br></label>
+				DATE OF BIRTH<label><div class="box"><input type="checkbox" name="date of birth" checked></div><br></label>
+				BIRTHPLACE<label><div class="box"><input type="checkbox" name="birthplace" checked></div><br></label>
+				NATIONALITY<label><div class="box"><input type="checkbox" name="nationality" checked></div><br></label>
+				CONGENITAL DISEASE<label><div class="box"><input type="checkbox" name="congenital disease" checked></div><br></label>
+				CONTACT<label><div class="box"><input type="checkbox" name="contact" checked></div><br></label>
+				DATA CONTACT<label><div class="box"><input type="checkbox" name="data contact" checked></div><br></label>
 
 			</div>
 
@@ -77,7 +78,7 @@
 			</div>
 
 			<div class="alphabet-A">
-				GPAX<div class="box2"><input type="checkbox" name="gpax"></div>
+				GPAX<div class="box2"><input type="checkbox" name="gpax" checked></div>
 			</div>
 
 			<div class="alphabet-work">

@@ -204,6 +204,18 @@ def getCheckBox():
 	if getCheck.get('data contact') == 'on':
 		print('select data contact')
 
+@app.route('/selectall', methods=['POST'])
+def selectall():
+	getSelectall = request.form['click']
+	getID = keepID.ID
+	m = Method(getID)
+	name = m.cp_name()
+	if getSelectall == 'SELECTALL':
+		return render_template('print_choose_selectall.html', name_user=name)
+	if getSelectall == 'UNSELECTALL':
+		return render_template('print_choose.html', name_user=name)
+
+
 '''@app.route('/test', methods=['POST'])
 def test():
 	getTest = request.form['click']
