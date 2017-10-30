@@ -53,7 +53,7 @@
 		<div align="left" class="profile">
 			{%for profile in page %}
 			<div class="nationality">NATIONALITI : {{profile.Nation}}</div>
-			<div class="congenital-disease">CONGENITAL DISEASE : {{profile.Disease}}</div>
+			<div class="congenital-disease">CONGENITAL DISEASE : <br> {{profile.Disease}}</div>
 			<div class="data-contact">DATA CONTACT : {{profile.Relative}} {{profile.PhoneEmer}}</div>
 			<div class="name">NAME : {{profile.Name}} {{profile.Surname}}</div>
 			<div class="date-of-birth">DATE OF BIRTH : {{profile.Dateofbirth}}</div>
@@ -62,7 +62,7 @@
 			{% endfor %}
 		</div>
 
-		<div align="right" class="clk">
+		<div class="clk">
 
 			<form id="contact-form" action="/editInfo", method="POST">
 			<input type = "submit" name="click" value = "EDIT" class = "in2" >

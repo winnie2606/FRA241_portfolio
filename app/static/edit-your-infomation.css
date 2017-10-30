@@ -24,6 +24,7 @@
 	background-color: #e8e8e8;
 	color: #2e3940;
 	box-shadow: -4px 5px #3c3e3d;
+	margin-bottom: 20%;
 }
 
 .in2:hover , .in2:active{
@@ -71,7 +72,7 @@
 
 .emer-contact{
   margin-top: 2%;
-	margin-right: 62%;
+	margin-right: 62.45%;
 }
 
 .emer-phone{
@@ -86,7 +87,7 @@
 
 .contact{
   margin-top: 2%;
-	margin-right: 62%;
+	margin-right: 62.45%;
 }
 
 .phone{
@@ -106,6 +107,6 @@
 
 .clk{
 	float: right;
-	margin-top:7%;
+	margin-top:5%;
 	margin-right: 2%;
 }

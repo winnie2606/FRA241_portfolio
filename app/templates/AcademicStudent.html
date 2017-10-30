@@ -53,7 +53,7 @@
 							<option value="1/2560">1/2560</option>
 							<option value="2/2560">2/2560</option>
 						</select>
-						<input type="submit" value="select">
+						<div class="in"><input type="submit" value="select" class="in2"></div>
 					</form>
 
 			</select>
@@ -69,10 +69,10 @@
 				{%for academic in page %}
 				<tr>
 
-					<td>{{academic.ID_Subject}}</td>
-					<td>{{academic.Name_Subject}}</td>
-					<td>{{academic.Credit}}</td>
-					<td>{{academic.Academic_Regcord}}</td>
+					<td align="center">{{academic.ID_Subject}}</td>
+					<td>&nbsp;&nbsp;&nbsp;{{academic.Name_Subject}}</td>
+					<td align="center">{{academic.Credit}}</td>
+					<td align="center">{{academic.Academic_Regcord}}</td>
 
 				</tr>
 				{% endfor %}
@@ -89,16 +89,16 @@
 				</tr>
 				{%for academic2 in page2%}
 				<tr>
-					<td style=" border-color:#000014;font-size:20px;">THIS SEMESTER</td>
-					<td>{{academic2.This_semester}}</td>
-					<td>{{academic2.GPA}}</td>
+					<td style=" border-color:#000014;font-size:20px;">&nbsp;&nbsp;&nbsp;THIS SEMESTER</td>
+					<td align="center">{{academic2.This_semester}}</td>
+					<td align="center">{{academic2.GPA}}</td>
 
 
 				</tr>
 				<tr>
-					<td style=" border-color:#000014;font-size:20px;">CUMULATIVE</td>
-					<td>{{academic2.Cumulative_credit}}</td>
-					<td>{{academic2.GPAX}}</td>
+					<td style=" border-color:#000014;font-size:20px;">&nbsp;&nbsp;&nbsp;CUMULATIVE</td>
+					<td align="center">{{academic2.Cumulative_credit}}</td>
+					<td align="center">{{academic2.GPAX}}</td>
 				</tr>
 				{% endfor %}
 				</div>
