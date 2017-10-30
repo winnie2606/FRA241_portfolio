@@ -14,7 +14,7 @@
 	</head>
 
 	<body>
-	{%for activity in page %}
+
 		<form id="contact-form" action="/menubar", method="POST">
 		<div class="bar">
 
@@ -43,7 +43,7 @@
 
 		</div>
 		</form>
-
+		{%for activity in page %}
 			<form id="contact-form" action="/moreinfo", method="POST">
 			<image src="static/en1.png" width="30%" class="en1">
 			<div class="name-of-activity">NAME OF ACTIVITY</div>
@@ -58,7 +58,7 @@
 				</form>
 
 			</div>
-	{% endfor %}
+			{% endfor %}
 	</body>
 
 </html>
