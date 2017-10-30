@@ -63,10 +63,7 @@
 
 			<div class="alphabet-P">
 
-				NAME <label><div class="box"><input type="checkbox" name="NAME" checked></div><br></label>
-				DATE OF BIRTH<label><div class="box"><input type="checkbox" name="date of birth" checked></div><br></label>
 				BIRTHPLACE<label><div class="box"><input type="checkbox" name="birthplace" checked></div><br></label>
-				NATIONALITY<label><div class="box"><input type="checkbox" name="nationality" checked></div><br></label>
 				CONGENITAL DISEASE<label><div class="box"><input type="checkbox" name="congenital disease" checked></div><br></label>
 				CONTACT<label><div class="box"><input type="checkbox" name="contact" checked></div><br></label>
 				DATA CONTACT<label><div class="box"><input type="checkbox" name="data contact" checked></div><br></label>
@@ -85,7 +82,9 @@
 				WORK&EXPERIENCE <br>
 			</div>
 			<div class="alphabet-W">
-				<!--flask+box3 <div class="box3"><input type="checkbox" name="work"></div> -->
+				{%for activity in page %}
+				{{activity.Name_Activity}}<div class="box2"><input type="checkbox" name="gpax"></div>
+				{% endfor %}
 			</div>
 
 		</div>

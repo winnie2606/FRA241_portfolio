@@ -114,7 +114,7 @@ def menubar():
 	if getMenubar == 'print_icon':
 		keepHistory.keep_page('print_choose.html', None)
 		print(getMenubar)
-		return render_template('print_choose.html')
+		return render_template('print_choose.html', name=name)
 	if getMenubar == 'logout_icon':
 		print(getMenubar)
 		keepHistory.reset_keepHistory()
