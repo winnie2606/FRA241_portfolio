@@ -214,6 +214,9 @@ def getCheckBox():
 	'''name_file = str(name) + '\'s file' + '.txt'
 	create = open(str(name_file),'w')'''
 
+	if getCheckBox == 'DONE':
+		return render_template(keepHistory.history(),id_user=getID, name_user=name, page=keepHistory.Value_page())
+
 @app.route('/selectall', methods=['POST'])
 def selectall():
 	getSelectall = request.form['click']
