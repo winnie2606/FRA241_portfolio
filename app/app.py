@@ -114,6 +114,8 @@ def menubar():
 		return render_template('print_choose.html', name_user=name)
 	if getMenubar == 'logout_icon':
 		print(getMenubar)
+		keepHistory.reset_keepHistory()
+		keepID.reset_keepID()
 		return render_template('login.html')
 	if getMenubar == 'back':
 		print(getMenubar)
@@ -143,6 +145,7 @@ def moreinfo():
 	m = Method(getID)
 	name = m.cp_name()
 	if getMoreinfo == 'MORE INFO>>':
+		keepHistory.keep_page('activity.html', pullData.Activity(getID))
 		return render_template('dataactivity.html', name_user=name, page=pullData.dataActivity(getID))
 
 @app.route('/editInfo', methods=['POST'])
@@ -235,6 +238,7 @@ def getAddAc():
 	getID = keepID.ID
 	m = Method(getID)
 	name = m.cp_name()
+	keepHistory.keep_page('activity.html', pullData.Activity(getID))
 	return render_template('edit-activity.html', name_user=name)
 
 

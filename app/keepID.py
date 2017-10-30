@@ -7,3 +7,7 @@ class keepID():
     def Print_ID(self):
         print(self.ID)
         print(self.Password)
+
+    def reset_keepID(self):
+        self.ID = None
+        self.Password = None
