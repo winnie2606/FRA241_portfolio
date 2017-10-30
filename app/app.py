@@ -197,6 +197,8 @@ def getEditInfo():
 	name = re.name()
 	keepID.Name = name
 
+	keepHistory.history()
+	
 	return render_template('profile.html', name=name, page=pullData.Profile(getID))
 
 @app.route('/getEditAc', methods=['POST'])
