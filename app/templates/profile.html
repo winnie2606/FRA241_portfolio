@@ -15,7 +15,7 @@
 	</head>
 
 	<body>
-		{%for profile in page %}
+
 		<form id="contact-form" action="/menubar", method="POST">
 		<div class="bar">
 
@@ -33,7 +33,7 @@
 
 				<div class="R">
 
-					{{name_user}}&nbsp;&nbsp;&nbsp;
+					{{name}}&nbsp;&nbsp;&nbsp;
 					<input name="click" type="image" value="home_icon" src="static/home_icon.jpg" width="9.5%">&nbsp;&nbsp;&nbsp;
 					<input name="click" type="image" value="print_icon" src="static/print_icon.jpg" width="9.5%">&nbsp;&nbsp;&nbsp;
 					<input name="click" type="image" value="logout_icon" src="static/logout_icon.jpg" width="9.5%">
@@ -51,15 +51,15 @@
 		</div>
 
 		<div align="left" class="profile">
-
-			<div class="nationality">NATIONALITI : {{profile.nation}}</div>
-			<div class="congenital-disease">CONGENITAL DISEASE : {{profile.dis}}</div>
-			<div class="data-contact">DATA CONTACT : {{profile.relative}} {{profile.phoneEmer}}</div>
-			<div class="name">NAME : {{profile.name}}</div>
-			<div class="date-of-birth">DATE OF BIRTH : {{profile.birthD}}</div>
-			<div class="birtholace">BIRTHPLACE : {{profile.birthP}}</div>
-			<div class="contact">CONTACT : {{profile.cont}} <br> {{profile.address}} <br> {{profile.email}}</div><br><br><br>
-
+			{%for profile in page %}
+			<div class="nationality">NATIONALITI : {{profile.Nation}}</div>
+			<div class="congenital-disease">CONGENITAL DISEASE : {{profile.Disease}}</div>
+			<div class="data-contact">DATA CONTACT : {{profile.Relative}} {{profile.PhoneEmer}}</div>
+			<div class="name">NAME : {{profile.Name}} {{profile.Surname}}</div>
+			<div class="date-of-birth">DATE OF BIRTH : {{profile.Dateofbirth}}</div>
+			<div class="birtholace">BIRTHPLACE : {{profile.Birthplace}}</div>
+			<div class="contact">CONTACT : {{profile.Phonestudent}} <br> {{profile.Address}} <br> {{profile.Email}}</div><br><br><br>
+			{% endfor %}
 		</div>
 
 		<div align="right" class="clk">
@@ -69,7 +69,7 @@
 		  </form>
 
 		</div>
-	{% endfor %}
+
 	</body>
 
 </html>
