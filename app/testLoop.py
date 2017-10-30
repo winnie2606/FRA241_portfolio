@@ -11,6 +11,6 @@ activity = [{'nameAc':'activity1', 'advisor':'advisor1', 'date':'date1', 'type':
 
 @test.route('/')
 def html():
-	return render_template('test.html', activity = activity)
+	return render_template('testLoop.html', page = activity)
 
 test.run(debug=True)

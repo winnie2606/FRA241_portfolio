@@ -112,8 +112,9 @@ def menubar():
 		keepHistory.keep_page('print_choose.html', None)
 		print(getMenubar)
 		return render_template('print_choose.html', name_user=name)
-	if getMenubar == 'loguot_icon':
+	if getMenubar == 'logout_icon':
 		print(getMenubar)
+		return render_template('login.html')
 	if getMenubar == 'back':
 		print(getMenubar)
 		keepHistory.print_listPage()
@@ -189,6 +190,10 @@ def getCheckBox():
 	getCheckBox = request.form['click']
 	print(getCheckBox)
 
+	getID = keepID.ID
+	m = Method(getID)
+	name = m.cp_name()
+
 	if getCheck.get('NAME') == 'on':
 		print('select name')
 	if getCheck.get('date of birth') == 'on':
@@ -205,6 +210,9 @@ def getCheckBox():
 		print('select birthplace')
 	if getCheck.get('data contact') == 'on':
 		print('select data contact')
+
+	'''name_file = str(name) + '\'s file' + '.txt'
+	create = open(str(name_file),'w')'''
 
 @app.route('/selectall', methods=['POST'])
 def selectall():
@@ -226,11 +234,5 @@ def getAddAc():
 	name = m.cp_name()
 	return render_template('edit-activity.html', name_user=name)
 
-
-
-'''@app.route('/test', methods=['POST'])
-def test():
-	getTest = request.form['click']
-	print(getTest)'''
 
 app.run(debug=True)
