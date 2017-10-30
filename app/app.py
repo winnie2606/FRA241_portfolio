@@ -171,8 +171,8 @@ def editInfo():
 	if getEditInfo == 'EDIT':
 		return render_template('edit-your-infomation.html', name=name)
 
-@app.route('/editAc', methods=['POST'])
-def editAc():
+@app.route('/editAcButton', methods=['POST'])
+def editAcButton():
 	getEditAc = request.form['click']
 	getID = keepID.ID
 	name = keepID.Name
@@ -241,8 +241,8 @@ def selectall():
 	if getSelectall == 'UNSELECTALL':
 		return render_template('print_choose.html', name=name)
 
-@app.route('/getAddAc', methods=['POST'])
-def getAddAc():
+@app.route('/getAddAcButton', methods=['POST'])
+def getAddAcButton():
 	getAddAc = request.form['click']
 	print(getAddAc)
 	getID = keepID.ID
