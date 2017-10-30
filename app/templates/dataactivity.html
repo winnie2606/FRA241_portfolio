@@ -43,15 +43,14 @@
 
 		</div>
 	  </form>
-		{%for activity in page %}
+
 			<image src="static/en1.png" width="30%" class="en1">
 			<image src="static/activity.png" width="75%" class="activity-picture">
-			<div class="name-of-activity">NAME of ACTIVITY : {{activity.Name_Activity}}</div>
-			<div class="advisor">ADVISOR : {{activity.Advisor}}<input id="chkad" type="checkbox" value="ad" class="cheak"></div>
-			<div class="type">TYPE : {{activity.Type}}</div>
-			<div class="description">DESCRIPTION : {{activity.Description}}</div>
-			<div class="flies">FILE OR DOCUMENT RELEVANT TO THE ACTIVITY : {{activity.File}}</div>
-
+			<div class="name-of-activity">NAME of ACTIVITY : {{activity}}</div>
+			<div class="advisor">ADVISOR : {{activity}}<input id="chkad" type="checkbox" value="ad" class="cheak"></div>
+			<div class="type">TYPE : {{activity}}</div>
+			<div class="description">DESCRIPTION : {{activity}}</div>
+			<div class="flies">FILE OR DOCUMENT RELEVANT TO THE ACTIVITY : {{activity}}</div>
 
 		<div align="right" class="dataactivity-clk">
 
@@ -61,7 +60,6 @@
 
 		</div>
 
-	{% endfor %}
 	</body>
 
 </html>
