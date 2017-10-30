@@ -18,15 +18,25 @@ class editProfile():
         print (name,surname,nation,birth,birthplace,disease,emerphone,reletive,phone,address)
 
         add = Add_Method(ID)
-
-        add.name(name)
-        add.surname(surname)
-        add.nation(nation)
-        add.date(birth)
-        add.birth(birthplace)
-        add.disease(disease)
-        add.phoneEmer(emerphone)
-        add.relative(reletive)
-        add.phonestu(phone)
-        add.email(email)
-        add.address(address)
+        if name != "":
+            add.name(name)
+        if surname != "":
+            add.surname(surname)
+        if nation != "":
+            add.nation(nation)
+        if birth != "":
+            add.date(birth)
+        if birthplace != "":
+            add.birth(birthplace)
+        if disease != "":
+            add.disease(disease)
+        if emerphone != "":
+            add.phoneEmer(emerphone)
+        if reletive != "":
+            add.relative(reletive)
+        if phone != "":
+            add.phonestu(phone)
+        if email != "":
+            add.email(email)
+        if address != "":
+            add.address(address)
