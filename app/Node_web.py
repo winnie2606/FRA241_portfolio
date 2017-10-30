@@ -1,6 +1,6 @@
 class Node_web():
 
-    def __init__(self,page= None,value = None,next =None,previous=None):
+    def __init__(self,page= None,value = None,next = None,previous=None):
         self.page = page
         self.Next = next
         self.previous = previous
@@ -11,4 +11,9 @@ class Node_web():
     def __str__(self):
         return str(self.page)
 
-
+    def reset(self):
+        self.page = None
+        self.Next = None
+        self.previous = None
+        self.value = None
+        

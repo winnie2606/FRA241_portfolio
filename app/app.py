@@ -8,7 +8,7 @@ from sqlalchemy import *
 from sqlalchemy.orm import *
 from sqlalchemy.ext.declarative import declarative_base
 from keepID import *
-from FunctionAdd import Method
+from getDatabase import *
 from Node_web import *
 from keepHistory import *
 from pullData import *
@@ -46,6 +46,10 @@ def checkPerson():
 	getPassword = getIDPass().get('pass', None)
 	keepID.ID = getID
 	keepID.Password = getPassword
+	re = return_Method(getID)
+	name = re.name()
+	keepID.Name = name
+	print(keepID.Name)
 
 	conn = sqlite3.connect('IDPassStudent.db')
 	countID = 0
@@ -75,11 +79,10 @@ def checkPerson():
 	#print(countID)
 	#print(countPass)
 	if countID > 1 and countPass == 1:
-		m = Method(getID)
-		name = m.cp_name()
-		print(name)
+		name = keepID.Name
+		print(keepID.Name)
 		keepHistory.keep_page('homeStudent.html', None)
-		return render_template('homeStudent.html', id_user=getID, name_user=name )
+		return render_template('homeStudent.html', id_user=getID, name=name)
 	elif countID == 2 and countPass == 0:
 		print('your password is incorrect')
 	else:
@@ -91,44 +94,44 @@ def menubar():
 	getMenubar = request.form['click']
 	print(getMenubar)
 	getID = keepID.ID
-	#keepID.Print_ID()
-	m = Method(getID)
-	name = m.cp_name()
-	profile = pullData.Profile(getID)
+	name = keepID.Name
 
 	if getMenubar == 'PROFILE':
 		keepHistory.keep_page('profile.html', pullData.Profile(getID))
-		return render_template('profile.html', name_user=name, page=pullData.Profile(getID))
+		return render_template('profile.html', name=name, page=pullData.Profile(getID))
 	if getMenubar == 'ACADEMIC':
-		keepHistory.keep_page('AcademicStudent.html', pullData.Academic(getID))
-		return render_template('AcademicStudent.html', name_user=name, page=pullData.Academic(getID))
+		keepHistory.keep_page('AcademicStudent.html', pullData.Academic_term(getID,"1/2559"))
+		return render_template('AcademicStudent.html', name=name, page=pullData.Academic_term(getID,"1/2559"))
 	if getMenubar == 'WORK&EXPERIENCE':
 		keepHistory.keep_page('activity.html', pullData.Activity(getID))
-		return render_template('activity.html', name_user=name, page=pullData.Activity(getID))
+		return render_template('activity.html', name=name, page=pullData.Activity(getID))
 	if getMenubar == 'home_icon':
 		keepHistory.keep_page('homeStudent.html', None)
-		return render_template('homeStudent.html', id_user=getID, name_user=name )
+		return render_template('homeStudent.html', name=name, id_user=getID)
 	if getMenubar == 'print_icon':
 		keepHistory.keep_page('print_choose.html', None)
 		print(getMenubar)
-		return render_template('print_choose.html', name_user=name)
-	if getMenubar == 'loguot_icon':
+		return render_template('print_choose.html')
+	if getMenubar == 'logout_icon':
 		print(getMenubar)
+		keepHistory.reset_keepHistory()
+		keepID.reset_keepID()
+		return render_template('login.html')
 	if getMenubar == 'back':
 		print(getMenubar)
 		keepHistory.print_listPage()
-		return render_template(keepHistory.history(),id_user=getID, name_user=name, page=keepHistory.Value_page())
+		return render_template(keepHistory.history(),id_user=getID, name=name, page=keepHistory.Value_page())
 
 @app.route('/printer', methods=['POST'])
 def printer():
 	printer = request.form['click']
 	getID = keepID.ID
+	name = keepID.Name
 	#keepID.Print_ID()
-	m = Method(getID)
-	name = m.cp_name()
+
 	keepHistory.keep_page('print_choose.html', None)
 	print(printer)
-	return render_template('print_choose.html', name_user=name)
+	return render_template('print_choose.html', name=name)
 
 @app.route('/selectTerm', methods=['POST'])
 def selectTerm():
@@ -139,28 +142,28 @@ def selectTerm():
 def moreinfo():
 	getMoreinfo = request.form['click']
 	getID = keepID.ID
-	m = Method(getID)
-	name = m.cp_name()
+	name = keepID.Name
+
 	if getMoreinfo == 'MORE INFO>>':
-		return render_template('dataactivity.html', name_user=name, page=pullData.dataActivity(getID))
+		keepHistory.keep_page('activity.html', pullData.Activity(getID))
+		return render_template('dataactivity.html', name=name, page=pullData.Activity(getID))
 
 @app.route('/editInfo', methods=['POST'])
 def editInfo():
 	getEditInfo = request.form['click']
 	getID = keepID.ID
-	m = Method(getID)
-	name = m.cp_name()
+	name = keepID.Name
 	if getEditInfo == 'EDIT':
-		return render_template('edit-your-infomation.html', name_user=name)
+		return render_template('edit-your-infomation.html', name=name)
 
 @app.route('/editAc', methods=['POST'])
 def editAc():
 	getEditAc = request.form['click']
 	getID = keepID.ID
-	m = Method(getID)
-	name = m.cp_name()
+	name = keepID.Name
+
 	if getEditAc == 'EDIT':
-		return render_template('edit-activity.html', name_user=name)
+		return render_template('edit-activity.html', name=name)
 
 @app.route('/getEditInfo', methods=['POST'])
 def getEditInfo():
@@ -168,9 +171,9 @@ def getEditInfo():
 	print(getEditInfo)
 	getID = keepID.ID
 	#keepID.Print_ID()
-	m = Method(getID)
-	name = m.cp_name()
-	return render_template('profile.html', name_user=name, page=pullData.Profile(getID))
+	name = keepID.Name
+
+	return render_template('profile.html', name=name, page=pullData.Profile(getID))
 
 @app.route('/getEditAc', methods=['POST'])
 def getEditAc():
@@ -178,9 +181,9 @@ def getEditAc():
 	print(getEditAc)
 	getID = keepID.ID
 	#keepID.Print_ID()
-	m = Method(getID)
-	name = m.cp_name()
-	return render_template('activity.html', name_user=name, page=pullData.Activity(getID))
+	name = keepID.Name
+
+	return render_template('activity.html', name=name, page=pullData.Activity(getID))
 
 @app.route('/checkBox', methods=['POST'])
 def getCheckBox():
@@ -188,6 +191,9 @@ def getCheckBox():
 	print(getCheck)
 	getCheckBox = request.form['click']
 	print(getCheckBox)
+
+	getID = keepID.ID
+	name = keepID.Name
 
 	if getCheck.get('NAME') == 'on':
 		print('select name')
@@ -206,31 +212,32 @@ def getCheckBox():
 	if getCheck.get('data contact') == 'on':
 		print('select data contact')
 
+	'''name_file = str(name) + '\'s file' + '.txt'
+	create = open(str(name_file),'w')'''
+
+	if getCheckBox == 'DONE':
+		return render_template(keepHistory.history(),id_user=getID, name=name, page=keepHistory.Value_page())
+
 @app.route('/selectall', methods=['POST'])
 def selectall():
 	getSelectall = request.form['click']
 	getID = keepID.ID
-	m = Method(getID)
-	name = m.cp_name()
+	name = keepID.Name
+
 	if getSelectall == 'SELECTALL':
-		return render_template('print_choose_selectall.html', name_user=name)
+		return render_template('print_choose_selectall.html', name=name)
 	if getSelectall == 'UNSELECTALL':
-		return render_template('print_choose.html', name_user=name)
+		return render_template('print_choose.html', name=name)
 
 @app.route('/getAddAc', methods=['POST'])
 def getAddAc():
 	getAddAc = request.form['click']
 	print(getAddAc)
 	getID = keepID.ID
-	m = Method(getID)
-	name = m.cp_name()
-	return render_template('edit-activity.html', name_user=name)
+	name = keepID.Name
 
+	keepHistory.keep_page('activity.html', pullData.Activity(getID))
+	return render_template('edit-activity.html', name=name)
 
-
-'''@app.route('/test', methods=['POST'])
-def test():
-	getTest = request.form['click']
-	print(getTest)'''
 
 app.run(debug=True)

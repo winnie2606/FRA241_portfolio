@@ -37,7 +37,10 @@ class keepHistory():
     def Value_page(self):
         return self.tail.value
 
-
+    def reset_keepHistory(self):
+        self.head = None
+        self.tail = None
+        self.size = 0
 
 
     def print_listPage(self):

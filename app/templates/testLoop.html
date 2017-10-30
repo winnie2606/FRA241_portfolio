@@ -1,13 +1,12 @@
-
 <!DOCTYPE html>
 
 <html>
 
 	<head>
 
-		<title>Profile</title>
+		<title>Activity</title>
 
-		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='profile.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='activity.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='background.css')}}" />
 
 		<!--<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans+Condensed"-->
@@ -15,7 +14,6 @@
 	</head>
 
 	<body>
-
 		<form id="contact-form" action="/menubar", method="POST">
 		<div class="bar">
 
@@ -33,7 +31,7 @@
 
 				<div class="R">
 
-					{{name}}&nbsp;&nbsp;&nbsp;
+					{{name_user}}&nbsp;&nbsp;&nbsp;
 					<input name="click" type="image" value="home_icon" src="static/home_icon.jpg" width="9.5%">&nbsp;&nbsp;&nbsp;
 					<input name="click" type="image" value="print_icon" src="static/print_icon.jpg" width="9.5%">&nbsp;&nbsp;&nbsp;
 					<input name="click" type="image" value="logout_icon" src="static/logout_icon.jpg" width="9.5%">
@@ -43,33 +41,23 @@
 			</div>
 
 		</div>
-	  </form>
-		<div align="center" class="pic2">
+		</form>
+    {%for activity in page %}
+			<form id="contact-form" action="/moreinfo", method="POST">
+			<image src="static/en1.png" width="30%" class="en1">
+			<div class="name-of-activity">NAME OF ACTIVITY</div>
+			<div class="advisor">ADVISOR :<input id="chkad" type="checkbox" value="ad" class="cheak"></div>
+			<div class="date-duration">DATE/DURATION</div>
+			<u><div class="more-info"><input type="submit" name="click" value="MORE INFO>>" class="more-info-link"></div><u/>
+			</form>
 
-			<img src="static/student.png" width="15%" height="15%">
+			<div align="right" class="activity-clk">
+				<form id="contact-form" action="/getAddAc", method="POST">
+				<input type = "submit" name="click" value = "ADD" class = "in2" >
+				</form>
 
-		</div>
-
-		<div align="left" class="profile">
-			{%for profile in page %}
-			<div class="nationality">NATIONALITI : {{profile.Nation}}</div>
-			<div class="congenital-disease">CONGENITAL DISEASE : {{profile.Disease}}</div>
-			<div class="data-contact">DATA CONTACT : {{profile.Relative}} {{profile.PhoneEmer}}</div>
-			<div class="name">NAME : {{profile.Name}} {{profile.Surname}}</div>
-			<div class="date-of-birth">DATE OF BIRTH : {{profile.Dateofbirth}}</div>
-			<div class="birtholace">BIRTHPLACE : {{profile.Birthplace}}</div>
-			<div class="contact">CONTACT : {{profile.Phonestudent}} <br> {{profile.Address}} <br> {{profile.Email}}</div><br><br><br>
-			{% endfor %}
-		</div>
-
-		<div align="right" class="clk">
-
-			<form id="contact-form" action="/editInfo", method="POST">
-			<input type = "submit" name="click" value = "EDIT" class = "in2" >
-		  </form>
-
-		</div>
-
+			</div>
+	{% endfor %}
 	</body>
 
 </html>
