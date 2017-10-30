@@ -7,7 +7,7 @@ class keepHistory():
         self.tail = None
         self.size = 0
 
-    def keep_page(self,page,value):
+    def keep_page(self,page,value = None):
         page = Node_web(page,value)
         if self.size == 0:
             self.head = page

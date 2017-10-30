@@ -23,11 +23,12 @@ print(p.output_sum(s.get_this_semester_credit(),s.get_GPA(),s.get_cumulative_cre
 
 class pullData():
 
-    def __init__(self, profile=None, academicTerm =None, activity=None ,academicSum=None):
+    def __init__(self, profile=None, academicTerm =None, activity=None ,academicSum=None, academic =None):
         self.profile = profile
         self.academicTerm = academicTerm
         self.activity = activity
         self.academicSum = academicSum
+        self.academic = academic
 
     def Profile(self, getID):
         re = return_Method(getID)
@@ -50,12 +51,8 @@ class pullData():
         return self.academicTerm
 
     def Academic(self, getID):
-        s = Get_Academic(getID,term)
-        t = Get_name_credit_subject(getID,term)
-        o = Academic_1st_table()
-        p = Academic_2st_table()
-        self.academic = o.output_term(s.get_id_subject(),t.get_nameSubject(),t.get_credit(),s.get_grade())
-        return self.academicTerm
+        self.academic = [None]
+        return self.academic
 
     def Academic_sum(self, getID, term):
         s = Get_Academic(getID,term)

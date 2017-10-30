@@ -100,8 +100,8 @@ def menubar():
 		keepHistory.keep_page('profile.html', pullData.Profile(getID))
 		return render_template('profile.html', name=name, page=pullData.Profile(getID))
 	if getMenubar == 'ACADEMIC':
-		keepHistory.keep_page('AcademicStudent.html', pullData.Academic_term(getID,"1/2559"))
-		return render_template('AcademicStudent.html', name=name, page=pullData.Academic_term(getID,"1/2559"))
+		keepHistory.keep_page('AcademicStudent.html', pullData.Academic(getID))
+		return render_template('AcademicStudent.html', name=name, page=pullData.Academic(getID))
 	if getMenubar == 'WORK&EXPERIENCE':
 		keepHistory.keep_page('activity.html', pullData.Activity(getID))
 		return render_template('activity.html', name=name, page=pullData.Activity(getID))
@@ -145,7 +145,8 @@ def moreinfo():
 	name = keepID.Name
 
 	if getMoreinfo == 'MORE INFO>>':
-		keepHistory.keep_page('activity.html', pullData.Activity(getID))
+		keepHistory.keep_page('dataactivity.html', pullData.Activity(getID))
+		keepHistory.print_listPage()
 		return render_template('dataactivity.html', name=name, page=pullData.Activity(getID))
 
 @app.route('/editInfo', methods=['POST'])
@@ -163,6 +164,7 @@ def editAc():
 	name = keepID.Name
 
 	if getEditAc == 'EDIT':
+		keepHistory.keep_page('edit-activity.html',None)
 		return render_template('edit-activity.html', name=name)
 
 @app.route('/getEditInfo', methods=['POST'])
@@ -179,11 +181,7 @@ def getEditInfo():
 def getEditAc():
 	getEditAc = dict(request.form.items())
 	print(getEditAc)
-	getID = keepID.ID
-	#keepID.Print_ID()
-	name = keepID.Name
-
-	return render_template('activity.html', name=name, page=pullData.Activity(getID))
+	return render_template('dataactivity.html', name=name, page=pullData.Activity(getID))
 
 @app.route('/checkBox', methods=['POST'])
 def getCheckBox():
@@ -235,8 +233,7 @@ def getAddAc():
 	print(getAddAc)
 	getID = keepID.ID
 	name = keepID.Name
-
-	keepHistory.keep_page('activity.html', pullData.Activity(getID))
+	keepHistory.keep_page('edit-activity.html',None)
 	return render_template('edit-activity.html', name=name)
 
 
