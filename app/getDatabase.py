@@ -240,3 +240,84 @@ class Academic_2st_table:
              "Cumulative_credit":cumulative_credit[i],"GPAX":gpax[i]}
             list_sum_output.append(dict_output_term)
         return list_sum_output
+
+class Add_Method:
+
+    def __init__(self,id):
+        self.id = id
+
+    def id_stu(self,method):
+        sth = method(id_student = "{}".format(self.id))
+        session.add(sth)
+        session.commit()
+
+    def name(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Name = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def surname(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Surname = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def date(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Dateofbirth = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def birth(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Birthplace = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def nation(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Nationality = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def education(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Education = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def disease(self,data):
+        sth = Disease(id_student = "{}".format(self.id),Disease = "{}".format(data))
+        session.add(sth)
+        session.commit()
+
+    def relative(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Relative = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def phoneEmer(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.PhoneforEmergency = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def phonestu(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Phonestudent = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def address(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.Address = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def email(self,data):
+        addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
+        addData.EmailDateofbirth = "{}".format(data)
+        session.add(addData)
+        session.commit()

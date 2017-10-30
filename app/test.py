@@ -9,6 +9,11 @@ p = Academic_2st_table()
 re = return_Method(studenID)
 returnda = return_data(studenID)
 
+
+add = Add_Method(studenID)
+add.id_stu(Profile)
+add.name("")
+
 print("Profile: ")
 print(returnda.DicPro(re.name(), re.surname(), re.date(), re.birth(), re.nation(), re.education(), re.disease(), re.PhoneEmer(), re.Phonestu(), re.address(), re.email()))
 print("Activity: ")

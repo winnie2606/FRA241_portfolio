@@ -44,6 +44,11 @@
 	margin-right: 35%;
 }
 
+.surname{
+  margin-top: 2%;
+	margin-right: 35%;
+}
+
 .nationality{
   margin-top: 2%;
 	margin-right: 35%;
@@ -64,12 +69,37 @@
 	margin-right: 35%;
 }
 
-.data-contact{
+.emer-contact{
+  margin-top: 2%;
+	margin-right: 62%;
+}
+
+.emer-phone{
+  margin-top: 2%;
+	margin-right: 35%;
+}
+
+.reletive{
   margin-top: 2%;
 	margin-right: 35%;
 }
 
 .contact{
+  margin-top: 2%;
+	margin-right: 62%;
+}
+
+.phone{
+  margin-top: 2%;
+	margin-right: 35%;
+}
+
+.email{
+  margin-top: 2%;
+	margin-right: 35%;
+}
+
+.address{
   margin-top: 2%;
 	margin-right: 35%;
 }

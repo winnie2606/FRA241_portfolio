@@ -12,12 +12,15 @@ from getDatabase import *
 from Node_web import *
 from keepHistory import *
 from pullData import *
+from editProfile import *
+
 
 app = Flask(__name__)
 
 keepID = keepID()
 keepHistory = keepHistory()
 pullData = pullData()
+editProfile = editProfile()
 
 @app.route('/')
 def html():
@@ -187,7 +190,12 @@ def getEditInfo():
 	print(getEditInfo)
 	getID = keepID.ID
 	#keepID.Print_ID()
-	name = keepID.Name
+
+	editProfile.edit(getID,getEditInfo)
+
+	re = return_Method(getID)
+	name = re.name()
+	keepID.Name = name
 
 	return render_template('profile.html', name=name, page=pullData.Profile(getID))
 
