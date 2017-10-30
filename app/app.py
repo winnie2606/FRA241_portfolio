@@ -161,10 +161,15 @@ def moreinfo():
 	getID = keepID.ID
 	name = keepID.Name
 
+	for i in pullData.Activity(getID):
+		if i["Name_Activity"] == getMoreinfo:
+			return render_template('dataactivity.html', name=name, page= i )
+'''
 	if getMoreinfo == 'MORE INFO>>':
 		keepHistory.keep_page('dataactivity.html', pullData.Activity(getID))
 		keepHistory.print_listPage()
 		return render_template('dataactivity.html', name=name, page=pullData.Activity(getID))
+'''
 
 @app.route('/editInfo', methods=['POST'])
 def editInfo():
@@ -198,7 +203,7 @@ def getEditInfo():
 	keepID.Name = name
 
 	keepHistory.history()
-	
+
 	return render_template('profile.html', name=name, page=pullData.Profile(getID))
 
 @app.route('/getEditAc', methods=['POST'])

@@ -18,6 +18,7 @@ class editProfile():
         print (name,surname,nation,birth,birthplace,disease,emerphone,reletive,phone,address)
 
         add = Add_Method(ID)
+        re = return_Method(ID)
         if name != "":
             add.name(name)
         if surname != "":
@@ -29,7 +30,7 @@ class editProfile():
         if birthplace != "":
             add.birth(birthplace)
         if disease != "":
-            add.disease(disease)
+            add.edit_disease(re.disease(),disease)
         if emerphone != "":
             add.phoneEmer(emerphone)
         if reletive != "":
