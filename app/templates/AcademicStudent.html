@@ -48,10 +48,10 @@
 		<div class="selectbar">
 					<form id="contact-form" action="/selectTerm", method="POST">
 						<select id="section"  name = "click" size="1" style="width:400px; font-size:25px;height:30px;color:#46445c; " >
-							<option value="1/59">1/2559</option>
-							<option value="2/59">2/2559</option>
-							<option value="1/60">1/2560</option>
-							<option value="2/60">2/2560</option>
+							<option value="1/2559">1/2559</option>
+							<option value="2/2559">2/2559</option>
+							<option value="1/2560">1/2560</option>
+							<option value="2/2560">2/2560</option>
 						</select>
 						<input type="submit" value="select">
 					</form>
@@ -69,10 +69,10 @@
 				{%for academic in page %}
 				<tr>
 
-					<td>{{academic}}</td>
-					<td>{{academic}}</td>
-					<td>{{academic}}</td>
-					<td>{{academic}}</td>
+					<td>{{academic.ID_Subject}}</td>
+					<td>{{academic.Name_Subject}}</td>
+					<td>{{academic.Credit}}</td>
+					<td>{{academic.Academic_Regcord}}</td>
 
 				</tr>
 				{% endfor %}
@@ -87,19 +87,20 @@
 					<th style="background-color: #46445c; border-color:#000014;font-size:20px;">GPA/GPAX</th>
 
 				</tr>
+				{%for academic2 in page2%}
 				<tr>
 					<td style=" border-color:#000014;font-size:20px;">THIS SEMESTER</td>
-					<td>E1</td>
-					<td>F1</td>
+					<td>{{academic2.This_semester}}</td>
+					<td>{{academic2.GPA}}</td>
 
 
 				</tr>
 				<tr>
 					<td style=" border-color:#000014;font-size:20px;">CUMULATIVE</td>
-					<td>E2</td>
-					<td>F2</td>
+					<td>{{academic2.Cumulative_credit}}</td>
+					<td>{{academic2.GPAX}}</td>
 				</tr>
-
+				{% endfor %}
 				</div>
 		</table>
 

@@ -100,8 +100,8 @@ def menubar():
 		keepHistory.keep_page('profile.html', pullData.Profile(getID))
 		return render_template('profile.html', name=name, page=pullData.Profile(getID))
 	if getMenubar == 'ACADEMIC':
-		keepHistory.keep_page('AcademicStudent.html', pullData.Academic(getID))
-		return render_template('AcademicStudent.html', name=name, page=pullData.Academic(getID))
+		keepHistory.keep_page('AcademicStudent.html', pullData.Academic_term(getID),pullData.Academic_sum(getID))
+		return render_template('AcademicStudent.html', name=name, page=pullData.Academic_term(getID), page2=pullData.Academic_sum(getID))
 	if getMenubar == 'WORK&EXPERIENCE':
 		keepHistory.keep_page('activity.html', pullData.Activity(getID))
 		return render_template('activity.html', name=name, page=pullData.Activity(getID))
@@ -120,7 +120,10 @@ def menubar():
 	if getMenubar == 'back':
 		print(getMenubar)
 		keepHistory.print_listPage()
-		return render_template(keepHistory.history(),id_user=getID, name=name, page=keepHistory.Value_page())
+		history = keepHistory.history()
+		Value = keepHistory.Value_page()
+		Value2 = keepHistory.Value2_page()
+		return render_template(history,id_user=getID, name=name, page = Value, page2 = Value2)
 
 @app.route('/printer', methods=['POST'])
 def printer():
@@ -137,6 +140,17 @@ def printer():
 def selectTerm():
 	getSelectTerm = request.form['click']
 	print(getSelectTerm)
+	getID = keepID.ID
+	name = keepID.Name
+	if getSelectTerm == '1/2559':
+		term = '1/2559'
+	if getSelectTerm == '2/2559':
+		term = '2/2559'
+	if getSelectTerm == '1/2560':
+		term = '1/2560'
+	if getSelectTerm == '2/2560':
+		term = '2/2560'
+	return render_template('AcademicStudent.html', name=name, page=pullData.Academic_term(getID,term),page2=pullData.Academic_sum(getID,term))
 
 @app.route('/moreinfo', methods=['POST'])
 def moreinfo():
@@ -214,7 +228,7 @@ def getCheckBox():
 	create = open(str(name_file),'w')'''
 
 	if getCheckBox == 'DONE':
-		return render_template(keepHistory.history(),id_user=getID, name=name, page=keepHistory.Value_page())
+		return render_template(keepHistory.history(),id_user=getID, name=name, page=keepHistory.Value_page() )
 
 @app.route('/selectall', methods=['POST'])
 def selectall():

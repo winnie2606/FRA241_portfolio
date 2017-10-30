@@ -7,8 +7,8 @@ class keepHistory():
         self.tail = None
         self.size = 0
 
-    def keep_page(self,page,value = None):
-        page = Node_web(page,value)
+    def keep_page(self,page,value = None,value2 = None):
+        page = Node_web(page,value,value2)
         if self.size == 0:
             self.head = page
             self.tail = page
@@ -36,6 +36,9 @@ class keepHistory():
 
     def Value_page(self):
         return self.tail.value
+
+    def Value2_page(self):
+        return self.tail.value2
 
     def reset_keepHistory(self):
         self.head = None

@@ -1,10 +1,11 @@
 class Node_web():
 
-    def __init__(self,page= None,value = None,next = None,previous=None):
+    def __init__(self,page= None,value = None,value2 = None,next = None,previous=None):
         self.page = page
         self.Next = next
         self.previous = previous
         self.value = value
+        self.value2 = value2
 
 
 
@@ -16,4 +17,4 @@ class Node_web():
         self.Next = None
         self.previous = None
         self.value = None
-        
+        self.value2 = None
