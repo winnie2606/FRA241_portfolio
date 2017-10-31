@@ -17,8 +17,9 @@
 }
 
 .dataactivity-clk{
+	float: left;
 	position: fixed;
-	margin-top: 19%;
+	margin-top: 17%;
 	margin-left: 88%;
 }
 
