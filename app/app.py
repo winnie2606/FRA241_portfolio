@@ -269,5 +269,13 @@ def getAddAcButton():
 	keepHistory.keep_page('edit-activity.html',None)
 	return render_template('edit-activity.html', name=name)
 
+@app.route('/saveAcButton', methods=['POST'])
+def getSaveAcButton():
+	getSaveAc = request.form['click']
+	getID = keepID.ID
+	name = keepID.Name
+	if getSaveAc == 'SAVE':
+		return render_template('dataactivity.html', name=name, page=pullData.Activity(getID))
+
 
 app.run(debug=True)
