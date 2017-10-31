@@ -1,5 +1,5 @@
 from getDatabase import *
-studenID = "59340500035"
+studenID = "59340500021"
 term = "1/2559"
 
 s = Get_Academic(studenID,term)

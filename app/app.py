@@ -153,18 +153,21 @@ def selectTerm():
 		term = '1/2560'
 	if getSelectTerm == '2/2560':
 		term = '2/2560'
-	return render_template('AcademicStudent.html', name=name, page=pullData.Academic_term(getID,term),page2=pullData.Academic_sum(getID,term))
+	return render_template('AcademicStudent.html', name=name, term=term, page=pullData.Academic_term(getID,term),page2=pullData.Academic_sum(getID,term))
 
 @app.route('/moreinfo', methods=['POST'])
 def moreinfo():
-	getMoreinfo = request.form['click']
+	getMoreinfo = dict(request.form.items())
 	getID = keepID.ID
 	name = keepID.Name
 	print(getMoreinfo)
 
-	for i in pullData.Activity(getID):
-		if i["Name_Activity"] == getMoreinfo:
-			return render_template('dataactivity.html', name=name, page= i )
+	for nameAct in getMoreinfo:
+		for Act in pullData.Activity(getID):
+			if Act["Name_Activity"] == nameAct :
+				keepHistory.keep_page('dataactivity.html',Act)
+				print (Act)
+				return render_template('dataactivity.html', name=name, page= Act )
 '''
 	if getMoreinfo == 'MORE INFO>>':
 		keepHistory.keep_page('dataactivity.html', pullData.Activity(getID))
