@@ -213,6 +213,8 @@ def getEditInfo():
 @app.route('/getEditAc', methods=['POST'])
 def getEditAc():
 	getEditAc = dict(request.form.items())
+	getID = keepID.ID
+	name = keepID.Name
 	print(getEditAc)
 	return render_template('dataactivity.html', name=name, page=pullData.Activity(getID))
 
@@ -266,16 +268,17 @@ def getAddAcButton():
 	print(getAddAc)
 	getID = keepID.ID
 	name = keepID.Name
-	keepHistory.keep_page('edit-activity.html',None)
-	return render_template('edit-activity.html', name=name)
+	if getAddAc == 'ADD':
+		keepHistory.keep_page('activity.html', pullData.Activity(getID))
+		return render_template('add-activity.html', name=name)
 
-@app.route('/saveAcButton', methods=['POST'])
-def getSaveAcButton():
-	getSaveAc = request.form['click']
+@app.route('/getAddAc', methods=['POST'])
+def geAddAc():
+	getAddAc = dict(request.form.items())
 	getID = keepID.ID
 	name = keepID.Name
-	if getSaveAc == 'SAVE':
-		return render_template('dataactivity.html', name=name, page=pullData.Activity(getID))
+	print(getAddAc)
+	return render_template('activity.html', name=name, page=pullData.Activity(getID))
 
 
 app.run(debug=True)
