@@ -45,16 +45,15 @@
 	  </form>
 
 		<div class="group">
-			{% for activity in page %}
+			<!--{% for activity in page %}-->
 			<image src="static/en1.png" width="30%" class="en1">
 			<image src="static/activity.png" width="75%" class="activity-picture">
-			<div class="name-of-activity">NAME of ACTIVITY : {{activity.Name_Activity}}</div>
-			<div class="advisor">ADVISOR : {{activity.Advisor}}<input id="chkad" type="checkbox" value="ad" class="cheak"></div>
-			<div class="type">TYPE : {{activity}}</div>
-			<div class="date-duration">DATE/DURATION : {{activity.Date_Activity}}</div>
-			<div class="description">DESCRIPTION : {{activity.Description}}</div>
-			<div class="flies">FILE OR DOCUMENT RELEVANT TO THE ACTIVITY : {{activity}}</div>
-			{% endfor %}
+			<div class="name-of-activity">NAME of ACTIVITY : {{page.Name_Activity}}</div>
+			<div class="advisor">ADVISOR : {{page.Advisor}}<input id="chkad" type="checkbox" value="ad" class="cheak"></div>
+			<div class="type">TYPE : {{page.Type}}</div>
+			<div class="description">DESCRIPTION : {{page.Description}}</div>
+			<div class="flies">FILE OR DOCUMENT RELEVANT TO THE ACTIVITY : {{page.File}}</div>
+			<!--{% endfor %}-->
 		</div>
 
 		<div align="right" class="dataactivity-clk">

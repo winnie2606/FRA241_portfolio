@@ -160,6 +160,7 @@ def moreinfo():
 	getMoreinfo = request.form['click']
 	getID = keepID.ID
 	name = keepID.Name
+	print(getMoreinfo)
 
 	for i in pullData.Activity(getID):
 		if i["Name_Activity"] == getMoreinfo:
