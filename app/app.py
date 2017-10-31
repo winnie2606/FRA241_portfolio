@@ -112,9 +112,9 @@ def menubar():
 		keepHistory.keep_page('homeStudent.html', None)
 		return render_template('homeStudent.html', name=name, id_user=getID)
 	if getMenubar == 'print_icon':
-		keepHistory.keep_page('print_choose.html', None)
+		keepHistory.keep_page('print_choose.html', pullData.Activity(getID))
 		print(getMenubar)
-		return render_template('print_choose.html', name=name)
+		return render_template('print_choose.html', name=name, page=pullData.Activity(getID))
 	if getMenubar == 'logout_icon':
 		print(getMenubar)
 		keepHistory.reset_keepHistory()
@@ -135,9 +135,9 @@ def printer():
 	name = keepID.Name
 	#keepID.Print_ID()
 
-	keepHistory.keep_page('print_choose.html', None)
+	keepHistory.keep_page('print_choose.html', pullData.Activity(getID))
 	print(printer)
-	return render_template('print_choose.html', name=name)
+	return render_template('print_choose.html', name=name, page=pullData.Activity(getID))
 
 @app.route('/selectTerm', methods=['POST'])
 def selectTerm():
@@ -258,9 +258,9 @@ def selectall():
 	name = keepID.Name
 
 	if getSelectall == 'SELECTALL':
-		return render_template('print_choose_selectall.html', name=name)
+		return render_template('print_choose_selectall.html', name=name, page=pullData.Activity(getID))
 	if getSelectall == 'UNSELECTALL':
-		return render_template('print_choose.html', name=name)
+		return render_template('print_choose.html', name=name, page=pullData.Activity(getID))
 
 @app.route('/getAddAcButton', methods=['POST'])
 def getAddAcButton():
