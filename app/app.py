@@ -227,45 +227,33 @@ def getCheckBox():
 
 	getID = keepID.ID
 	name = keepID.Name
-	name = re.name()
+
 
 	re = return_Method(getID)
 	s = Get_Academic(getID,None)
 
 	ProfileAndAcademic = []
-	gpax = {'gpax':None}
-	phone = {'phone':None}
-	address = {'address':None}
-	email = {'email':None}
-	dis = {'dis':None}
-	nation = {'nation':None}
-	birthplace = {'birthplace':None}
+	data = {'name':re.name(),'sur':re.surname(),'dateofbirth':re.date(),'nation':re.nation(),'gpax':'-','contact':'','phone':'','address':'','email':'','dis':'','birthplace':''}
 	Activity = []
 
+
 	if getCheck.get('gpax') == 'on':
-		gpax['gpax'] = s.get_GPAX()
-		ProfileAndAcademic.append(gpax)
+		data['gpax'] = ''.join(s.get_GPAX())
 		print('select gpax')
 	if getCheck.get('contact') == 'on':
-		phone['phone'] = re.Phonestu()
-		ProfileAndAcademic.append(phone)
-		address['address'] = re.address()
-		ProfileAndAcademic.append(address)
-		email['email'] = re.email()
-		ProfileAndAcademic.append(email)
+		data['contact'] = "CONTACT"
+		data['phone'] = "PHONE : " + re.Phonestu()
+		data['address'] = "ADDRESS : " +  re.address()
+		data['email'] = "EMAIL : " + re.email()
 		print('select contact')
 	if getCheck.get('congenital disease') == 'on':
-		dis['dis'] = re.disease()
-		ProfileAndAcademic.append(dis)
+		data['dis'] = "CONGENITAL DISEASE : " + ','.join(re.disease())
 		print('select congenital disease')
-	if getCheck.get('nationality') == 'on':
-		nation['nation'] = re.nation()
-		ProfileAndAcademic.append(nation)
-		print('select nationality')
 	if getCheck.get('birthplace') == 'on':
-		birthplace['birthplace'] = re.birth()
-		ProfileAndAcademic.append(birthplace)
+		data['birthplace'] = "BIRTH PLACE : " + re.birth()
 		print('select birthplace')
+
+	ProfileAndAcademic.append(data)
 
 	DataActivity = pullData.Activity(getID)
 	for Act in DataActivity:
@@ -278,7 +266,8 @@ def getCheckBox():
 
 	if getCheckBox == 'DONE':
 		print(ProfileAndAcademic)
-		return render_template(keepHistory.history(),id_user=getID, name=name, page=keepHistory.Value_page() )
+		print(Activity)
+		return render_template('printdata.html',id_user=getID, name=name, page=ProfileAndAcademic , page2 = Activity )
 
 @app.route('/selectall', methods=['POST'])
 def selectall():

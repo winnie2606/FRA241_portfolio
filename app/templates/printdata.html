@@ -47,27 +47,35 @@
     <div class="barPrint">PRINT</div>
 
     <div align="left" class="font-FFF">
-
+			{% for data in page %}
       <div class="profile"><b>Profile</b></div>
       <img src="static/student.png" width="15%" height="15%" class="pic-student">
-      <div class="name">Name : </div>
-      <div class="date-of-birth">Date of birth : </div>
-      <div class="nationality">Nationality : </div>
-      <div class="data">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
-      <div class="gpax">GPAX : </div>
+      <div class="name">Name : {{data.name}}  {{data.sur}}</div>
+      <div class="date-of-birth">Date of birth : {{data.dateofbirth}}</div>
+      <div class="nationality">Nationality : {{data.nation}}</div>
+      <div class="data">{{data.contact}}<br>
+												{{data.phone}}<br>
+												{{data.address}}<br>
+												{{data.email}}<br>
+												{{data.dis}}<br>
+												{{data.birthplace}}</div>
+      <div class="gpax">GPAX : {{data.gpax}}</div>
       <div class="graduated">Graduated from KMUTT in FIBO</div>
+			{% endfor %}
       <div class="work"><b>Work & Experience</b></div>
 
 		</div>
 
+		{% for activity in page2 %}
 		<div class="group">
 
 			<image src="static/en1.png" width="25%" class="en1">
-			<div class="name-of-activity">Activities Name : </div>
-			<div class="advisor">Advisor : </div>
-			<div class="date-duration">Date / Duration : </div><br><br>
+			<div class="name-of-activity">Activities Name : {{activity.Name_Activity}}</div>
+			<div class="advisor">Advisor : {{activity.Advisor}}</div>
+			<div class="date-duration">Date / Duration : {{activity.Date_Activity}}</div><br><br>
 
 		</div>
+		{% endfor %}
 
 		<div class="print-clk">
 
