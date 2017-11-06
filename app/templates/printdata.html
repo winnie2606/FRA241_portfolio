@@ -77,9 +77,10 @@
 		</div>
 		{% endfor %}
 
-		<div class="save-clk"><input type = "submit" value = "SAVE AS PDF" class = "in2" ></div>
-		<div class="print-clk"><input type = "submit" value = "PRINT" class = "in2" ></div>
-		<div class="edit-clk"><input type = "submit" value = "EDIT" class = "in2" ></div>
+		<form id="contact-form" action="/getPrindataButton", method="POST">
+		<div class="save-clk"><input type = "submit" name="click" value = "SAVE" class = "in2" ></div>
+		<div class="edit-clk"><input type = "submit" name="click" value = "EDIT" class = "in2" ></div>
+		</form>
 
 	</body>
 

@@ -322,5 +322,12 @@ def geAddAc():
 
 	return render_template(history, name=name, page=pullData.Activity(getID))
 
+@app.route('/getPrindataButton', methods=['POST'])
+def getPrindataButton():
+	button = request.form['click']
+	if button == 'SAVE':
+		print('save')
+	if button  == 'EDIT':
+		print('edit')
 
 app.run(debug=True)
