@@ -13,7 +13,7 @@ from Node_web import *
 from keepHistory import *
 from pullData import *
 from editProfile import *
-
+from editActivity import *
 
 app = Flask(__name__)
 
@@ -21,6 +21,8 @@ keepID = keepID()
 keepHistory = keepHistory()
 pullData = pullData()
 editProfile = editProfile()
+editActivity = editActivity()
+
 
 @app.route('/')
 def html():
@@ -183,7 +185,7 @@ def editInfo():
 	if getEditInfo == 'EDIT':
 		return render_template('edit-your-infomation.html', name=name)
 
-@app.route('/editAcButton', methods=['POST'])
+@app.route('/editAcButton', methods=['POST']) 				#ยังไม่ได้ทำ
 def editAcButton():
 	getEditAc = request.form['click']
 	getID = keepID.ID
@@ -210,11 +212,14 @@ def getEditInfo():
 
 	return render_template('profile.html', name=name, page=pullData.Profile(getID))
 
-@app.route('/getEditAc', methods=['POST'])
+@app.route('/getEditAc', methods=['POST'])				#ยังไม่ได้ทำ
 def getEditAc():
 	getEditAc = dict(request.form.items())
 	getID = keepID.ID
 	name = keepID.Name
+
+
+
 	print(getEditAc)
 	return render_template('dataactivity.html', name=name, page=pullData.Activity(getID))
 
@@ -291,7 +296,12 @@ def geAddAc():
 	getID = keepID.ID
 	name = keepID.Name
 	print(getAddAc)
-	return render_template('activity.html', name=name, page=pullData.Activity(getID))
+
+	editActivity.edit(getID,getAddAc)
+
+	history = keepHistory.history()
+
+	return render_template(history, name=name, page=pullData.Activity(getID))
 
 
 app.run(debug=True)

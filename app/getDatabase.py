@@ -322,6 +322,53 @@ class Add_Method:
         session.add(addData)
         session.commit()
 
+    def Act_name(self,nameAct):
+        sth = Activity(id_student = "{}".format(self.id),NameActivity = "{}".format(nameAct))
+        session.add(sth)
+        session.commit()
+
+    def Act_des(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.Description = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Act_photo(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.Photo = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Act_type(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.Type = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Act_advisor(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.Advisor = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Act_date(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.Date_Activity = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Act_file(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.File = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Act_confirm(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.Confirm = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
     def edit_disease(self,edit,data):
         print(edit)
         for item in edit:
