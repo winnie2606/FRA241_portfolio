@@ -70,9 +70,6 @@
   margin-top: 1%;
   margin-left: 35%;
   font-size: 20px;
-  height: 100px;
-	width: 600px;
-	background-color: #000014;
 }
 
 .gpax{
@@ -82,9 +79,10 @@
 }
 
 .graduated{
-  margin-top: -2%;
+  margin-top: -1.8%;
   margin-left: 60%;
   font-size: 20px;
+	margin-bottom: 15%
 }
 
 .work{
@@ -119,8 +117,18 @@
 	margin-left: 42%;
 }
 
+.save-clk{
+	margin-top: 4%;
+	margin-left: 68%;
+}
+
 .print-clk{
-	position: fixed;
-	margin-top: -18%;
+	margin-top: -2.3%;
+	margin-left: 78%;
+}
+
+.edit-clk{
+	margin-top: -2.3%;
 	margin-left: 88%;
+	margin-bottom: 2%
 }
