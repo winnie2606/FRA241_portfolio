@@ -227,6 +227,7 @@ def getCheckBox():
 
 	getID = keepID.ID
 	name = keepID.Name
+	name = re.name()
 
 	re = return_Method(getID)
 	s = Get_Academic(getID,None)
@@ -266,7 +267,11 @@ def getCheckBox():
 		ProfileAndAcademic.append(birthplace)
 		print('select birthplace')
 
-	name = re.name()
+	DataActivity = pullData.Activity(getID)
+	for Act in DataActivity:
+		nameAct = Act["Name_Activity"]
+		if getCheck.get(nameAct) == 'on' :
+			Activity.append(Act)
 
 	'''name_file = str(name) + '\'s file' + '.txt'
 	create = open(str(name_file),'w')'''

@@ -318,7 +318,7 @@ class Add_Method:
 
     def email(self,data):
         addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
-        addData.EmailDateofbirth = "{}".format(data)
+        addData.Email = "{}".format(data)
         session.add(addData)
         session.commit()
 
