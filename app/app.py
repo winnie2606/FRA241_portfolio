@@ -128,6 +128,8 @@ def menubar():
 		history = keepHistory.history()
 		Value = keepHistory.Value_page()
 		Value2 = keepHistory.Value2_page()
+		if history == 'activity.html':
+			Value = pullData.Activity(getID)
 		return render_template(history,id_user=getID, name=name, page = Value, page2 = Value2)
 
 @app.route('/printer', methods=['POST'])
@@ -185,15 +187,23 @@ def editInfo():
 	if getEditInfo == 'EDIT':
 		return render_template('edit-your-infomation.html', name=name)
 
-@app.route('/editAcButton', methods=['POST']) 				#ยังไม่ได้ทำ
+@app.route('/editAcButton', methods=['POST'])
 def editAcButton():
-	getEditAc = request.form['click']
+	getEditAc = dict(request.form.items())
+	print(getEditAc)
 	getID = keepID.ID
 	name = keepID.Name
 
+	for nameAct in getEditAc:
+		for Act in pullData.Activity(getID):
+			if Act["Name_Activity"] == nameAct :
+				keepHistory.keep_page('dataactivity.html',Act)
+				return render_template('edit-activity.html', name=name, page= Act["Name_Activity"] )
+
+'''
 	if getEditAc == 'EDIT':
 		keepHistory.keep_page('edit-activity.html',None)
-		return render_template('edit-activity.html', name=name)
+		return render_template('edit-activity.html', name=name) '''
 
 @app.route('/getEditInfo', methods=['POST'])
 def getEditInfo():
@@ -208,9 +218,9 @@ def getEditInfo():
 	name = re.name()
 	keepID.Name = name
 
-	keepHistory.history()
+	history = keepHistory.history()
 
-	return render_template('profile.html', name=name, page=pullData.Profile(getID))
+	return render_template(history , name=name, page=pullData.Profile(getID))
 
 @app.route('/getEditAc', methods=['POST'])				#ยังไม่ได้ทำ
 def getEditAc():
@@ -218,10 +228,19 @@ def getEditAc():
 	getID = keepID.ID
 	name = keepID.Name
 
-
-
 	print(getEditAc)
-	return render_template('dataactivity.html', name=name, page=pullData.Activity(getID))
+
+	for nameAct in getEditAc:
+		if nameAct != 'type' and nameAct != 'photo'and nameAct != 'advisor'and nameAct != 'des' and nameAct != 'fileDoc' and nameAct != 'date':
+			print(nameAct)
+			Name_act = nameAct
+
+	editActivity.add(getID,Name_act,getEditAc)
+
+	for Act in pullData.Activity(getID):
+		if Act["Name_Activity"] == Name_act :
+			history = keepHistory.history()
+			return render_template(history , name=name, page= Act)
 
 @app.route('/checkBox', methods=['POST'])
 def getCheckBox():

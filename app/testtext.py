@@ -1,6 +1,6 @@
 import os.path
 
-save_path = 'C:/Users/Desktop'
+save_path = 'C:/Users/' + str(os.getlogin()) + '/Desktop'
 
 name = 'Pop'
 name_file = str(name) + '\'s file' + '.txt'
