@@ -15,7 +15,7 @@ class editProfile():
         phone = dicProfile["phone"]
         email = dicProfile["email"]
         address = dicProfile["address"]
-        print (name,surname,nation,birth,birthplace,disease,emerphone,reletive,phone,address)
+        print (name,surname,nation,birth,birthplace,disease,emerphone,reletive,phone,address,email)
 
         add = Add_Method(ID)
         re = return_Method(ID)
@@ -38,6 +38,7 @@ class editProfile():
         if phone != "":
             add.phonestu(phone)
         if email != "":
+            print(email)
             add.email(email)
         if address != "":
             add.address(address)

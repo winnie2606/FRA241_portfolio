@@ -228,10 +228,6 @@ def getCheckBox():
 	getID = keepID.ID
 	name = keepID.Name
 
-	if getCheck.get('NAME') == 'on':
-		print('select name')
-	if getCheck.get('date of birth') == 'on':
-		print('select date of birth')
 	if getCheck.get('gpax') == 'on':
 		print('select gpax')
 	if getCheck.get('contact') == 'on':
@@ -244,6 +240,10 @@ def getCheckBox():
 		print('select birthplace')
 	if getCheck.get('data contact') == 'on':
 		print('select data contact')
+
+	re = return_Method(getID)
+	name = re.name()
+	print(name)
 
 	'''name_file = str(name) + '\'s file' + '.txt'
 	create = open(str(name_file),'w')'''
