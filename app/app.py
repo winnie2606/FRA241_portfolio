@@ -228,27 +228,51 @@ def getCheckBox():
 	getID = keepID.ID
 	name = keepID.Name
 
+	re = return_Method(getID)
+	s = Get_Academic(getID,None)
+
+	ProfileAndAcademic = []
+	gpax = {'gpax':None}
+	phone = {'phone':None}
+	address = {'address':None}
+	email = {'email':None}
+	dis = {'dis':None}
+	nation = {'nation':None}
+	birthplace = {'birthplace':None}
+	Activity = []
+
 	if getCheck.get('gpax') == 'on':
+		gpax['gpax'] = s.get_GPAX()
+		ProfileAndAcademic.append(gpax)
 		print('select gpax')
 	if getCheck.get('contact') == 'on':
+		phone['phone'] = re.Phonestu()
+		ProfileAndAcademic.append(phone)
+		address['address'] = re.address()
+		ProfileAndAcademic.append(address)
+		email['email'] = re.email()
+		ProfileAndAcademic.append(email)
 		print('select contact')
 	if getCheck.get('congenital disease') == 'on':
+		dis['dis'] = re.disease()
+		ProfileAndAcademic.append(dis)
 		print('select congenital disease')
 	if getCheck.get('nationality') == 'on':
+		nation['nation'] = re.nation()
+		ProfileAndAcademic.append(nation)
 		print('select nationality')
 	if getCheck.get('birthplace') == 'on':
+		birthplace['birthplace'] = re.birth()
+		ProfileAndAcademic.append(birthplace)
 		print('select birthplace')
-	if getCheck.get('data contact') == 'on':
-		print('select data contact')
 
-	re = return_Method(getID)
 	name = re.name()
-	print(name)
 
 	'''name_file = str(name) + '\'s file' + '.txt'
 	create = open(str(name_file),'w')'''
 
 	if getCheckBox == 'DONE':
+		print(ProfileAndAcademic)
 		return render_template(keepHistory.history(),id_user=getID, name=name, page=keepHistory.Value_page() )
 
 @app.route('/selectall', methods=['POST'])
