@@ -228,14 +228,12 @@ def getCheckBox():
 	getID = keepID.ID
 	name = keepID.Name
 
-
 	re = return_Method(getID)
 	s = Get_Academic(getID,None)
 
 	ProfileAndAcademic = []
 	data = {'name':re.name(),'sur':re.surname(),'dateofbirth':re.date(),'nation':re.nation(),'gpax':'-','contact':'','phone':'','address':'','email':'','dis':'','birthplace':''}
 	Activity = []
-
 
 	if getCheck.get('gpax') == 'on':
 		data['gpax'] = ''.join(s.get_GPAX())
@@ -260,9 +258,6 @@ def getCheckBox():
 		nameAct = Act["Name_Activity"]
 		if getCheck.get(nameAct) == 'on' :
 			Activity.append(Act)
-
-	'''name_file = str(name) + '\'s file' + '.txt'
-	create = open(str(name_file),'w')'''
 
 	if getCheckBox == 'DONE':
 		print(ProfileAndAcademic)
