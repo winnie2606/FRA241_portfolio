@@ -8,7 +8,7 @@ test = Flask(__name__)
 
 @test.route('/')
 def html():
-	return render_template('AcademicStudent.html')
+	return render_template('testPopup.html')
 
 @test.route('/getPopup', methods=['POST'])
 def getPopup():

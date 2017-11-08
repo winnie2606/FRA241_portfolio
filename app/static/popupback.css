@@ -1,0 +1,78 @@
+body{
+
+	padding: 0;
+	margin: 0;
+}
+.containerback{
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 100px;
+
+}
+.btn{
+	padding: 10px 15px;
+	background-color: #E91E63;
+	border-radius: 4px;
+	color: #fff;
+	border: none;
+	text-transform: uppercase;
+}
+.popupback{
+	width: 400px;
+	height: 180px;
+	background-color: #fff;
+	border-radius: 4px;
+	margin: 0 auto;
+	z-index: 1000;
+	display: none;
+	position: relative;
+	position: fixed;
+	margin-left: 35%;
+}
+
+p{
+	font-size: 20px;
+	line-height: 100px;
+
+}
+.optionsback{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+
+.aback{
+	font-size: 22px;
+	float: left;
+	cursor: pointer;
+	width: 50%;
+	background-color: #2ECC71;
+}
+
+.bback{
+	font-size: 22px;
+	float: left;
+	cursor: pointer;
+	width: 50%;
+	background-color: #F44336;
+}
+.optionsback{
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+	padding: 15px 0px;
+}
+.coverback{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: none;
+	z-index: 999;
+	background-color: rgba(0,0,0,0.5);
+	top: 0;
+	left: 0;
+	position: fixed;
+}
