@@ -27,6 +27,8 @@ body{
 	z-index: 1000;
 	display: none;
 	position: relative;
+	position: fixed;
+	margin-left: 35%;
 }
 
 p{
@@ -72,4 +74,5 @@ p{
 	background-color: rgba(0,0,0,0.5);
 	top: 0;
 	left: 0;
+	position: fixed;
 }
