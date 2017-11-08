@@ -13,7 +13,7 @@ def html():
 @test.route('/getPopup', methods=['POST'])
 def getPopup():
 
-    getPopup = request.form['text1']
+    getPopup = request.form['popup']
 
     print(getPopup)
 test.run(debug=True)
