@@ -330,4 +330,10 @@ def getPrindataButton():
 	if button  == 'EDIT':
 		print('edit')
 
+@app.route('/getPopup', methods=['POST'])
+def getPopup():
+	getpopup = request.form['popup']
+	print(getpopup)
+
+
 app.run(debug=True)

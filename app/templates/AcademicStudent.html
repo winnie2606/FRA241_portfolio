@@ -8,18 +8,19 @@
 
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='AcademicStudent.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='background.css')}}" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 	</head>
 
 	<body>
 
-		<form id="contact-form" action="/menubar", method="POST">
+
 		<div class="bar">
 
 			<div class="bar-in">
 
 				<div class="L">
-
+					<form id="contact-form" action="/menubar", method="POST">
 					<input type="image" name="click" value="back" src="static/back_icon.jpg" width="4.5%">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="PROFILE" class="link">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="ACADEMIC" class="link">&nbsp;&nbsp;&nbsp;
@@ -32,14 +33,51 @@
 					{{name}}&nbsp;&nbsp;&nbsp;
 					<input name="click" type="image" value="home_icon" src="static/home_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
 					<input name="click" type="image" value="print_icon" src="static/print_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
-					<input name="click" type="image" value="logout_icon" src="static/logout_icon.jpg" width="8.5%">
+					</form>
+					<input class="out" name="click" type="image" value="logout_icon" src="static/logout_icon.jpg" width="8.5%">
 
 				</div>
 
 			</div>
 
 		</div>
-	</form>
+
+
+		<div class="container">
+
+			<div class="popup">
+				<span id="close">&times;</span>
+				<p>Do you want to Exit ?</p>
+				<div class="option">
+          <form id="contact-form" action="/getPopup", method="POST">
+					<input class="a" type = "submit" name="popup" value = "Cancel" />
+					<input  class ="b" type = "submit" name="popup" value = "Exit" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="cover">
+
+		</div>
+		<script type="../js/jquery-3.2.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$(".out").on('click',function(){
+					$(".cover").fadeIn('slow');
+					$(".popup").fadeIn('slow');
+				});
+				$('.a').on('click',function(){
+					$(".cover").fadeOut('slow');
+					$(".popup").fadeOut('slow');
+				});
+				$('.b').on('click',function(){
+					$(".cover").fadeOut('slow');
+					$(".popup").fadeOut('slow');
+				});
+			});
+
+		</script>
+
 		<div class="Academic">
 
 			<p><u>ACADEMIC</u> : GRADE</p>
