@@ -6,8 +6,9 @@
 
 		<title>Academic</title>
 
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='AcademicStudent.css')}}" />
+    	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='AcademicStudent.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='background.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='popup.css')}}" />
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<!--<script rel="stylesheet" type="text/javascript" href="{{url_for('static', filename='jquery-3.2.1.min.js')}}"></script>-->
 
@@ -47,11 +48,10 @@
 		<div class="container">
 
 			<div class="popup">
-				<span id="close">&times;</span>
 				<p>Do you want to Exit ?</p>
 				<div class="option">
           <form id="contact-form" action="/getPopup", method="POST">
-					<input class="a" type = "submit" name="popup" value = "Cancel" />
+					<input class="a" type = "button" name="popup" value = "Cancel" /> 
 					<input  class ="b" type = "submit" name="popup" value = "Exit" />
 					</form>
 				</div>
@@ -67,26 +67,20 @@
 					$(".cover").fadeIn('slow');
 					$(".popup").fadeIn('slow');
 				});
-				$(".popup").on('click',function(){
-					if($(event.target).is("#close")){
-						$(".cover").fadeOut('slow');
-						$(".popup").fadeOut('slow');
-					}
-				});
+			});
+			$(document).ready(function(){
 				$('.cover').on('click',function(){
 					$(".cover").fadeOut('slow');
 					$(".popup").fadeOut('slow');
 				});
+			});
+			$(document).ready(function(){
 				$('.a').on('click',function(){
 					$(".cover").fadeOut('slow');
 					$(".popup").fadeOut('slow');
 				});
-				$('.b').on('click',function(){
-					$(".cover").fadeOut('slow');
-					$(".popup").fadeOut('slow');
-				});
 			});
-
+				
 		</script>
 		<div class="Academic">
 
