@@ -8,6 +8,7 @@
 
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='HomeStudent.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='background.css')}}" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	</head>
 
 	<body>
@@ -17,13 +18,12 @@
 		}
 		</script>
 
-		<form id="contact-form" action="/menubar", method="POST">
 		<div class="bar">
 
 			<div class="bar-in">
 
 				<div class="L">
-
+					<form id="contact-form" action="/menubar", method="POST">
 					<input type="image" name="click" value="back" src="static/back_icon.jpg" width="4.5%">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="PROFILE" class="link">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="ACADEMIC" class="link">&nbsp;&nbsp;&nbsp;
@@ -36,6 +36,7 @@
 					{{name}}&nbsp;&nbsp;&nbsp;
 					<input name="click" type="image" value="home_icon" src="static/home_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
 					<input name="click" type="image" value="print_icon" src="static/print_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
+					</form>
 					<input name="click" type="image" value="logout_icon" src="static/logout_icon.jpg" width="8.5%">
 
 				</div>
@@ -43,7 +44,6 @@
 			</div>
 
 		</div>
-		</form>
 
 		<image src="static/student.png" width="20%" class='pic'>
 
