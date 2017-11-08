@@ -8,6 +8,7 @@
 
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='dataactivity.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='background.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='popup.css')}}" />
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 	</head>
@@ -41,6 +42,44 @@
 			</div>
 
 		</div>
+
+		<div class="container">
+
+			<div class="popup">
+				<p>Do you want to Exit ?</p>
+				<div class="option">
+          <form id="contact-form" action="/getPopup", method="POST">
+					<input class="a" type = "button" name="popup" value = "Cancel" />
+					<input  class ="b" type = "submit" name="popup" value = "Exit" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="cover">
+
+		</div>
+		<script type="../js/jquery-3.2.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$(".out").on('click',function(){
+					$(".cover").fadeIn('slow');
+					$(".popup").fadeIn('slow');
+				});
+			});
+			$(document).ready(function(){
+				$('.cover').on('click',function(){
+					$(".cover").fadeOut('slow');
+					$(".popup").fadeOut('slow');
+				});
+			});
+			$(document).ready(function(){
+				$('.a').on('click',function(){
+					$(".cover").fadeOut('slow');
+					$(".popup").fadeOut('slow');
+				});
+			});
+
+		</script>
 
 		<div class="group">
 			<image src="static/en1.png" width="30%" class="en1">
