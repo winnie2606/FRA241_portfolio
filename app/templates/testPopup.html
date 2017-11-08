@@ -8,13 +8,8 @@
 
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='AcademicStudent.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='background.css')}}" />
-		<script rel="stylesheet" type="text/javascript" href="{{url_for('static', filename='jquery-3.2.1.min.js')}}"></script>
-		<!--<script type="text/javascript" src="static/jquery-3.2.1.min.js"></script>-->
-
-
-
-
-		<!--<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans+Condensed"-->
+		<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+		<!--<script rel="stylesheet" type="text/javascript" href="{{url_for('static', filename='jquery-3.2.1.min.js')}}"></script>-->
 
 
 	</head>
@@ -40,9 +35,9 @@
 				<div class="R">
 
 					USERNAME&nbsp;&nbsp;&nbsp;
-					<input name="click" type="image" value="home" src="home_icon.jpg" width="9.5%">&nbsp;&nbsp;&nbsp;
-					<input name="click" type="image" value="picPrinter" src="print_icon.jpg" width="9.5%">&nbsp;&nbsp;&nbsp;
-					<input class = "out" name="click" type="image" value="logout" src="logout_icon.jpg" width="9.5%">
+					<input name="click" type="image" value="home" src="static/home_icon.jpg" width="9.5%">&nbsp;&nbsp;&nbsp;
+					<input name="click" type="image" value="picPrinter" src="static/print_icon.jpg" width="9.5%">&nbsp;&nbsp;&nbsp;
+					<input class = "out" name="click" type="image" value="logout" src="static/logout_icon.jpg" width="9.5%">
 
 				</div>
 
@@ -65,7 +60,7 @@
 		<div class="cover">
 
 		</div>
-		<script type="../js/jquery-3.js"></script>
+		<script type="../js/jquery-3.2.1.min.js"></script>
 		<script>
 			$(document).ready(function(){
 				$(".out").on('click',function(){
