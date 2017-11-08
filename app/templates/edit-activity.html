@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='edit-activity.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='background.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='popup.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='popupback.css')}}" />
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 	</head>
@@ -21,8 +22,9 @@
 			<div class="bar-in">
 
 				<div class="L">
+
+					<input class="back" type="image" name="click" value="back" src="static/back_icon.jpg" width="4.5%">&nbsp;&nbsp;&nbsp;
 					<form id="contact-form" action="/menubar", method="POST">
-					<input class = "back" type="image" name="click" value="back" src="static/back_icon.jpg" width="4.5%">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="PROFILE" class="link">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="ACADEMIC" class="link">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="WORK&EXPERIENCE" class="link">
@@ -48,7 +50,7 @@
 			<div class="popupback">
 				<p>Do you want to leave without finishing ?</p>
 				<div class="optionback">
-          <form id="contact-form" action="/getPopup", method="POST">
+          <form id="contact-form" action="/getleave", method="POST">
 					<input class="aback" type = "button" name="popup" value = "NO" />
 					<input  class ="bback" type = "submit" name="popup" value = "YES" />
 					</form>

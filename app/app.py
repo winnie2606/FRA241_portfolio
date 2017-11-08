@@ -339,5 +339,23 @@ def getPopup():
 		keepID.reset_keepID()
 		return render_template('login.html')
 
+@app.route('/getleave', methods=['POST'])
+def getleave():
+	getID = keepID.ID
+	name = keepID.Name
+	getleave = request.form['popup']
+	print(getleave)
+	if getleave == 'YES':
+		keepHistory.print_listPage()
+		history = keepHistory.history()
+		Value = keepHistory.Value_page()
+		Value2 = keepHistory.Value2_page()
+		if history == 'activity.html':
+			Value = pullData.Activity(getID)
+			return render_template(history,id_user=getID, name=name, page = Value, page2 = Value2)
+		if history == 'dataactivity.html':
+			Value = pullData.Activity(getID)
+			return render_template(history,id_user=getID, name=name, page = Value, page2 = Value2)
+
 
 app.run(debug=True)
