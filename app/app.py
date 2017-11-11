@@ -25,6 +25,10 @@ editProfile = editProfile()
 editActivity = editActivity()
 saveText = saveText()
 
+
+'''---------------------------------------------------------------------------------------------------------------------------------------------------'''
+""" Login """
+
 @app.route('/')
 def html():
 	return render_template('login.html')
@@ -72,7 +76,7 @@ def checkPerson():
 		keepHistory.keep_page('port_tea.html', None )
 		return render_template('port_tea.html' , name = name )
 
-
+'''end Login'''
 
 
 
