@@ -369,7 +369,7 @@ def getleave():
 			Value = keepHistory.Value_page()
 			return render_template(history,id_user=getID, name=name, page = Value)
 
-'''end student'''
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''end student'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 
 app.run(debug=True)
