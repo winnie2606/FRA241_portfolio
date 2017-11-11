@@ -185,6 +185,7 @@ def editInfo():
 	getID = keepID.ID
 	name = keepID.Name
 	if getEditInfo == 'EDIT':
+		keepHistory.keep_page('edit-your-infomation.html', None)
 		return render_template('edit-your-infomation.html', name=name)
 
 @app.route('/editAcButton', methods=['POST'])
@@ -222,7 +223,7 @@ def getEditInfo():
 
 	return render_template(history , name=name, page=pullData.Profile(getID))
 
-@app.route('/getEditAc', methods=['POST'])				#ยังไม่ได้ทำ
+@app.route('/getEditAc', methods=['POST'])
 def getEditAc():
 	getEditAc = dict(request.form.items())
 	getID = keepID.ID
@@ -286,6 +287,7 @@ def getCheckBox():
 	if getCheckBox == 'DONE':
 		print(ProfileAndAcademic)
 		print(Activity)
+		keepHistory.keep_page('printdata.html', ProfileAndAcademic,Activity)
 		return render_template('printdata.html',id_user=getID, name=name, page=ProfileAndAcademic , page2 = Activity )
 
 @app.route('/selectall', methods=['POST'])
@@ -323,10 +325,22 @@ def geAddAc():
 	return render_template(history, name=name, page=pullData.Activity(getID))
 
 @app.route('/getPrindataButton', methods=['POST'])
-def getPrindataButton():
+def getPrindataButton():   												#--------- save text -----------
 	button = request.form['click']
+	getID = keepID.ID
+	name = keepID.Name
+
 	if button == 'SAVE':
 		print('save')
+		profile = keepHistory.Value_page()
+		activity = keepHistory.Value2_page()
+		print(profile)
+		print(activity)
+
+
+		history = keepHistory.history()
+		keepHistory.keep_page('homeStudent.html', None)
+		return render_template('homeStudent.html', name=name, id_user=getID)
 	if button  == 'EDIT':
 		print('edit')
 
@@ -348,14 +362,14 @@ def getleave():
 	if getleave == 'YES':
 		keepHistory.print_listPage()
 		history = keepHistory.history()
-		Value = keepHistory.Value_page()
-		Value2 = keepHistory.Value2_page()
 		if history == 'activity.html':
 			Value = pullData.Activity(getID)
-			return render_template(history,id_user=getID, name=name, page = Value, page2 = Value2)
+			return render_template(history,id_user=getID, name=name, page = Value)
 		if history == 'dataactivity.html':
-			Value = pullData.Activity(getID)
-			return render_template(history,id_user=getID, name=name, page = Value, page2 = Value2)
+			Value = keepHistory.Value_page()
+			return render_template(history,id_user=getID, name=name, page = Value)
+
+'''end student'''
 
 
 app.run(debug=True)
