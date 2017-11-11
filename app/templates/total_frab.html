@@ -84,22 +84,21 @@
 		<form id="contact-form" action="/getFrab", method="POST">
 		<div class="frabL">
 
-			<label><input name="click" type="image" value="1" src="static/si.png" width="200px">&nbsp;&nbsp;&nbsp;
-			<div align="center" class="frabL_font">FRAB1</div></label>
-
-			<label><input name="click" type="image" value="3" src="static/si.png" width="200px">&nbsp;&nbsp;&nbsp;
-			<div align="center" class="frabL_font">FRAB3</div></label>
+			{% for frab in page %}
+			<label><input name="click" type="image" value={{frab}} src="static/si.png" width="200px">&nbsp;&nbsp;&nbsp;
+			<div align="center" class="frabL_font">{{frab}}</div></label>
+			{% endfor %}
 
 		</div>
-
+<!--
 		<div class="frabR">
+			{% for frab in page %}
 
-			<label><input name="click" type="image" value="2" src="static/si.png" width="200px">&nbsp;&nbsp;&nbsp;
-			<div align="center" class="frabR_font">FRAB2</div></label>
+			<label><input name="click" type="image" value={{frab}} src="static/si.png" width="200px">&nbsp;&nbsp;&nbsp;
+			<div align="center" class="frabR_font">{{frab}}</div></label>
 
-			<label><input name="click" type="image" value="4" src="static/si.png" width="200px">&nbsp;&nbsp;&nbsp;
-			<div align="center" class="frabR_font">FRAB4</div></label>
-
+			{% endfor %}
+-->
 		</div>
 	  </form>
 

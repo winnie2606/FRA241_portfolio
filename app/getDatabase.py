@@ -486,3 +486,18 @@ class Check:
                 datafrab.append(dicfrab)
             print(datafrab)
             return datafrab
+
+
+        def checkfrab(self):
+            box = []
+            include = []
+            for instance in session.query(Profile).order_by(Profile.id_student):
+                x = instance.id_student
+                box.append(str(x))
+            for i in box:
+                year = str(i)[:2]
+                frab = int(year) - 56
+                word = "FRAB#"+str(frab)
+                if word not in include:
+                    include.append(word)
+            return include

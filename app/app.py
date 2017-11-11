@@ -395,7 +395,11 @@ def gethome():
 
 	if gethome == 'frab':
 		print('frab')
-		return render_template('total_frab.html', name=name)
+		check = Check()
+		frab = check.checkfrab()
+		print(frab)
+		keepHistory.keep_page('total_frab.html', frab)
+		return render_template('total_frab.html', name=name, page= frab)
 	if gethome == 'grade':
 		print('add grade')
 		return render_template('add_grade.html', name=name)
