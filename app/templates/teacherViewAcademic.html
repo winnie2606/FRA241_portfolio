@@ -4,9 +4,9 @@
 
 	<head>
 
-		<title>ADD GRADE</title>
+		<title>View Academic</title>
 
-		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='nametea.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='viewdata.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='background_tea.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='popup.css')}}" />
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -31,7 +31,7 @@
 				<div class="R">
 					<input name="click" type="image" value="home" src="static/home_icon.jpg" width="20%">&nbsp;&nbsp;&nbsp;
 					<input name="click" type="image" value="noti" src="static/nat.jpg" width="20%">&nbsp;&nbsp;&nbsp;
-					</form>
+				  </form>
 					<input class="out" name="click" type="image" value="logout" src="static/logout_icon.jpg" width="20%">
 
 				</div>
@@ -78,39 +78,23 @@
 
 		</script>
 
-    <div class="farb">FARB {{frab}}</div>
+    <div class="data">
 
-    <div align="center" class="table1">
+      <div class="data-in">Academic</div>
 
-      <table border="3" style="width:95%;color:#FFF; border-color:#000014;font-size:20px;" >
+    </div>
 
-        <tr>
-					<th style="background-color: #46445c; border-color:#000014;font-size:25px;" >STUDENT ID</th>
-					<th style="background-color: #46445c; border-color:#000014;font-size:25px;">NAME</th>
-					<th style="background-color: #46445c; border-color:#000014;font-size:25px;">VIEW PROFILE</th>
-				</tr>
-<!--loop 3-->
-        <tr>
-					<td width="20%" height="30px" align="center">59340500011</td>
-					<td width="60%" height="30px">&nbsp;&nbsp;&nbsp;CHANITTHA TECHASOMBOORANAKIT</td>
-					<form id="contact-form" action="/getView", method="POST">
-					<td width="20%" height="30px" align="center"><input type = "submit" name="student_id" value = "VIEW" class = "in2" ></td>
-				  </form>
-				</tr>
-        <tr>
-					<td width="20%" height="30px" align="center">59340500011</td>
-					<td width="60%" height="30px">&nbsp;&nbsp;&nbsp;CHANITTHA TECHASOMBOORANAKIT</td>
-					<td width="20%" height="30px" align="center"><input type = "submit" value = "VIEW" class = "in2" ></td>
-				</tr>
-        <tr>
-					<td width="20%" height="30px" align="center">59340500011</td>
-					<td width="60%" height="30px">&nbsp;&nbsp;&nbsp;CHANITTHA TECHASOMBOORANAKIT</td>
-					<td width="20%" height="30px" align="center"><input type = "submit" value = "VIEW" class = "in2" ></td>
-				</tr>
-<!--finish-->
-      </table>
+    <img src="static/student.png" width="15%" height="15%" class="pic">
 
-		</div>
+    <div class="in">
+
+			<form id="contact-form" action="/selectView", method="POST">
+      <div align="center"><input type="submit" name="click" value="PROFILE" class="in2"></div>
+      <div align="center"><input type="submit" name="click" value="ACADEMIC" class="in2"></div>
+      <div align="center"><input type="submit" name="click" value="WORK&EXPERIENCE" class="in2"></div>
+		  </form>
+
+    </div>
 
 	</body>
 </html>

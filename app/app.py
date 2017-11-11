@@ -51,6 +51,9 @@ def checkPerson():
 	getID = getIDPass().get('id', None)
 	getPassword = getIDPass().get('pass', None)
 	keepID.ID = getID
+
+	''' checkstudent '''
+
 	keepID.Password = getPassword
 	re = return_Method(getID)
 	name = re.name()
@@ -87,14 +90,20 @@ def checkPerson():
 	if countID > 1 and countPass == 1:
 		name = keepID.Name
 		print(keepID.Name)
-		keepHistory.keep_page('homeStudent.html', None)
+		keepHistory.keep_page('homeStudent.html',  id_user=getID, name=name)
 		return render_template('homeStudent.html', id_user=getID, name=name)
 	elif countID > 1 and countPass == 0:
 		print('your password is incorrect')
+
+		''' checkteacher '''
 	else:
 		name = keepID.Name
 		return render_template('port_tea.html')
 	conn.close()
+
+
+'''---------------------------------------------------------------------------------------------------------------------------------------------------'''
+""" Student """
 
 @app.route('/menubar', methods=['POST'])
 def menubar():
@@ -346,6 +355,7 @@ def getPrindataButton():   												#--------- save text -----------
 		return render_template('homeStudent.html', name=name, id_user=getID)
 	if button  == 'EDIT':
 		print('edit')
+		return render_template('print_choose.html', name=name, page=pullData.Activity(getID))
 
 @app.route('/getPopup', methods=['POST'])
 def getPopup():
@@ -374,6 +384,10 @@ def getleave():
 
 '''end student'''
 
+"""--------------------------------------------------------------------------------------------------------------------------------------------------------------------------"""
+
+""" Teacher """
+
 @app.route('/menubarTeacher', methods=['POST'])
 def getMenubarTeacher():
 	getmenubar = request.form['click']
@@ -383,8 +397,14 @@ def getMenubarTeacher():
 
 	if getmenubar == 'back':
 		print('back')
+		history = keepHistory.history()
+		Value = keepHistory.Value_page()
+		Value2 = keepHistory.Value2_page()
+		return render_template(history,id_user=getID, name=name, page = Value, page2 = Value2)
+
 	if getmenubar == 'home':
 		print('home')
+		keepHistory.keep_page('port_tea.html')
 		return render_template('port_tea.html')
 
 @app.route('/gethome', methods=['POST'])
@@ -398,6 +418,49 @@ def gethome():
 	if gethome == 'grade':
 		print('add grade')
 		return render_template('add_grade.html')
+
+@app.route('/getFrab', methods=['POST'])
+def frab():
+	frab = request.form['click']
+	print(frab)
+
+	if frab == '1':
+		print('1')
+		frab = '1'
+		return render_template('nametea.html', frab=frab)
+	if frab == '2':
+		print('2')
+		frab = '2'
+		return render_template('nametea.html', frab=frab)
+	if frab == '3':
+		print('3')
+		frab = '3'
+		return render_template('nametea.html', frab=frab)
+	if frab == '4':
+		print('4')
+		frab = '4'
+		return render_template('nametea.html', frab=frab)
+
+@app.route('/getView', methods=['POST'])
+def view():
+	view = dict(request.form.items())
+	print(view)
+	return render_template('teacherViewProfile.html', frab=frab)
+
+@app.route('/selectView', methods=['POST'])
+def seect():
+	select = request.form['click']
+	print(select)
+
+	if select == 'PROFILE':
+		print('profile')
+		return render_template('teacherViewProfile.html')
+	if select == 'ACADEMIC':
+		print('academic')
+		return render_template('teacherViewAcademic.html')
+	if select == 'WORK&EXPERIENCE':
+		print('activity')
+		return render_template('teacherViewActivity.html')
 
 
 app.run(debug=True)
