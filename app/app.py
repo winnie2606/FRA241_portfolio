@@ -14,6 +14,7 @@ from keepHistory import *
 from pullData import *
 from editProfile import *
 from editActivity import *
+from saveText import *
 
 app = Flask(__name__)
 
@@ -22,7 +23,7 @@ keepHistory = keepHistory()
 pullData = pullData()
 editProfile = editProfile()
 editActivity = editActivity()
-
+saveText = saveText()
 
 @app.route('/')
 def html():
@@ -88,10 +89,11 @@ def checkPerson():
 		print(keepID.Name)
 		keepHistory.keep_page('homeStudent.html', None)
 		return render_template('homeStudent.html', id_user=getID, name=name)
-	elif countID == 2 and countPass == 0:
+	elif countID > 1 and countPass == 0:
 		print('your password is incorrect')
 	else:
-		return render_template('homeTeacherofficer.html')
+		name = keepID.Name
+		return render_template('port_tea.html')
 	conn.close()
 
 @app.route('/menubar', methods=['POST'])
@@ -337,6 +339,7 @@ def getPrindataButton():   												#--------- save text -----------
 		print(profile)
 		print(activity)
 
+		saveText.create(getID,profile,activity)
 
 		history = keepHistory.history()
 		keepHistory.keep_page('homeStudent.html', None)
@@ -369,7 +372,32 @@ def getleave():
 			Value = keepHistory.Value_page()
 			return render_template(history,id_user=getID, name=name, page = Value)
 
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''end student'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+'''end student'''
+
+@app.route('/menubarTeacher', methods=['POST'])
+def getMenubarTeacher():
+	getmenubar = request.form['click']
+	print(getmenubar)
+	getID = keepID.ID
+	name = keepID.Name
+
+	if getmenubar == 'back':
+		print('back')
+	if getmenubar == 'home':
+		print('home')
+		return render_template('port_tea.html')
+
+@app.route('/gethome', methods=['POST'])
+def gethome():
+	gethome = request.form['click']
+	print(gethome)
+
+	if gethome == 'frab':
+		print('frab')
+		return render_template('total_frab.html')
+	if gethome == 'grade':
+		print('add grade')
+		return render_template('add_grade.html')
 
 
 app.run(debug=True)

@@ -4,9 +4,9 @@
 
 	<head>
 
-		<title>HOME TEACHER</title>
+		<title>ADD GRADE</title>
 
-		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='port_tea.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='add_grade.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='background_tea.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='popup.css')}}" />
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -25,15 +25,15 @@
 				<div class="L">
 
 					<form id="contact-form" action="/menubarTeacher", method="POST">
-						<input type="image" name="click" value="back"src="static/back_icon.jpg" width="6%">&nbsp;&nbsp;&nbsp;
+						<input type="image" name="click" src="static/back_icon.jpg" width="6%">&nbsp;&nbsp;&nbsp;
 						PORTFOLIO&nbsp;&nbsp;&nbsp;&nbsp;
 						USERNAME
 
 				</div>
 
 				<div class="R">
-					<input name="click" type="image" value="home"  src="static/home_icon.jpg"width="20%">&nbsp;&nbsp;&nbsp;
-					<input name="click" type="image" value="noti"  src="static/nat.jpg"width="20%">&nbsp;&nbsp;&nbsp;
+					<input name="click" type="image" value="home" src="static/home_icon.jpg" width="20%">&nbsp;&nbsp;&nbsp;
+					<input name="click" type="image" value="noti" src="static/nat.jpg" width="20%">&nbsp;&nbsp;&nbsp;
 					</form>
 					<input class="out" name="click" type="image" value="logout" src="static/logout_icon.jpg" width="20%">
 
@@ -81,25 +81,20 @@
 
 		</script>
 
-		<form id="contact-form" action="/gethome", method="POST">
+		<div class="bar_add">ADD GRADE</div>
 
-		<div class="Student_Information"><label>
+		<div align="center" class="selectfile">
 
-			<input name="click" type="image" name="click" value="frab" src="static/si.png" width="300px">&nbsp;&nbsp;&nbsp;
+			Select your files.
+			<div align="center" ><input type = "file" name = "file" placeholder="SELECT FROM YOUR COMPUTER" style="width:30%;height:25px;"></div>
 
-			<div align="center" class="Student_Information_A">STUDENT INFORMATION</div>
+		</div>
 
-		</label></div>
+		<div align="right">
 
-		<div class="Add_Grade"><label>
+			<input type = "submit" name="click" value = "ADD" class="buttonAdd" >
 
-			<input name="click" type="image" name="click" value="grade" src="static/ago.png" width="300px">&nbsp;&nbsp;&nbsp;
-
-			<div align="center" class="Add_Grade_A">ADD GRADE (FOR OFFICER)</div>
-
-		</label></div>
-
-	</form>
+		</div>
 
 	</body>
 </html>

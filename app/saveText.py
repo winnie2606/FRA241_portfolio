@@ -1,6 +1,6 @@
 import os.path
 
-class text():
+class saveText():
 
     def create(self,ID,Profile,Activity = None):
 
@@ -12,31 +12,29 @@ class text():
 
         Text.write('Profile\n')
         for profile in Profile:
-            Text.write('Name : ' + str(profile[name]) + "  " + str(profile[sur]) + "\n")
-            Text.write('Date of birth : ' + str(profile[dateofbirth]) + '\n')
+            Text.write('Name : ' + str(profile['name']) + "  " + str(profile['sur']) + "\n")
+            Text.write('Date of birth : ' + str(profile['dateofbirth']) + '\n')
+            Text.write('Nationality : ' + str(profile['nation']) + '\n' )
+            if profile['contact'] != None :
+                Text.write('Contact\n')
+                Text.write(str(profile['phone']) + '\n')
+                Text.write(str(profile['email']) + '\n')
+                Text.write(str(profile['address']) + '\n')
+            if profile['dis'] != None:
+                Text.write(str(profile['dis']) + '\n')
+            if profile['birthplace'] != None:
+                Text.write(str(profile['birthplace']) + '\n')
+            if profile['gpax'] != None:
+                Text.write("GPAX : " + str(profile['gpax']) + '\n\n')
 
+        if Activity != [] :
+            num = 0
+            for Act in Activity:
+                num += 1
+                Text.write('-- Activity ' + str(num) + " --\n")
+                Text.write('Name Activity : ' + str(Act['Name_Activity']) + "\n")
+                Text.write('Type Activity : ' + str(Act['Type']) + "\n")
+                Text.write('Date Activity : ' + str(Act['Date_Activity']) + "\n\n")
 
 
         Text.close
-
-
-'''save
-[{'contact': 'CONTACT', 'dateofbirth': '29/05/1997',
- 'nation': 'Thai', 'birthplace': 'BIRTH PLACE : hospital',
-'phone': 'PHONE : 0896103901', 'gpax': '3.77', 'dis': 'CONGENITAL DISEASE : -',
- 'name': 'Palop', 'sur': 'Perzz', 'address': 'ADDRESS : my room', 'email':
-  'EMAIL : Palop@mail.com'}]
-
-[{'File': 'file of the Digital', 'Type': 'Digital', 'Name_Activity':
- 'Panchalee', 'Confirm': 'Not Confirm yet', 'Description': 'It is will be useful.',
-  'Date_Activity': '15/12/60', 'Advisor': 'Prof.Pi', 'Photo': 'Popperzz.jpg'},
-
-  {'File': 'file of the table tennis', 'Type': 'Sport', 'Name_Activity':
-  'Tabletennnis.', 'Confirm': 'Confirm', 'Description': 'Table tennis is good.',
-  'Date_Activity': '29/05/60', 'Advisor': 'Prof.__', 'Photo': 'Popperzztennis.jpg'},
-
-  {'File': None, 'Type': '123', 'Name_Activity': 'game', 'Confirm': None,
-  'Description': '65', 'Date_Activity': '234', 'Advisor': '345', 'Photo': None},
-   {'File': None, 'Type': 'a', 'Name_Activity': 'hi', 'Confirm': None,
-    'Description': 'd', 'Date_Activity': 'b', 'Advisor': 'c', 'Photo': None}]
-    '''
