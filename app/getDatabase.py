@@ -4,6 +4,7 @@ from sqlalchemy import *
 from sqlalchemy.orm import *
 from sqlalchemy.ext.declarative import declarative_base
 from databaseSetup import *
+import collections
 
 engine = create_engine('sqlite:///Database.db')
 Base.metadata.bind=engine
@@ -12,11 +13,16 @@ session = DBSession()
 query = session.query(Profile)
 Acque = session.query(Activity)
 disquery = session.query(Disease)
+teacher = session.query(TeacherPW)
 
 class return_Method:
 
     def __init__(self,data):
         self.data = data
+
+    def idstu(self):
+        for user in query.filter_by(id_student="{}".format(self.data)):
+            return user.id_student
 
     def name(self):
         for user in query.filter_by(id_student="{}".format(self.data)):
@@ -124,14 +130,16 @@ class return_Method:
             box.append(user.Confirm)
         return box
 
-class return_data(return_Method):
+    def t_name(self):
+        for user in teacher.filter_by(id_teacher="{}".format(self.data)):
+            return user.Name
 
-    # def Dicdisease(self,Disease = None):
-    #     dataAct = []
-    #     for item in Disease:
-    #         dicAct = {'id_student' : self.data, 'Disease ' : item}
-    #         dataAct.append(dicAct)
-    #     return dataAct
+    def t_surname(self):
+        for user in teacher.filter_by(id_teacher="{}".format(self.data)):
+            return user.Surname
+
+
+class return_data(return_Method):
 
     def DicPro(self,name = None, surname = None, date = None, birth = None, nation = None, edu = None, disease = None, relative = None, phoneEmer = None, phonestu = None, address = None, email = None ):
         dataPro = []
@@ -148,98 +156,27 @@ class return_data(return_Method):
             dataAct.append(dicAct)
         return dataAct
 
-class Get_Academic:
-    def __init__(self,studenID,term):
-        self.studenID = studenID
-        self.term = term
-    def get_id_subject(self):
-        query = session.query(Academic)
-        list_idSub = []
-        for i in query.filter_by(Student_ID="{}".format(self.studenID),Term="{}".format(self.term)):
-            list_idSub.append(i.ID_Subject)
-        return list_idSub
+    def DicFRAB(self):
+        box = []
+        for instance in session.query(Profile).order_by(Profile.id_student):
+            id = instance.id_student
+            box.append(id)
+        countid = [item for item, count in collections.Counter(box).items() if count >= 1]
+        Frab = [i for i in countid if str(i)[:2] == "59"]
+        return Frab
 
-    def get_grade(self):
-        query = session.query(Academic)
-        list_grade = []
-        for i in query.filter_by(Student_ID="{}".format(self.studenID),Term="{}".format(self.term)):
-            list_grade.append(i.Grade)
-        return list_grade
-    # print(get_grade())
 
-    def get_this_semester_credit(self):
-        termCredit = []
-        query = session.query(Gpa)
-        for i in query.filter_by(Student_ID="{}".format(self.studenID),Term="{}".format(self.term)):
-            termCredit.append(i.sum_credit)
-        return termCredit
-    # print(get_this_semester_credit())
+class Edit:
+    def __init__(self,id):
+        self.id = id
 
-    def get_cumulative_credit(self):
-        allCredit = []
-        query = session.query(Gpax)
-        for i in query.filter_by(Student_ID="{}".format(self.studenID)):
-            allCredit.append(i.sum_all_credit)
-        return allCredit
-    # print(get_cumulative_credit())
-
-    def get_GPA(self):
-        gpa = []
-        query = session.query(Gpa)
-        for i in query.filter_by(Student_ID="{}".format(self.studenID),Term="{}".format(self.term)):
-            gpa.append(i.GPA)
-        return gpa
-    # print(get_GPA())
-
-    def get_GPAX(self):
-        gpax = []
-        query = session.query(Gpax)
-        for i in query.filter_by(Student_ID="{}".format(self.studenID)):
-            gpax.append(i.GPAX)
-        return gpax
-    # print(get_GPAX())
-
-class Get_name_credit_subject:
-    def __init__(self,studenID,term):
-        self.studenID = studenID
-        self.term = term
-    def get_nameSubject(self):
-
-        query = session.query(Subject)
-        a = Get_Academic.get_id_subject(self)
-        b = []
-        for i in a:
-            for j in query.filter_by(ID_Subject="{}".format(i)):
-                b.append(j.name_subject)
-        return b
-
-    def get_credit(self):
-        query = session.query(Subject)
-        c = Get_Academic.get_id_subject(self)
-        d = []
-        for i in c:
-            for j in query.filter_by(ID_Subject="{}".format(i)):
-                d.append(j.Credit)
-        return d
-    # print(get_credit())
-
-class Academic_1st_table:
-    def output_term(self,idsub = None,namesub = None,credit = None,grade = None):
-        list_output_term = []
-        for i in range(len(idsub)):
-            dict_output_term = {"ID_Subject":idsub[i],"Name_Subject":namesub[i],
-             "Credit":credit[i],"Academic_Regcord":grade[i]}
-            list_output_term.append(dict_output_term)
-        return list_output_term
-
-class Academic_2st_table:
-    def output_sum(self,this_credit = None,gpa = None,cumulative_credit = None,gpax = None):
-        list_sum_output = []
-        for i in range(len(cumulative_credit)):
-            dict_output_term = {"This_semester":this_credit[i],"GPA":gpa[i],
-             "Cumulative_credit":cumulative_credit[i],"GPAX":gpax[i]}
-            list_sum_output.append(dict_output_term)
-        return list_sum_output
+    def edit_disease(self,edit,data):
+        for item in edit:
+            spinach = session.query(Disease).filter_by(id_student = "{}".format(self.id),Disease = "{}".format(item)).one()
+            session.delete(spinach)
+        sth = Disease(id_student = "{}".format(self.id),Disease = "{}".format(data))
+        session.add(sth)
+        session.commit()
 
 class Add_Method:
 
@@ -257,7 +194,7 @@ class Add_Method:
         session.add(addData)
         session.commit()
 
-    def surname(self,data):
+    def Surname(self,data):
         addData = session.query(Profile).filter_by(id_student="{}".format(self.id)).one()
         addData.Surname = "{}".format(data)
         session.add(addData)
@@ -369,6 +306,13 @@ class Add_Method:
         session.add(addData)
         session.commit()
 
+    def Dicdisease(self,Disease = None):
+        dataAct = []
+        for item in Disease:
+            dicAct = {'id_student' : self.id, 'Disease ' : item}
+            dataAct.append(dicAct)
+        return dataAct
+#############################################################
     def edit_disease(self,edit,data):
         print(edit)
         for item in edit:
@@ -378,3 +322,167 @@ class Add_Method:
         sth = Disease(id_student = "{}".format(self.id),Disease = "{}".format(data))
         session.add(sth)
         session.commit()
+
+
+class Get_Academic:
+    def __init__(self,studenID,term):
+        self.studenID = studenID
+        self.term = term
+    def get_id_subject(self):
+        query = session.query(Academic)
+        list_idSub = []
+        for i in query.filter_by(Student_ID="{}".format(self.studenID),Term="{}".format(self.term)):
+            list_idSub.append(i.ID_Subject)
+        return list_idSub
+
+    def get_grade(self):
+        query = session.query(Academic)
+        list_grade = []
+        for i in query.filter_by(Student_ID="{}".format(self.studenID),Term="{}".format(self.term)):
+            list_grade.append(i.Grade)
+        return list_grade
+    # print(get_grade())
+
+    def get_this_semester_credit(self):
+        termCredit = []
+        query = session.query(Gpa)
+        for i in query.filter_by(Student_ID="{}".format(self.studenID),Term="{}".format(self.term)):
+            termCredit.append(i.sum_credit)
+        return termCredit
+    # print(get_this_semester_credit())
+
+    def get_cumulative_credit(self):
+        allCredit = []
+        query = session.query(Gpax)
+        for i in query.filter_by(Student_ID="{}".format(self.studenID)):
+            allCredit.append(i.sum_all_credit)
+        return allCredit
+    # print(get_cumulative_credit())
+
+    def get_GPA(self):
+        gpa = []
+        query = session.query(Gpa)
+        for i in query.filter_by(Student_ID="{}".format(self.studenID),Term="{}".format(self.term)):
+            gpa.append(i.GPA)
+        return gpa
+    # print(get_GPA())
+
+    def get_GPAX(self):
+        gpax = []
+        query = session.query(Gpax)
+        for i in query.filter_by(Student_ID="{}".format(self.studenID)):
+            gpax.append(i.GPAX)
+        return gpax
+
+class Get_name_credit_subject:
+    def __init__(self,studenID,term):
+        self.studenID = studenID
+        self.term = term
+    def get_nameSubject(self):
+
+        query = session.query(Subject)
+        a = Get_Academic.get_id_subject(self)
+        b = []
+        for i in a:
+            for j in query.filter_by(ID_Subject="{}".format(i)):
+                b.append(j.name_subject)
+        return b
+
+    def get_credit(self):
+        query = session.query(Subject)
+        c = Get_Academic.get_id_subject(self)
+        d = []
+        for i in c:
+            for j in query.filter_by(ID_Subject="{}".format(i)):
+                d.append(j.Credit)
+        return d
+    # print(get_credit())
+
+class Academic_1st_table:
+    def output_term(self,idsub = None,namesub = None,credit = None,grade = None):
+        list_output_term = []
+        for i in range(len(idsub)):
+            dict_output_term = {"ID Subject":idsub[i],"Name Subject":namesub[i],
+             "Credit":credit[i],"Academic Regcord":grade[i]}
+            list_output_term.append(dict_output_term)
+        return list_output_term
+
+class Academic_2st_table:
+    def output_sum(self,this_credit = None,gpa = None,cumulative_credit = None,gpax = None):
+        list_sum_output = []
+        for i in range(len(cumulative_credit)):
+            dict_output_term = {"This semester":this_credit[i],"GPA":gpa[i],
+             "Cumulative credit":cumulative_credit[i],"GPAX":gpax[i]}
+            list_sum_output.append(dict_output_term)
+        return list_sum_output
+
+class Check:
+        def T_check(self,ID,password):
+            ID = int(ID)
+            box_id = []
+            box_P = []
+            for instance in session.query(TeacherPW).order_by(TeacherPW.id_teacher):
+                x = instance.id_teacher
+                box_id.append(x)
+
+            for instance in session.query(TeacherPW).order_by(TeacherPW.T_Password):
+                x = instance.T_Password
+                box_P.append(x)
+            count = 0
+            for i in box_id:
+                if( i == ID):
+                    count += 1
+            for j in box_P:
+                if( j == password):
+                    count += 1
+            if(count == 2):
+                print("True")
+                return True
+            else:
+                print("False")
+                return False
+
+        def S_check(self,ID,password):
+            ID = int(ID)
+            box_id = []
+            box_P = []
+            for instance in session.query(StudentPW).order_by(StudentPW.id_student):
+                x = instance.id_student
+                box_id.append(x)
+
+            for instance in session.query(StudentPW).order_by(StudentPW.S_Password):
+                x = instance.S_Password
+                box_P.append(x)
+
+            count = 0
+            for i in box_id:
+                if i == ID:
+                    count += 1
+                    print (count)
+            for j in box_P:
+                if j == password :
+                    count += 1
+                    print (count)
+            if count == 2 :
+                print("True")
+                return True
+            else:
+                print("False")
+                return False
+
+
+        def FRAB(self,frab):
+            year = 56 + int(frab)
+            id_stu = []
+            datafrab = []
+            for instance in session.query(Profile).order_by(Profile.id_student):
+                x = instance.id_student
+                id_stu.append(x)
+            id = [item for item, count in collections.Counter(id_stu).items() if count == 1]
+            include = [i for i in id if str(i)[:2] == str(year)]
+            for item in include:
+                re = return_Method(item)
+                dicfrab = {'Name' : re.name(),'Surname' : re.surname(),'ID' : re.idstu()}
+                datafrab.append(dicfrab)
+            print(datafrab)
+            return datafrab

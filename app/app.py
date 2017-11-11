@@ -51,55 +51,29 @@ def checkPerson():
 	getID = getIDPass().get('id', None)
 	getPassword = getIDPass().get('pass', None)
 	keepID.ID = getID
-
-	''' checkstudent '''
-
 	keepID.Password = getPassword
-	re = return_Method(getID)
-	name = re.name()
-	keepID.Name = name
-	print(keepID.Name)
+	print (getID)
+	print (getPassword)
+	check = Check()
 
-	conn = sqlite3.connect('IDPassStudent.db')
-	countID = 0
-	countPass = 0
-	atRow = 0
-	with conn:
-		cur = conn.cursor()
-		cur.execute("SELECT * FROM IDPASS")
-		rows = cur.fetchall()
-		countRow = 0
-		for row in rows:
-			countRow += 1
-			for i in range(countRow):
-				for row in rows[i]:
-					if str(row) == getID:
-						countID += 1
-						atRow = i
-						break;
-					else:
-						countID += 0
-		for row in rows[atRow]:
-				if str(row) == getPassword:
-					countPass += 1
-					break;
-				else:
-					countPass += 0
-	#print(countID)
-	#print(countPass)
-	if countID > 1 and countPass == 1:
-		name = keepID.Name
+	if check.S_check(getID,getPassword) :
+		print (getID)
+		re = return_Method(getID)
+		name = re.name()
+		keepID.Name = name
 		print(keepID.Name)
-		keepHistory.keep_page('homeStudent.html',  id_user=getID, name=name)
+		keepHistory.keep_page('homeStudent.html', None )
 		return render_template('homeStudent.html', id_user=getID, name=name)
-	elif countID > 1 and countPass == 0:
-		print('your password is incorrect')
 
-		''' checkteacher '''
-	else:
-		name = keepID.Name
-		return render_template('port_tea.html')
-	conn.close()
+	elif  check.T_check(getID,getPassword):
+		re = return_Method(getID)
+		name = re.t_name()
+		keepID.Name = name
+		keepHistory.keep_page('port_tea.html', None )
+		return render_template('port_tea.html' , name = name )
+
+
+
 
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------------'''
@@ -404,63 +378,71 @@ def getMenubarTeacher():
 
 	if getmenubar == 'home':
 		print('home')
-		keepHistory.keep_page('port_tea.html')
-		return render_template('port_tea.html')
+		keepHistory.keep_page('port_tea.html', None)
+		return render_template('port_tea.html',name=name)
 
 @app.route('/gethome', methods=['POST'])
 def gethome():
 	gethome = request.form['click']
 	print(gethome)
+	getID = keepID.ID
+	name = keepID.Name
 
 	if gethome == 'frab':
 		print('frab')
-		return render_template('total_frab.html')
+		return render_template('total_frab.html', name=name)
 	if gethome == 'grade':
 		print('add grade')
-		return render_template('add_grade.html')
+		return render_template('add_grade.html', name=name)
 
 @app.route('/getFrab', methods=['POST'])
 def frab():
 	frab = request.form['click']
 	print(frab)
+	getID = keepID.ID
+	name = keepID.Name
 
 	if frab == '1':
 		print('1')
 		frab = '1'
-		return render_template('nametea.html', frab=frab)
+		return render_template('nametea.html', name=name, frab=frab)
 	if frab == '2':
 		print('2')
 		frab = '2'
-		return render_template('nametea.html', frab=frab)
+		return render_template('nametea.html', name=name, frab=frab)
 	if frab == '3':
 		print('3')
 		frab = '3'
-		return render_template('nametea.html', frab=frab)
+		return render_template('nametea.html', name=name, frab=frab)
 	if frab == '4':
 		print('4')
 		frab = '4'
-		return render_template('nametea.html', frab=frab)
+		return render_template('nametea.html', name=name, frab=frab)
 
 @app.route('/getView', methods=['POST'])
 def view():
 	view = dict(request.form.items())
 	print(view)
-	return render_template('teacherViewProfile.html', frab=frab)
+	getID = keepID.ID
+	name = keepID.Name
+	return render_template('teacherViewProfile.html', name=name, frab=frab)
 
 @app.route('/selectView', methods=['POST'])
 def seect():
 	select = request.form['click']
 	print(select)
+	getID = keepID.ID
+	name = keepID.Name
 
 	if select == 'PROFILE':
 		print('profile')
-		return render_template('teacherViewProfile.html')
+		return render_template('teacherViewProfile.html', name=name)
 	if select == 'ACADEMIC':
 		print('academic')
-		return render_template('teacherViewAcademic.html')
+		return render_template('teacherViewAcademic.html', name=name)
 	if select == 'WORK&EXPERIENCE':
 		print('activity')
-		return render_template('teacherViewActivity.html')
+		return render_template('teacherViewActivity.html', name=name)
 
 
 app.run(debug=True)
