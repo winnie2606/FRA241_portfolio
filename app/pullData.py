@@ -52,6 +52,7 @@ class pullData():
             o = Academic_1st_table()
             p = Academic_2st_table()
             self.academicTerm = o.output_term(s.get_id_subject(),t.get_nameSubject(),t.get_credit(),s.get_grade())
+            print (self.academicTerm)
             return self.academicTerm
 
 

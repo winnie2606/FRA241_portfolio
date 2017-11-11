@@ -142,6 +142,7 @@ def selectTerm():
 		term = '1/2560'
 	if getSelectTerm == '2/2560':
 		term = '2/2560'
+	print(pullData.Academic_term(getID,term))
 	return render_template('AcademicStudent.html', name=name, term=term, page=pullData.Academic_term(getID,term),page2=pullData.Academic_sum(getID,term))
 
 @app.route('/moreinfo', methods=['POST'])

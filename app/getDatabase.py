@@ -402,8 +402,8 @@ class Academic_1st_table:
     def output_term(self,idsub = None,namesub = None,credit = None,grade = None):
         list_output_term = []
         for i in range(len(idsub)):
-            dict_output_term = {"ID Subject":idsub[i],"Name Subject":namesub[i],
-             "Credit":credit[i],"Academic Regcord":grade[i]}
+            dict_output_term = {"ID_Subject":idsub[i],"Name_Subject":namesub[i],
+             "Credit":credit[i],"Academic_Regcord":grade[i]}
             list_output_term.append(dict_output_term)
         return list_output_term
 
@@ -411,8 +411,8 @@ class Academic_2st_table:
     def output_sum(self,this_credit = None,gpa = None,cumulative_credit = None,gpax = None):
         list_sum_output = []
         for i in range(len(cumulative_credit)):
-            dict_output_term = {"This semester":this_credit[i],"GPA":gpa[i],
-             "Cumulative credit":cumulative_credit[i],"GPAX":gpax[i]}
+            dict_output_term = {"This_semester":this_credit[i],"GPA":gpa[i],
+             "Cumulative_credit":cumulative_credit[i],"GPAX":gpax[i]}
             list_sum_output.append(dict_output_term)
         return list_sum_output
 
