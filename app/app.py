@@ -379,12 +379,12 @@ def getMenubarTeacher():
 		history = keepHistory.history()
 		Value = keepHistory.Value_page()
 		Value2 = keepHistory.Value2_page()
-		return render_template(history,id_user=getID, name=name, page = Value, page2 = Value2)
+		return render_template(history,id_user=getID, name=name, page=Value, page2=Value2)
 
 	if getmenubar == 'home':
 		print('home')
 		keepHistory.keep_page('port_tea.html', None)
-		return render_template('port_tea.html',name=name)
+		return render_template('port_tea.html', name=name)
 
 @app.route('/gethome', methods=['POST'])
 def gethome():
@@ -410,23 +410,12 @@ def frab():
 	print(frab)
 	getID = keepID.ID
 	name = keepID.Name
-
-	if frab == '1':
-		print('1')
-		frab = '1'
-		return render_template('nametea.html', name=name, frab=frab)
-	if frab == '2':
-		print('2')
-		frab = '2'
-		return render_template('nametea.html', name=name, frab=frab)
-	if frab == '3':
-		print('3')
-		frab = '3'
-		return render_template('nametea.html', name=name, frab=frab)
-	if frab == '4':
-		print('4')
-		frab = '4'
-		return render_template('nametea.html', name=name, frab=frab)
+	check = Check()
+	print (frab[5:])
+	dataFrab = check.FRAB(frab[5:])
+	print (dataFrab)
+	keepHistory.keep_page('nametea.html', dataFrab , frab)
+	return render_template('nametea.html', name=name, page = dataFrab , page2=frab)
 
 @app.route('/getView', methods=['POST'])
 def view():
@@ -434,7 +423,14 @@ def view():
 	print(view)
 	getID = keepID.ID
 	name = keepID.Name
-	return render_template('teacherViewProfile.html', name=name, frab=frab)
+
+
+	for ID in view:
+		profile = pullData.Profile(ID)
+		print (profile)
+
+		keepHistory.keep_page('teacherViewProfile.html', profile , ID )
+		return render_template('teacherViewProfile.html', name=name, page = profile , page2 = ID)
 
 @app.route('/selectView', methods=['POST'])
 def seect():
@@ -443,15 +439,20 @@ def seect():
 	getID = keepID.ID
 	name = keepID.Name
 
+	ID = keepHistory.Value2_page()
+
 	if select == 'PROFILE':
 		print('profile')
-		return render_template('teacherViewProfile.html', name=name)
+		profile = pullData.Profile(ID)
+		return render_template('teacherViewProfile.html', name=name, page = profile , page2 = ID)
 	if select == 'ACADEMIC':
 		print('academic')
+		#จะโชว์แบบไหน??
 		return render_template('teacherViewAcademic.html', name=name)
 	if select == 'WORK&EXPERIENCE':
 		print('activity')
-		return render_template('teacherViewActivity.html', name=name)
+		activity = pullData.Activity(ID)
+		return render_template('teacherViewActivity.html', name=name, page = activity, page2 = ID)
 
 
 app.run(debug=True)

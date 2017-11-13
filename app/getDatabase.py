@@ -484,7 +484,7 @@ class Check:
                 re = return_Method(item)
                 dicfrab = {'Name' : re.name(),'Surname' : re.surname(),'ID' : re.idstu()}
                 datafrab.append(dicfrab)
-            print(datafrab)
+            #print(datafrab)
             return datafrab
 
 

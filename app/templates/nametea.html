@@ -22,7 +22,7 @@
 				<div class="L">
 
 					<form id="contact-form" action="/menubarTeacher", method="POST">
-						<input type="image" name="click" src="static/back_icon.jpg" width="6%">&nbsp;&nbsp;&nbsp;
+						<input type="image" name="click" value="back" src="static/back_icon.jpg" width="6%">&nbsp;&nbsp;&nbsp;
 						PORTFOLIO&nbsp;&nbsp;&nbsp;&nbsp;
 						{{name}}
 
@@ -32,6 +32,7 @@
 					<input name="click" type="image" value="home" src="static/home_icon.jpg" width="20%">&nbsp;&nbsp;&nbsp;
 					<input name="click" type="image" value="noti" src="static/nat.jpg" width="20%">&nbsp;&nbsp;&nbsp;
 					</form>
+
 					<input class="out" name="click" type="image" value="logout" src="static/logout_icon.jpg" width="20%">
 
 				</div>
@@ -78,7 +79,7 @@
 
 		</script>
 
-    <div class="farb">FARB {{frab}}</div>
+    <div class="farb">{{page2}}</div>
 
     <div align="center" class="table1">
 
@@ -90,13 +91,16 @@
 					<th style="background-color: #46445c; border-color:#000014;font-size:25px;">VIEW PROFILE</th>
 				</tr>
 <!--loop 3-->
+				{% for student in page %}
         <tr>
-					<td width="20%" height="30px" align="center">59340500011</td>
-					<td width="60%" height="30px">&nbsp;&nbsp;&nbsp;CHANITTHA TECHASOMBOORANAKIT</td>
+					<td width="20%" height="30px" align="center">{{student.ID}}</td>
+					<td width="60%" height="30px">&nbsp;&nbsp;&nbsp;{{student.Name}} {{student.Surname}}</td>
 					<form id="contact-form" action="/getView", method="POST">
-					<td width="20%" height="30px" align="center"><input type = "submit" name="student_id" value = "VIEW" class = "in2" ></td>
+					<td width="20%" height="30px" align="center"><input type = "submit" name={{student.ID}} value = "VIEW" class = "in2" ></td>
 				  </form>
 				</tr>
+				{% endfor %}
+<!--
         <tr>
 					<td width="20%" height="30px" align="center">59340500011</td>
 					<td width="60%" height="30px">&nbsp;&nbsp;&nbsp;CHANITTHA TECHASOMBOORANAKIT</td>
@@ -107,6 +111,7 @@
 					<td width="60%" height="30px">&nbsp;&nbsp;&nbsp;CHANITTHA TECHASOMBOORANAKIT</td>
 					<td width="20%" height="30px" align="center"><input type = "submit" value = "VIEW" class = "in2" ></td>
 				</tr>
+-->
 <!--finish-->
       </table>
 
