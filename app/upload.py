@@ -6,7 +6,10 @@ import os
 from shutil import copyfile
 
 from pathlib import Path
+from flask import Flask, render_template, request
+from werkzeug import secure_filename
 
+import shutil
 
 test = Flask(__name__)
 
@@ -18,16 +21,12 @@ def html():
 @test.route('/getfile', methods=['POST'])
 def getfile():
 
-    getfile = request.form['photo']
+	ffile = request.form['file']
+	print(ffile)
 
-    print(getfile)
+	copy = 'Copy' + str(ffile)
+	copyto = 'C:/Users/Pop PerZz/Desktop/' + str(copy)
 
-    #find = 'mydir/' + str(getfile)
-    path =  os.fsdecode(getfile)
-    print(path)
-    '''name = 'Copy' + str(getfile)
-    to = 'C:/Users/' + str(os.getlogin()) + '/Desktop/' + name
-    #copyfile(path, str(to))'''
-
+	shutil.copy(ffile, copyto)
 
 test.run(debug=True)
