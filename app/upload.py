@@ -24,9 +24,4 @@ def getfile():
 	ffile = request.form['file']
 	print(ffile)
 
-	copy = 'Copy' + str(ffile)
-	copyto = 'C:/Users/Pop PerZz/Desktop/' + str(copy)
-
-	shutil.copy(ffile, copyto)
-
 test.run(debug=True)
