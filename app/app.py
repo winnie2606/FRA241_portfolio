@@ -469,7 +469,7 @@ def seect():
 		return render_template('teacherViewProfile.html', name=name, page = profile , page2 = ID)
 	if select == 'ACADEMIC':
 		print('academic')
-		#จะโชว์แบบไหน??
+		
 		return render_template('teacherViewAcademic.html', name=name)
 	if select == 'WORK&EXPERIENCE':
 		print('activity')
