@@ -424,7 +424,6 @@ class Academic_2st_table:
 
 class Check:
         def T_check(self,ID,password):
-            ID = int(ID)
             box_id = []
             box_P = []
             for instance in session.query(TeacherPW).order_by(TeacherPW.id_teacher):
@@ -435,13 +434,17 @@ class Check:
                 x = instance.T_Password
                 box_P.append(x)
             count = 0
+            print (box_id)
             for i in box_id:
-                if( i == ID):
+                if i == ID:
                     count += 1
+            #print(count)
+            #print(box_P)
             for j in box_P:
-                if( j == password):
+                if j == password:
                     count += 1
-            if(count == 2):
+            #print(count)
+            if count == 2:
                 print("True")
                 return True
             else:
@@ -449,7 +452,8 @@ class Check:
                 return False
 
         def S_check(self,ID,password):
-            ID = int(ID)
+            #print(ID)
+            #print(password)
             box_id = []
             box_P = []
             for instance in session.query(StudentPW).order_by(StudentPW.id_student):
@@ -461,14 +465,17 @@ class Check:
                 box_P.append(x)
 
             count = 0
+            #print (box_id)
             for i in box_id:
                 if i == ID:
                     count += 1
-                    print (count)
+                    #print (count)
+            #print (box_P)
             for j in box_P:
                 if j == password :
                     count += 1
-                    print (count)
+                    #print (count)
+            #print (count)
             if count == 2 :
                 print("True")
                 return True
