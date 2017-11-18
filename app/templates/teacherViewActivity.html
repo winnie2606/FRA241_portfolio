@@ -43,11 +43,11 @@
 		<div class="container">
 
 			<div class="popup">
-				<p>Do you want to logout ?</p>
+				<p>Do you want to Exit ?</p>
 				<div class="option">
           <form id="contact-form" action="/getPopup", method="POST">
-					<input class="a" type = "button" name="popup" value = "NO" />
-					<input  class ="b" type = "submit" name="popup" value = "YES" />
+					<input class="a" type = "button" name="popup" value = "Cancel" />
+					<input  class ="b" type = "submit" name="popup" value = "Exit" />
 					</form>
 				</div>
 			</div>
@@ -63,7 +63,12 @@
 					$(".popup").fadeIn('slow');
 				});
 			});
-			
+			$(document).ready(function(){
+				$('.cover').on('click',function(){
+					$(".cover").fadeOut('slow');
+					$(".popup").fadeOut('slow');
+				});
+			});
 			$(document).ready(function(){
 				$('.a').on('click',function(){
 					$(".cover").fadeOut('slow');
@@ -85,9 +90,17 @@
 
     </div>
 
-    <div class="data">
+    <div class="data3">
 
       <div class="data-in">Activity</div>
+
+			<image src="static/en1.png" width="30%" class="en1">
+			<div class="name-of-activity">Name of Activity : </div>
+			<div class="advisor">ADVISOR : </div>
+			<div class="date-duration">DATE/DURATION : </div>
+
+
+		</div>
 
     </div>
 

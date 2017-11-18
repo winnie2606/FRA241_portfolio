@@ -43,11 +43,11 @@
 		<div class="container">
 
 			<div class="popup">
-				<p>Do you want to logout ?</p>
+				<p>Do you want to Exit ?</p>
 				<div class="option">
           <form id="contact-form" action="/getPopup", method="POST">
-					<input class="a" type = "button" name="popup" value = "NO" />
-					<input  class ="b" type = "submit" name="popup" value = "YES" />
+					<input class="a" type = "button" name="popup" value = "Cancel" />
+					<input  class ="b" type = "submit" name="popup" value = "Exit" />
 					</form>
 				</div>
 			</div>
@@ -63,7 +63,12 @@
 					$(".popup").fadeIn('slow');
 				});
 			});
-			
+			$(document).ready(function(){
+				$('.cover').on('click',function(){
+					$(".cover").fadeOut('slow');
+					$(".popup").fadeOut('slow');
+				});
+			});
 			$(document).ready(function(){
 				$('.a').on('click',function(){
 					$(".cover").fadeOut('slow');
@@ -87,7 +92,7 @@
 
     <div class="data">
 
-      <div class="data-in">Profile<!-- = {{page}}--></div>
+      <div class="data-in">Profile</div>
 			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Name : </div>
 			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Date of birth : </div>
 			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Birthplate : </div>

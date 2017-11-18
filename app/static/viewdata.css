@@ -44,6 +44,32 @@
   font-size: 20px;
 }
 
+.data2{
+  float: right;
+  background-color: #000014;
+  height: 150px;
+	width: 800px;
+  margin-top: -33.5%;
+  margin-right: 5%;
+  border-radius: 10px;
+	border: 5px;
+  color: #FFF;
+  font-size: 20px;
+}
+
+.data3{
+  float: right;
+  background-color: #000014;
+  height: 100px;
+	width: 800px;
+  margin-top: -33.5%;
+  margin-right: 5%;
+  border-radius: 10px;
+	border: 5px;
+  color: #FFF;
+  font-size: 20px;
+}
+
 .data-in{
   margin-top: 5%;
   margin-left: 5%;
@@ -58,7 +84,7 @@
 
 .table1{
 	margin-top: 2%;
-	margin-left: 10%;
+	margin-left: 2%;
 }
 
 .table2{
@@ -90,6 +116,33 @@
 }
 
 .term{
-  margin-top: 5%;
+  margin-top: 8%;
 	margin-left: -35%;
+  font-size: 25px;
+}
+
+.en1{
+	margin-top: 5%;
+	margin-left: 4%;
+}
+
+.name-of-activity{
+	font-size: 30px;
+	color: #FFF;
+	margin-top: -22%;
+	margin-left: 35%;
+}
+
+.advisor{
+	font-size: 30px;
+	color: #FFF;
+	margin-top: 1%;
+	margin-left: 35%;
+}
+
+.date-duration{
+	font-size: 30px;
+	color: #FFF;
+	margin-top: 1%;
+	margin-left: 35%;
 }
