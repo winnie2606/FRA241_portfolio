@@ -22,13 +22,13 @@
 }
 
 .barPrint{
-  margin-top: 2%;
-  margin-left: -0.6%;
+  	margin-top: 2%;
+  	margin-left: -0.6%;
 	font-size: 30px;
 	background-color: #000014;
 	color: #FFF;
-	padding-left: 13px;
-  padding-top: 5px;
+	padding-left: 40px;
+  	padding-top: 5px;
 	height: 40px;
 	width: 100px;
 }
@@ -49,39 +49,39 @@
 }
 
 .name{
-  margin-top: -18%;
+  margin-top: -15%;
   margin-left: 35%;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .date-of-birth{
   margin-top: 1%;
   margin-left: 35%;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .nationality{
   margin-top: -2%;
   margin-left: 60%;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .data{
   margin-top: 1%;
   margin-left: 35%;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .gpax{
   margin-top: 1%;
   margin-left: 35%;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .graduated{
   margin-top: -1.8%;
   margin-left: 60%;
-  font-size: 20px;
+  font-size: 22px;
 	margin-bottom: 15%
 }
 
@@ -118,13 +118,8 @@
 }
 
 .save-clk{
-	margin-top: 4%;
-	margin-left: 68%;
-}
-
-.print-clk{
-	margin-top: -2.3%;
-	margin-left: 78%;
+	margin-top: 6%;
+	margin-left: 75%;
 }
 
 .edit-clk{
