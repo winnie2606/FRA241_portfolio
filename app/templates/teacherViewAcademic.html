@@ -82,6 +82,21 @@
 
       <div class="data-in">Academic = {{page}}</div>
 
+			<div class="selectbar">
+						<form id="contact-form" action="/selectTerm", method="POST">
+							<select id="section"  name = "click" size="1" style="width:200px; font-size:20px;height:30px;color:#46445c; " >
+								<option value="1/2559">1/2559</option>
+								<option value="2/2559">2/2559</option>
+								<option value="1/2560">1/2560</option>
+								<option value="2/2560">2/2560</option>
+							</select>
+							<div class="se"><input type="submit" value="select" class="in3"></div>
+						</form>
+
+						<div class="term">term{{term}}</div>
+
+			</div>
+
     </div>
 
     <img src="static/student.png" width="15%" height="15%" class="pic">

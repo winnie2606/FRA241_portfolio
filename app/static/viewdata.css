@@ -1,5 +1,5 @@
 .pic{
-  margin-top: 5%;
+  margin-top: 0%;
   margin-left: 12.5%;
 }
 
@@ -25,7 +25,7 @@
   background-color: #000014;
   height: 185px;
 	width: 300px;
-  margin-top: 1%;
+  margin-top: 0.7%;
   margin-left: 8%;
   border-radius: 10px;
 	border: 5px;
@@ -36,7 +36,7 @@
   background-color: #000014;
   height: 460px;
 	width: 800px;
-  margin-top: 5%;
+  margin-top: 0%;
   margin-right: 5%;
   border-radius: 10px;
 	border: 5px;
@@ -48,4 +48,50 @@
   margin-top: 5%;
   margin-left: 5%;
   margin-bottom: -1.5%;
+}
+
+.selectbar{
+	margin-top: 5%;
+	margin-left: 30%;
+	z-index: 1000;
+}
+
+.table1{
+	margin-top:50px;
+	margin-left: 0%;
+	z-index: 1000;
+}
+
+.table2{
+	margin-top:50px;
+	margin-left: 0%;
+	z-index: 1000;
+}
+
+.in3 {
+	font-family: "Open Sans Condensed";
+	padding-left: 5px;
+	border-radius: 5px;
+	border: 5px;
+	height: 30px;
+	width: 100px;
+	background-color: #e8e8e8;
+	color: #2e3940;
+  margin-top: 8%;
+  font-size: 20px;
+}
+
+.in3:hover , .in2:active{
+	background-color: #c1c1c1;
+	color: #2e3940;
+}
+
+.se{
+  margin-top: -10.2%;
+	margin-left: 40%;
+}
+
+.term{
+  margin-top: 5%;
+	margin-left: -35%;
 }
