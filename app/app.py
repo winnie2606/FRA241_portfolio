@@ -358,7 +358,7 @@ def getPrindataButton():   												#--------- save text -----------
 def getPopup():
 	getpopup = request.form['popup']
 	print(getpopup)
-	if getpopup == 'Exit':
+	if getpopup == 'YES':
 		keepHistory.reset_keepHistory()
 		keepID.reset_keepID()
 		return render_template('login.html')
