@@ -63,7 +63,7 @@
 					$(".popup").fadeIn('slow');
 				});
 			});
-			
+
 			$(document).ready(function(){
 				$('.a').on('click',function(){
 					$(".cover").fadeOut('slow');
@@ -73,7 +73,7 @@
 
 		</script>
 
-		<img src="static/student.png" width="15%" height="15%" class="pic">
+		<img src="static/pictures/profile/{{picS}}" width="15%" height="15%" class="pic">
 
     <div class="in">
 
@@ -89,11 +89,14 @@
 
       <div class="data-in">Activity</div>
 
-			<image src="static/en1.png" width="30%" class="en1">
-			<div class="name-of-activity">Name of Activity : </div>
-			<div class="advisor">ADVISOR : </div>
-			<div class="date-duration">DATE/DURATION : </div>
-
+			{%for act in page%}
+			<image src="static/pictures/activity/{{act.Photo}}"  width="30%" class="en1">
+			<div class="name-of-activity">Name of Activity : {{act.Name_Activity}}</div>
+			<div class="--------">TYPE : {{act.Type}}</div>
+			<div class="advisor">ADVISOR : {{act.Advisor}}</div>
+			<div class="date-duration">DATE/DURATION : {{act.Date_Activity}}</div>
+			<div class=".......">Description : {{act.Description}}</div>
+			{%endfor%}
 
 		</div>
 

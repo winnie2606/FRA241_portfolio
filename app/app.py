@@ -450,9 +450,10 @@ def view():
 	for ID in view:
 		profile = pullData.Profile(ID)
 		print (profile)
-
+		re = return_Method(ID)
+		picS = re.photo()
 		keepHistory.keep_page('teacherViewProfile.html', profile , ID )
-		return render_template('teacherViewProfile.html', name=name, page = profile , page2 = ID)
+		return render_template('teacherViewProfile.html', name=name, page = profile , page2 = ID, picS = picS)
 
 @app.route('/selectView', methods=['POST'])
 def seect():
@@ -462,19 +463,36 @@ def seect():
 	name = keepID.Name
 
 	ID = keepHistory.Value2_page()
-
+	re = return_Method(ID)
+	picS = re.photo()
 	if select == 'PROFILE':
 		print('profile')
 		profile = pullData.Profile(ID)
-		return render_template('teacherViewProfile.html', name=name, page = profile , page2 = ID)
+		return render_template('teacherViewProfile.html', name=name, page = profile , page2 = ID, picS = picS)
 	if select == 'ACADEMIC':
 		print('academic')
-
-		return render_template('teacherViewAcademic.html', name=name)
+		check = Check()
+		term = check.TERM(ID)
+		return render_template('teacherViewAcademic.html', name=name,term = term, picS = picS,page=pullData.Academic_term(getID) , page2=pullData.Academic_sum(getID) )
 	if select == 'WORK&EXPERIENCE':
 		print('activity')
 		activity = pullData.Activity(ID)
-		return render_template('teacherViewActivity.html', name=name, page = activity, page2 = ID)
+		print(activity)
+		return render_template('teacherViewActivity.html', name=name, page = activity, page2 = ID, picS = picS)
+
+@app.route('/TeacherSelectTerm', methods=['POST'])
+def TeacherSelectTerm():
+	getSelectTerm = request.form['click']
+	print(getSelectTerm)
+	getID = keepID.ID
+	name = keepID.Name
+	ID = keepHistory.Value2_page()
+	re = return_Method(ID)
+	picS = re.photo()
+	check = Check()
+	term = check.TERM(ID)
+
+	return render_template('teacherViewAcademic.html', name=name,term = term, picS = picS,page=pullData.Academic_term(ID,getSelectTerm) , page2=pullData.Academic_sum(ID,getSelectTerm) ,SelectTerm=getSelectTerm )
 
 
 app.run(debug=True)
