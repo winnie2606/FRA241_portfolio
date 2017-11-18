@@ -36,10 +36,6 @@ class return_Method:
         for user in query.filter_by(id_student="{}".format(self.data)):
             return user.Sex
 
-    def year(self):
-        for user in query.filter_by(id_student="{}".format(self.data)):
-            return user.Year
-
     def date(self):
         for user in query.filter_by(id_student="{}".format(self.data)):
             return user.Dateofbirth
