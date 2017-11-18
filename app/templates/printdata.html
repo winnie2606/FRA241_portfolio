@@ -86,7 +86,7 @@
     <div align="left" class="font-FFF">
 			{% for data in page %}
       <div class="profile"><b>Profile</b></div>
-      <img src="static/student.png" width="15%" height="15%" class="pic-student">
+      <img src="static/pictures/profile/{{picS}}" width="15%" height="15%" class="pic-student">
       <div class="name">Name : {{data.name}}  {{data.sur}}</div>
       <div class="date-of-birth">Date of birth : {{data.dateofbirth}}</div>
       <div class="nationality">Nationality : {{data.nation}}</div>
@@ -109,7 +109,7 @@
 		{% for activity in page2 %}
 		<div class="group">
 
-			<image src="static/en1.png" width="25%" class="en1">
+			<image src="static/pictures/activity/{{activity.Photo}}" width="25%" class="en1">
 			<div class="name-of-activity">Activities Name : {{activity.Name_Activity}}</div>
 			<div class="type">Type : {{activity.Type}}</div>
 			<div class="date-duration">Date / Duration : {{activity.Date_Activity}}</div><br><br>

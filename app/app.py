@@ -71,8 +71,10 @@ def checkPerson():
 		name = re.name()
 		keepID.Name = name
 		print(keepID.Name)
+		keepID.picS = re.photo()
+		picS = keepID.picS
 		keepHistory.keep_page('homeStudent.html', None )
-		return render_template('homeStudent.html', id_user=getID, name=name)
+		return render_template('homeStudent.html', id_user=getID, name=name, picS = picS)
 
 	elif  check.T_check(getID,getPassword):
 		re = return_Method(getID)
@@ -94,19 +96,21 @@ def menubar():
 	print(getMenubar)
 	getID = keepID.ID
 	name = keepID.Name
+	picS = keepID.picS
 
 	if getMenubar == 'PROFILE':
 		keepHistory.keep_page('profile.html', pullData.Profile(getID))
-		return render_template('profile.html', name=name, page=pullData.Profile(getID))
+		return render_template('profile.html', name=name, page=pullData.Profile(getID), picS = picS)
 	if getMenubar == 'ACADEMIC':
 		keepHistory.keep_page('AcademicStudent.html', pullData.Academic_term(getID),pullData.Academic_sum(getID))
 		return render_template('AcademicStudent.html', name=name, page=pullData.Academic_term(getID), page2=pullData.Academic_sum(getID))
 	if getMenubar == 'WORK&EXPERIENCE':
 		keepHistory.keep_page('activity.html', pullData.Activity(getID))
+		print(pullData.Activity(getID))
 		return render_template('activity.html', name=name, page=pullData.Activity(getID))
 	if getMenubar == 'home_icon':
 		keepHistory.keep_page('homeStudent.html', None)
-		return render_template('homeStudent.html', name=name, id_user=getID)
+		return render_template('homeStudent.html', name=name, id_user=getID, picS = picS)
 	if getMenubar == 'print_icon':
 		keepHistory.keep_page('print_choose.html', pullData.Activity(getID))
 		print(getMenubar)
@@ -118,13 +122,14 @@ def menubar():
 		return render_template('login.html')
 	if getMenubar == 'back':
 		print(getMenubar)
+
 		keepHistory.print_listPage()
 		history = keepHistory.history()
 		Value = keepHistory.Value_page()
 		Value2 = keepHistory.Value2_page()
 		if history == 'activity.html':
 			Value = pullData.Activity(getID)
-		return render_template(history,id_user=getID, name=name, page = Value, page2 = Value2)
+		return render_template(history,id_user=getID, name=name, page = Value, page2 = Value2, picS = picS)
 
 @app.route('/printer', methods=['POST'])
 def printer():
@@ -207,6 +212,7 @@ def getEditInfo():
 	print(getEditInfo)
 	getID = keepID.ID
 	#keepID.Print_ID()
+	picS = keepID.picS
 
 	editProfile.edit(getID,getEditInfo)
 
@@ -216,7 +222,7 @@ def getEditInfo():
 
 	history = keepHistory.history()
 
-	return render_template(history , name=name, page=pullData.Profile(getID))
+	return render_template(history , name=name, page=pullData.Profile(getID), picS = picS)
 
 @app.route('/getEditAc', methods=['POST'])
 def getEditAc():
@@ -283,7 +289,7 @@ def getCheckBox():
 		print(ProfileAndAcademic)
 		print(Activity)
 		keepHistory.keep_page('printdata.html', ProfileAndAcademic,Activity)
-		return render_template('printdata.html',id_user=getID, name=name, page=ProfileAndAcademic , page2 = Activity )
+		return render_template('printdata.html',id_user=getID, name=name, page=ProfileAndAcademic , page2 = Activity , picS = keepID.picS)
 
 @app.route('/selectall', methods=['POST'])
 def selectall():
@@ -374,7 +380,8 @@ def getleave():
 			return render_template(history,id_user=getID, name=name, page = Value)
 		if history == 'profile.html':
 			Value = pullData.Profile(getID)
-			return render_template(history,id_user=getID, name=name, page = Value)
+			picS = keepID.picS
+			return render_template(history,id_user=getID, name=name, page = Value , picS = picS)
 
 '''end student'''
 
