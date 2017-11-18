@@ -73,7 +73,7 @@
 					$(".popup").fadeOut('slow');
 				});
 			});
-				
+
 		</script>
 
 		<div class="Academic">
@@ -84,15 +84,14 @@
 		<div class="selectbar">
 					<form id="contact-form" action="/selectTerm", method="POST">
 						<select id="section"  name = "click" size="1" style="width:400px; font-size:25px;height:30px;color:#46445c; " >
-							<option value="1/2559">1/2559</option>
-							<option value="2/2559">2/2559</option>
-							<option value="1/2560">1/2560</option>
-							<option value="2/2560">2/2560</option>
+							{%for i in term%}
+							<option value={{i}}>{{i}}</option>
+							{%endfor%}
 						</select>
 						<div class="in"><input type="submit" value="select" class="in2"></div>
 					</form>
 
-		<div class="term">{{term}}</div>
+		<div class="term">{{thisTerm}}</div>
 
 
 		</div>
