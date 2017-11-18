@@ -23,6 +23,7 @@ class Profile(Base):
     Phonestudent = Column(String,nullable=True)
     Address = Column(String,nullable=True)
     Email = Column(String,nullable=True)
+    Photo = Column(String,nullable=True)
 
 class Disease(Base):
     __tablename__ = 'Disease'
@@ -38,8 +39,6 @@ class Activity(Base):
     Type = Column(String,nullable=True)
     Advisor = Column(String,nullable=True)
     Date_Activity = Column(String,nullable=True)
-    File = Column(String,nullable=True)#will be change next time
-    Confirm = Column(String,nullable=True)
 
 class Academic(Base):
     __tablename__ = 'academic'
