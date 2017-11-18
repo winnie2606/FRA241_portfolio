@@ -497,9 +497,7 @@ class Check:
                 re = return_Method(item)
                 dicfrab = {'Name' : re.name(),'Surname' : re.surname(),'ID' : re.idstu()}
                 datafrab.append(dicfrab)
-            #print(datafrab)
             return datafrab
-
 
         def checkfrab(self):
             box = []
@@ -514,3 +512,14 @@ class Check:
                 if word not in include:
                     include.append(word)
             return include
+
+        def TERM(self,studentID):
+            query = session.query(Academic)
+            list_idSub = []
+            box = []
+            for instance in query.filter_by(Student_ID="{}".format(studentID)):
+                list_idSub.append(instance.Term)
+            for item in list_idSub:
+                if item not in box:
+                    box.append(item)
+            return box
