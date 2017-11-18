@@ -77,7 +77,7 @@ class TeacherPW(Base):
 
 class StudentPW(Base):
     __tablename__ = 'StudentPW'
-    id_student = Column(Integer,primary_key=True,nullable=False)
+    id_student = Column(String,primary_key=True,nullable=False)
     S_Password = Column(String,nullable=False)
 
 
