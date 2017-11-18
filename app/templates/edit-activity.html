@@ -68,12 +68,7 @@
 					$(".popupback").fadeIn('slow');
 				});
 			});
-			$(document).ready(function(){
-				$('.coverback').on('click',function(){
-					$(".coverback").fadeOut('slow');
-					$(".popupback").fadeOut('slow');
-				});
-			});
+			
 			$(document).ready(function(){
 				$('.aback').on('click',function(){
 					$(".coverback").fadeOut('slow');
@@ -86,11 +81,11 @@
 		<div class="container">
 
 			<div class="popup">
-				<p>Do you want to Exit ?</p>
+				<p>Do you want to logout ?</p>
 				<div class="option">
           <form id="contact-form" action="/getPopup", method="POST">
-					<input class="a" type = "button" name="popup" value = "Cancel" />
-					<input  class ="b" type = "submit" name="popup" value = "Exit" />
+					<input class="a" type = "button" name="popup" value = "NO" />
+					<input  class ="b" type = "submit" name="popup" value = "YES" />
 					</form>
 				</div>
 			</div>
@@ -106,12 +101,7 @@
 					$(".popup").fadeIn('slow');
 				});
 			});
-			$(document).ready(function(){
-				$('.cover').on('click',function(){
-					$(".cover").fadeOut('slow');
-					$(".popup").fadeOut('slow');
-				});
-			});
+			
 			$(document).ready(function(){
 				$('.a').on('click',function(){
 					$(".cover").fadeOut('slow');

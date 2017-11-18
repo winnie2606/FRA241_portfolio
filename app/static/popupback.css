@@ -20,8 +20,8 @@ body{
 }
 .popupback{
 	width: 400px;
-	height: 180px;
-	background-color: #fff;
+	height: 200px;
+	background-color: #060610;
 	border-radius: 4px;
 	margin: 0 auto;
 	z-index: 1000;
@@ -32,7 +32,8 @@ body{
 }
 
 p{
-	font-size: 20px;
+	font-size: 22px;
+	color: #fff;
 	line-height: 100px;
 
 }
@@ -44,19 +45,27 @@ p{
 }
 
 .aback{
-	font-size: 22px;
+	margin-top : -3%;
+	font-size: 20px;
+	color: #fff;
 	float: left;
 	cursor: pointer;
 	width: 50%;
-	background-color: #2ECC71;
+	height: 40px;
+	background-color: #171723;
+	border-color: #171723;
 }
 
 .bback{
-	font-size: 22px;
+	margin-top : -3%;
+	font-size: 20px;
+	color: #fff;
 	float: left;
 	cursor: pointer;
 	width: 50%;
-	background-color: #F44336;
+	height: 40px;
+	background-color: #171723;
+	border-color: #171723;
 }
 .optionsback{
 	text-transform: uppercase;
