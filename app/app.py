@@ -314,11 +314,10 @@ def geAddAc():
 	print(getAddAc)
 
 	save_path = 'C:/Users/' + str(os.getlogin()) + '/Desktop'
-	nameAc = getAddAc['nameAc'] + '.jpg'
 	namephoto = getAddAc['photo']
 	inputfile = str(save_path) + '/' + str(namephoto)
 	print(namephoto)
-	copyto = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/static/pictures/activity/' + str(nameAc)
+	copyto = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/static/pictures/activity/' + str(namephoto)
 	copyfile(inputfile,copyto)
 
 	editActivity.edit(getID,getAddAc)
@@ -372,6 +371,9 @@ def getleave():
 			return render_template(history,id_user=getID, name=name, page = Value)
 		if history == 'dataactivity.html':
 			Value = keepHistory.Value_page()
+			return render_template(history,id_user=getID, name=name, page = Value)
+		if history == 'profile.html':
+			Value = pullData.Profile(getID)
 			return render_template(history,id_user=getID, name=name, page = Value)
 
 '''end student'''
