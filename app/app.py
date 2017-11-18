@@ -15,6 +15,11 @@ from pullData import *
 from editProfile import *
 from editActivity import *
 from saveText import *
+import os
+import os.path
+import shutil
+from shutil import copyfile
+import shutil
 
 app = Flask(__name__)
 
@@ -307,6 +312,14 @@ def geAddAc():
 	getID = keepID.ID
 	name = keepID.Name
 	print(getAddAc)
+
+	save_path = 'C:/Users/' + str(os.getlogin()) + '/Desktop'
+	nameAc = getAddAc['nameAc'] + '.jpg'
+	namephoto = getAddAc['photo']
+	inputfile = str(save_path) + '/' + str(namephoto)
+	print(namephoto)
+	copyto = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/static/pictures/activity/' + str(nameAc)
+	copyfile(inputfile,copyto)
 
 	editActivity.edit(getID,getAddAc)
 
