@@ -39,6 +39,8 @@ class Activity(Base):
     Type = Column(String,nullable=True)
     Advisor = Column(String,nullable=True)
     Date_Activity = Column(String,nullable=True)
+    File = Column(String,nullable=True)#will be change next time
+    Confirm = Column(String,nullable=True)
 
 class Academic(Base):
     __tablename__ = 'academic'

@@ -118,6 +118,18 @@ class return_Method:
             box.append(user.Date_Activity)
         return box
 
+    def Act_file(self):
+        box = []
+        for user in Acque.filter_by(id_student = "{}".format(self.data)):
+            box.append(user.File)
+        return box
+
+    def Act_confirm(self):
+        box = []
+        for user in Acque.filter_by(id_student = "{}".format(self.data)):
+            box.append(user.Confirm)
+        return box
+
     def t_name(self):
         for user in teacher.filter_by(id_teacher="{}".format(self.data)):
             return user.Name
@@ -137,10 +149,10 @@ class return_data(return_Method):
         dataPro.append(dicPro)
         return dataPro
 
-    def DicAct(self,NameAct = None, Descrip = None, Photo = None, Type = None, Advisor = None, Date = None ):
+    def DicAct(self,NameAct = None, Descrip = None, Photo = None, Type = None, Advisor = None, Date = None, File = None, Confirm = None ):
         dataAct = []
         for item in range(len(NameAct)):
-            dicAct = {'Name_Activity' : NameAct[item], 'Description' : Descrip[item], 'Photo' : Photo[item], 'Type' : Type[item], 'Advisor' : Advisor[item], 'Date_Activity' : Date[item]}
+            dicAct = {'Name_Activity' : NameAct[item], 'Description' : Descrip[item], 'Photo' : Photo[item], 'Type' : Type[item], 'Advisor' : Advisor[item], 'Date_Activity' : Date[item], 'File' : File[item], 'Confirm' : Confirm[item]}
             dataAct.append(dicAct)
         return dataAct
 
@@ -285,6 +297,18 @@ class Add_Method:
     def Act_date(self,data,nameAct):
         addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
         addData.Date_Activity = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Act_file(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.File = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Act_confirm(self,data,nameAct):
+        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.Confirm = "{}".format(data)
         session.add(addData)
         session.commit()
 
