@@ -536,5 +536,6 @@ def fileGrade():
 			os.remove(copyto)
 
 			return render_template('add_grade.html', name=name, add=fileAdd)
+		
 
 app.run(debug=True)
