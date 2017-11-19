@@ -156,6 +156,9 @@ def selectTerm():
 	name = keepID.Name
 	check = Check()
 	term = check.TERM(getID)
+	print(getID)
+	print(term)
+	print(check)
 	print(pullData.Academic_term(getID,getSelectTerm))
 	return render_template('AcademicStudent.html', name=name, term=term, page=pullData.Academic_term(getID,getSelectTerm),page2=pullData.Academic_sum(getID,getSelectTerm), thisTerm = getSelectTerm)
 
