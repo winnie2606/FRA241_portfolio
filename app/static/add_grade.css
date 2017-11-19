@@ -13,7 +13,7 @@
 .selectfile{
 	font-size:40px;
 	color:#FFF;
-	margin-top:5%;
+	margin-top:2%;
 }
 .buttonSelect{
 
@@ -50,9 +50,10 @@
 	background-color: #e8e8e8;
 	color: #2e3940;
 	box-shadow: -4px 5px #3c3e3d;
-	margin-top:6%;
-	margin-right:6%;
+	margin-top: 10%;
+	margin-left: 88%;
 	font-size:20px;
+	position: fixed;
 
 }
 
@@ -71,7 +72,7 @@
 	width: 500px;
 	background-color: #000014;
 	color: #FFF;
-	margin-top: 5%;
+	margin-top: 2%;
 }
 
 .file{
@@ -95,4 +96,9 @@
 	font-size: 20px;
 	margin-left: -45%;
 	margin-top: -5.5%;
+}
+
+.add{
+	margin-top: 2%;
+	font-size: 30px;
 }
