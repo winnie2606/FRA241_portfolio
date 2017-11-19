@@ -79,7 +79,7 @@
 }
 
 .name{
-
+	margin-bottom: 10%;
 }
 
 .date{
@@ -171,10 +171,9 @@
 }
 
 .box3{
-	float:left;
-	margin-top: -16.4%;
-	margin-left: 755%;
-	color: #FFF;
+	float:right;
+	margin-top: -28%;
+	margin-right: -342%;
 	width: 20px;
 	height: 20px;
 }
@@ -185,10 +184,11 @@
 	border-radius:20px;
 	border: 5px;
 	height: 35px;
-	width: 120px;
+	width: 110px;
 	background-color: #e8e8e8;
 	color: #2e3940;
 	box-shadow: -4px 5px #3c3e3d;
+	font-size: 18px;
 }
 
 .buttonDone:hover , .buttonDone:active{
@@ -197,6 +197,6 @@
 
 .buttonCD{
 	float:left;
-	margin-top:5%;
+	margin-top:3%;
 	margin-left:88.8%;
 }
