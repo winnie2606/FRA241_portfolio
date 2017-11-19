@@ -34,7 +34,7 @@
 .data{
   float: right;
   background-color: #000014;
-  height: 460px;
+  height: 540px;
 	width: 800px;
   margin-top: -33.5%;
   margin-right: 5%;
@@ -71,9 +71,9 @@
 }
 
 .data-in{
-  margin-top: 5%;
+  margin-top: 3%;
   margin-left: 5%;
-  margin-bottom: -1.5%;
+  margin-bottom: -1%;
 }
 
 .selectbar{
