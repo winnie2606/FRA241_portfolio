@@ -516,20 +516,25 @@ def fileGrade():
 	term = request.form['term']
 	fileAdd = 'You was add : ' + str(filename)
 	print(filename)
+
 	if click == 'ADD':
 
-		save_path = 'C:/Users/' + str(os.getlogin()) + '/Desktop'
-		inputfile = str(save_path) + '/' + str(filename)
-		print(inputfile)
-		copyto = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/forDatabase/' + str(filename)
-		copyfile(inputfile,copyto)
-		print(copyto)
+		if filename == '':
+			return render_template('add_grade.html', name=name)
 
-		inputFileGrade = Input_Academics(copyto, term)
-		inputFileGrade.input_Academic_and_edit_data()
+		else:
+			save_path = 'C:/Users/' + str(os.getlogin()) + '/Desktop'
+			inputfile = str(save_path) + '/' + str(filename)
+			print(inputfile)
+			copyto = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/forDatabase/' + str(filename)
+			copyfile(inputfile,copyto)
+			print(copyto)
 
-		os.remove(copyto)
+			inputFileGrade = Input_Academics(copyto, term)
+			inputFileGrade.input_Academic_and_edit_data()
 
-		return render_template('add_grade.html', name=name, add=fileAdd)
+			os.remove(copyto)
+
+			return render_template('add_grade.html', name=name, add=fileAdd)
 
 app.run(debug=True)
