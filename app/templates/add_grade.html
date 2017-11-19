@@ -76,16 +76,20 @@
 
 		</script>
 
+		<form id="contact-form" action="/getFileGrade", method="POST">
 		<div class="bar_add">ADD GRADE</div>
 
 		<div align="center" class="selectfile">
 
 			<div>Select File From Desktop ONLY!</div>
+			<br><br>
+			<div>{{add}}</div>
 			<div class="in3">
 
-				<input type = "file" name = "file" placeholder="SELECT FROM YOUR COMPUTER" class="file">
-				<input id="text1" type = "text" placeholder = "ex. 1/2559" name = "id" class = "in1">
+				<input type = "file" name = "fileGrade" placeholder="SELECT FROM YOUR COMPUTER" class="file">
+				<input id="text1" type = "text" placeholder = "ex. 1/2559" name = "term" class = "in1">
 				<div class="term">TERM</div>
+
 
 			</div>
 
@@ -96,16 +100,17 @@
 			<input type = "submit" name="click" value = "ADD" class="buttonAdd">
 
 		</div>
+		</form>
 
-				<div class="container2">
+				<!--<div class="container2">
 
 			<div class="popup2">
 				<p>Do you want to add file ?</p>
 				<div class="option2">
-          <form id="contact-form" action="/getPopup", method="POST">
+
 					<input class="e" type = "button" name="popup" value = "NO" />
 					<input  class ="f" type = "submit" name="popup" value = "YES" />
-					</form>
+
 				</div>
 			</div>
 		</div>
@@ -128,7 +133,7 @@
 				});
 			});
 
-		</script>
+		</script>-->
 
 	</body>
 </html>

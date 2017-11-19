@@ -20,6 +20,7 @@ import os.path
 import shutil
 from shutil import copyfile
 import shutil
+from addAcademic import Input_Academics
 
 app = Flask(__name__)
 
@@ -503,8 +504,32 @@ def TeacherSelectTerm():
 	picS = re.photo()
 	check = Check()
 	term = check.TERM(ID)
-
 	return render_template('teacherViewAcademic.html', name=name,term = term, picS = picS,page=pullData.Academic_term(ID,getSelectTerm) , page2=pullData.Academic_sum(ID,getSelectTerm) ,SelectTerm=getSelectTerm )
 
+@app.route('/getFileGrade', methods=['POST'])
+def fileGrade():
+	name = keepID.Name
+	fileGrade = dict(request.form.items())
+	print(fileGrade)
+	click = request.form['click']
+	filename = request.form['fileGrade']
+	term = request.form['term']
+	fileAdd = 'You was add : ' + str(filename)
+	print(filename)
+	if click == 'ADD':
+
+		save_path = 'C:/Users/' + str(os.getlogin()) + '/Desktop'
+		inputfile = str(save_path) + '/' + str(filename)
+		print(inputfile)
+		copyto = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/forDatabase/' + str(filename)
+		copyfile(inputfile,copyto)
+		print(copyto)
+
+		inputFileGrade = Input_Academics(copyto, term)
+		inputFileGrade.input_Academic_and_edit_data()
+
+		os.remove(copyto)
+
+		return render_template('add_grade.html', name=name, add=fileAdd)
 
 app.run(debug=True)
