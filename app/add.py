@@ -7,309 +7,112 @@ Base.metadata.bind=engine
 DBSession = sessionmaker(bind = engine)
 session = DBSession()
 
-# ---------------------------add subject and grade------------------------------#
-studenID = "59340500017"
-term = "1/2559"
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA141",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA161",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "GEN101",Grade = "3" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "LNG101",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "MTH101",Grade = "2.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "PHY103",Grade = "3" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "PHY191",Grade = "3.5" )
-session.add(student)
-# session.commit()
-
-studenID = "59340500021"
-term = "1/2559"
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA141",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA161",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "GEN101",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "LNG101",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "MTH101",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "PHY103",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "PHY191",Grade = "4" )
-session.add(student)
-# session.commit()
-
-studenID = "59340500035"
-term = "1/2559"
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA141",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA161",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "GEN101",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "LNG102",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "MTH101",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "PHY103",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "PHY191",Grade = "3.5" )
-session.add(student)
-
-studenID = "58340500011"
-term = "1/2559"
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA341",Grade = "2.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA361",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "GEN301",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "LNG301",Grade = "3" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "MTH301",Grade = "3" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "PHY303",Grade = "2.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "PHY391",Grade = "3" )
-session.add(student)
-
-# session.commit()
-#-------------------------------------------------------------------#
-studenID = "59340500017"
-term = "2/2559"
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA121",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA142",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA162",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA163",Grade = "3" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "GEN111",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "GEN121",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "MTH102",Grade = "2.5" )
-session.add(student)
-# session.commit()
-
-studenID = "59340500021"
-term = "2/2559"
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA121",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA142",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA162",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA163",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "GEN111",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "GEN121",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "MTH102",Grade = "3.5" )
-session.add(student)
-# session.commit()
-
-studenID = "59340500035"
-term = "2/2559"
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA121",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA142",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA162",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA163",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "GEN111",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "GEN121",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "MTH102",Grade = "3.5" )
-session.add(student)
-
-studenID = "58340500011"
-term = "2/2559"
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA321",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA342",Grade = "4" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA362",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "FRA363",Grade = "3" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "GEN311",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "GEN321",Grade = "3.5" )
-session.add(student)
-student = Academic(Student_ID = studenID,Term = term,
- ID_Subject = "MTH302",Grade = "2.5" )
-session.add(student)
-# session.commit()
-
-#--------------------------------add GPA---------------------------------------#
-term = "1/2559"
-gpa = Gpa(Student_ID = "59340500017",Term =term,sum_credit =17,GPA ="3.38")
-session.add(gpa)
-gpa = Gpa(Student_ID = "59340500021",Term =term,sum_credit =17,GPA ="3.82")
-session.add(gpa)
-gpa = Gpa(Student_ID = "59340500035",Term =term,sum_credit =17,GPA ="3.76")
-session.add(gpa)
-gpa = Gpa(Student_ID = "58340500011",Term =term,sum_credit =18,GPA ="3.85")
-session.add(gpa)
-# session.commit()
-
-term = "2/2559"
-gpa = Gpa(Student_ID = "59340500017",Term =term,sum_credit =17,GPA ="3.47")
-session.add(gpa)
-gpa = Gpa(Student_ID = "59340500021",Term =term,sum_credit =17,GPA ="3.76")
-session.add(gpa)
-gpa = Gpa(Student_ID = "59340500035",Term =term,sum_credit =17,GPA ="3.79")
-session.add(gpa)
-gpa = Gpa(Student_ID = "58340500011",Term =term,sum_credit =18,GPA ="3.43")
-session.add(gpa)
-# session.commit()
-
-#------------------------------add GPAX----------------------------------------#
-gpaxx = Gpax(Student_ID ="59340500017",sum_all_credit =34,GPAX ="3.42")
-session.add(gpaxx)
-gpaxx = Gpax(Student_ID ="59340500021",sum_all_credit =34,GPAX ="3.79")
-session.add(gpaxx)
-gpaxx = Gpax(Student_ID ="59340500035",sum_all_credit =34,GPAX ="3.77")
-session.add(gpaxx)
-gpaxx = Gpax(Student_ID ="58340500011",sum_all_credit =35,GPAX ="3.53")
-session.add(gpaxx)
-# session.commit()
-
 #----------------------------add subject---------------------------------------#
+sub = Subject(ID_Subject ="FRA141",name_subject ="COMPUTER PROGRAMMING")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA161",name_subject ="ROBOTICS EXPLORATION")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN101",name_subject ="PHYSICAL EDUCATION")
+session.add(sub)
+sub = Subject(ID_Subject ="LNG101",name_subject ="GENERAL ENGLISH")
+session.add(sub)
+sub = Subject(ID_Subject ="LNG102",name_subject ="TECHNICAL ENGLISH")
+session.add(sub)
+sub = Subject(ID_Subject ="MTH101",name_subject ="MATHEMATICS I")
+session.add(sub)
+sub = Subject(ID_Subject ="PHY103",name_subject ="GENERAL PHYSICS")
+session.add(sub)
+sub = Subject(ID_Subject ="PHY191",name_subject ="GENERAL PHYSICS LABORATORY I")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA121",name_subject ="ELECTRONIC CIRCUITS")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA142",name_subject ="COMPUTER PROGRAMMING")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA162",name_subject ="ROBOTICS AND AUTOMATION")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA163",name_subject ="ROBOTICS MACHINE SHOP")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN111",name_subject ="MAN AND ETHICS OF LIVING")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN121",name_subject ="LEARNING AND PROBLEM SOLVING SKILLS")
+session.add(sub)
+sub = Subject(ID_Subject ="MTH102",name_subject ="MATHEMATICS II")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA221",name_subject ="DIGITAL ELECTRONICS")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA222",name_subject ="INDUSTRIAL SENSORSAND ACTUATORS")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA231",name_subject ="STATICS AND DYNAMICS")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA241",name_subject ="SOFTWARE DEVELOPMENT FOR ROBOTICS AND AUTOMATION ENGINEERING")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA261",name_subject ="ROBOTICSAND AUTOMATION ENGINEERING LAB II")
+session.add(sub)
+sub = Subject(ID_Subject ="LNG103",name_subject ="ENGLISH FOR WORKPLACE COMMUNICATION")
+session.add(sub)
+sub = Subject(ID_Subject ="MTH201",name_subject ="MATHEMATICS III")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA223",name_subject ="EXPLORATION IN SIGNALS AND SYSTEMS")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA232",name_subject ="ROBOT STRUCTURE DESIGN I")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA262",name_subject ="INVENTOR STUDIO")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN231",name_subject ="MIRACLE OF THINKING")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN241",name_subject ="BEAUTY OF LIFE")
+session.add(sub)
+sub = Subject(ID_Subject ="STA302",name_subject ="STATISTICS FOR ENGINEERS")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA321",name_subject ="IMAGE PROCESSING AND ANALYSIS")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA331",name_subject ="BASIC CONTROL THEORY")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA332",name_subject ="ROBOT STRUCTURE DESIGN II")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA341",name_subject ="EMBEDDED SYSTEM DESIGN")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA361",name_subject ="ROBOTICS AND AUTOMATION ENGINEERING LAB III")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN211",name_subject ="THE PHILOSOPHY OF SUFFICIENCY ECONOMY")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN212",name_subject ="MIND DEVELOPMENT THROUGH BUDDHISM FOR A FULFILLING LIFE")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN301",name_subject ="HOLISTIC HEALTH DEVELOPMENT")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN311",name_subject ="ETHICS IN SCIENCE-BASED SOCIETY")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN321",name_subject ="THE HISTORY OF CIVILIZATION")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN331",name_subject ="MAN AND REASONING")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN341",name_subject ="THAI INDIGENOUS KNOWLEDGE")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN352",name_subject ="TECHNOLOGY AND INNOVATION FOR SUSTAINABLE DEVELOPMENT")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN353",name_subject ="MANAGERIAL PSYCHOLOGY")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN411",name_subject ="PERSONALITY DEVELOPMENT AND PUBLIC SPEAKING")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN412",name_subject ="SCIENCE AND ART OF LIVING AND WORKING")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN421",name_subject ="INTEGRATIVE SOCIAL SCIENCES")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN441",name_subject ="CULTURE AND EXCURSION")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA300",name_subject ="INDUSTRIAL TRAINING")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA311",name_subject ="ARTIFICIAL INTELLIGENCE FOR ROBOTICS AND AUTOMATION ENGINEERING")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA333",name_subject ="INTRODUCTION TO ROBOTICS")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA351",name_subject ="COMPUTERAIDED TECHNOLOGIES")
+session.add(sub)
+sub = Subject(ID_Subject ="FRA362",name_subject ="ROBOTICS STUDIO")
+session.add(sub)
+sub = Subject(ID_Subject ="GEN351",name_subject ="MODERN MANAGEMENT AND LEADERSHIP")
+session.add(sub)
 
-sub = Subject(ID_Subject ="FRA141",name_subject ="COMPUTER PROGRAMMING",
- Credit =3)
-session.add(sub)
-sub = Subject(ID_Subject ="FRA161",name_subject ="ROBOTICS EXPLORATION",
- Credit =3)
-session.add(sub)
-sub = Subject(ID_Subject ="GEN101",name_subject ="PHYSICAL EDUCATION",
- Credit =1)
-session.add(sub)
-sub = Subject(ID_Subject ="LNG101",name_subject ="GENERAL ENGLISH",
- Credit =3)
-session.add(sub)
-sub = Subject(ID_Subject ="LNG102",name_subject ="TECHNICAL ENGLISH",
- Credit =3)
-session.add(sub)
-sub = Subject(ID_Subject ="MTH101",name_subject ="MATHEMATICS I",
- Credit =3)
-session.add(sub)
-sub = Subject(ID_Subject ="PHY103",name_subject ="GENERAL PHYSICS",
- Credit =3)
-session.add(sub)
-sub = Subject(ID_Subject ="PHY191",name_subject ="GENERAL PHYSICS LABORATORY I",
- Credit =1)
-session.add(sub)
-sub = Subject(ID_Subject ="FRA121",name_subject ="ELECTRONIC CIRCUITS",
- Credit =3)
-session.add(sub)
-sub = Subject(ID_Subject ="FRA142",name_subject ="COMPUTER PROGRAMMING",
- Credit =3)
-session.add(sub)
-sub = Subject(ID_Subject ="FRA162",name_subject ="ROBOTICS AND AUTOMATION",
- Credit =1)
-session.add(sub)
-sub = Subject(ID_Subject ="FRA163",name_subject ="ROBOTICS MACHINE SHOP",
- Credit =1)
-session.add(sub)
-sub = Subject(ID_Subject ="GEN111",name_subject ="MAN AND ETHICS OF LIVING",
- Credit =3)
-session.add(sub)
-sub = Subject(ID_Subject ="GEN121",name_subject ="LEARNING AND PROBLEM SOLVING SKILLS",
- Credit =3)
-session.add(sub)
-sub = Subject(ID_Subject ="MTH102",name_subject ="MATHEMATICS II",
- Credit =3)
-session.add(sub)
-
-sub = Subject(ID_Subject ="FRA341",name_subject ="COMPUTER PROGRAMMING3",
-              Credit =3)
-session.add(sub)
-sub = Subject(ID_Subject ="FRA361",name_subject ="ROBOTICS EXPLORATION3",
-              Credit =3)
-session.add(sub)
-sub = Subject(ID_Subject ="GEN301",name_subject ="PHYSICAL EDUCATION3",
-              Credit =1)
-session.add(sub)
-sub = Subject(ID_Subject ="LNG301",name_subject ="GENERAL ENGLISH3",
-              Credit =3)
-session.add(sub)
-sub = Subject(ID_Subject ="MTH301",name_subject ="MATHEMATICS I3",
-              Credit =3)
-session.add(sub)
-sub = Subject(ID_Subject ="PHY303",name_subject ="GENERAL PHYSICS3",
-              Credit =3)
-session.add(sub)
-sub = Subject(ID_Subject ="PHY391",name_subject ="GENERAL PHYSICS LABORATORY I3",
-              Credit =1)
-session.add(sub)
 # session.commit()
 # -------------------------------------------------------------------#
 
@@ -416,10 +219,3 @@ session.add(sth6) #add sth into database.
 session.add(sth7) #add sth into database.
 session.add(sth8) #add sth into database.
 session.commit() #commit data that increase.
-
-
-
-
-
-
-
