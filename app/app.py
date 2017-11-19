@@ -420,11 +420,20 @@ def gethome():
 
 	if gethome == 'frab':
 		print('frab')
+		frab_O = []
+		frab_T = []
 		check = Check()
 		frab = check.checkfrab()
 		print(frab)
-		keepHistory.keep_page('total_frab.html', frab)
-		return render_template('total_frab.html', name=name, page= frab)
+		for i in frab:
+			if int(i[5:])%2 == 1:
+				frab_O.append(i)
+			elif int(i[5:])%2 == 0:
+				frab_T.append(i)
+		print(frab_O)
+		print(frab_T)
+		keepHistory.keep_page('total_frab.html', frab_O , frab_T )
+		return render_template('total_frab.html', name=name, page= frab_O ,page2 = frab_T)
 	if gethome == 'grade':
 		print('add grade')
 		return render_template('add_grade.html', name=name)
