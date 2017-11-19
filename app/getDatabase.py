@@ -312,6 +312,24 @@ class Add_Method:
         session.add(addData)
         session.commit()
 
+    def Academic_Gpax(self,data):
+        addData = session.query(Gpax).filter_by(Student_ID="{}".format(self.id)).one()
+        addData.GPAX = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Academic_sum_credit(self,data):
+        addData = session.query(Gpax).filter_by(Student_ID="{}".format(self.id)).one()
+        addData.sum_all_credit = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def subject_credit(self,ID_Sub,data):
+        addData = session.query(Subject).filter_by(ID_Subject="{}".format(ID_Sub)).one()
+        addData.Credit = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
     def Dicdisease(self,Disease = None):
         dataAct = []
         for item in Disease:
@@ -523,3 +541,12 @@ class Check:
                 if item not in box:
                     box.append(item)
             return box
+
+        def gpax_student_id(self,studentID):
+            query = session.query(Gpax)
+            list_idstudent = []
+            for i in query.filter_by(Student_ID="{}".format(studentID)):
+                if str(i.Student_ID) == str(studentID):
+                    return True
+            else:
+                return False

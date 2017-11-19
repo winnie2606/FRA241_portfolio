@@ -59,14 +59,14 @@ class Gpa(Base):
 class Gpax(Base):
     __tablename__ = 'gpax'
     Student_ID = Column(Integer,primary_key=True)
-    sum_all_credit = Column(Integer, nullable=False)
+    sum_all_credit = Column(String(5), nullable=True)
     GPAX = Column(String(5), nullable=True)
 
 class Subject(Base):
     __tablename__ = 'subject'
     ID_Subject = Column(String(10),primary_key=True)
     name_subject = Column(String(50), nullable=False)
-    Credit = Column(Integer, nullable=False)
+    Credit = Column(Integer, nullable=True)
 
 class TeacherPW(Base):
     __tablename__ = 'TeacherPW'

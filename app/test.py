@@ -1,17 +1,27 @@
-from getDatabase import *
-studenID = "59340500021"
-term = "1/2559"
-
-s = Get_Academic(studenID,term)
-t = Get_name_credit_subject(studenID,term)
-o = Academic_1st_table()
-p = Academic_2st_table()
-re = return_Method(studenID)
-returnda = return_data(studenID)
+from addAcademic import Input_Academics
+path = 'C:/Users/Million/Desktop/Test/TestData/test02.csv'
+interm = "2/2559"
+Input_Academics = Input_Academics(path,interm)
+Input_Academics.input_Academic_and_edit_data()
 
 
-add = Add_Method(studenID)
-add.id_stu(Profile)
+
+
+
+# from getDatabase import *
+# studenID = "59340500021"
+# term = "1/2559"
+#
+# s = Get_Academic(studenID,term)
+# t = Get_name_credit_subject(studenID,term)
+# o = Academic_1st_table()
+# p = Academic_2st_table()
+# re = return_Method(studenID)
+# returnda = return_data(studenID)
+#
+#
+# add = Add_Method(studenID)
+# add.id_stu(Profile)
 # add.name("")
 #
 # print("Profile: ")
