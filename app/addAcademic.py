@@ -74,7 +74,7 @@ class Input_Academics:
 
 #####################################################################
             count_column = 0
-            while(count_column < column-2):
+            while(count_column < len(list_sub)):
                 student = Academic(Student_ID = int(student_ID),Term = str(input_term),
                  ID_Subject = str(list_sub[count_column]),Grade = str(list_grade[count_column]) )
                 session.add(student)
