@@ -526,7 +526,7 @@ def fileGrade():
 			save_path = 'C:/Users/' + str(os.getlogin()) + '/Desktop'
 			inputfile = str(save_path) + '/' + str(filename)
 			print(inputfile)
-			copyto = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/forDatabase/' + str(filename)
+			copyto = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/' + str(filename)
 			copyfile(inputfile,copyto)
 			print(copyto)
 
@@ -536,6 +536,5 @@ def fileGrade():
 			os.remove(copyto)
 
 			return render_template('add_grade.html', name=name, add=fileAdd)
-		
 
 app.run(debug=True)
