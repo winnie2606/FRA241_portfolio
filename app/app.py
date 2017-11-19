@@ -236,11 +236,11 @@ def getEditAc():
 	print(getEditAc)
 
 	for nameAct in getEditAc:
-		if nameAct != 'type' and nameAct != 'photo'and nameAct != 'advisor'and nameAct != 'des' and nameAct != 'fileDoc' and nameAct != 'date':
+		if nameAct != 'type' and nameAct != 'advisor'and nameAct != 'des' and nameAct != 'date':
 			print(nameAct)
 			Name_act = nameAct
 
-	editActivity.add(getID,Name_act,getEditAc)
+	editActivity.edit(getID,Name_act,getEditAc)
 
 	for Act in pullData.Activity(getID):
 		if Act["Name_Activity"] == Name_act :
@@ -316,7 +316,7 @@ def getAddAcButton():
 		return render_template('add-activity.html', name=name)
 
 @app.route('/getAddAc', methods=['POST'])
-def geAddAc():
+def getAddAc():
 	getAddAc = dict(request.form.items())
 	getID = keepID.ID
 	name = keepID.Name
@@ -329,7 +329,7 @@ def geAddAc():
 	copyto = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/static/pictures/activity/' + str(namephoto)
 	copyfile(inputfile,copyto)
 
-	editActivity.edit(getID,getAddAc)
+	editActivity.add(getID,getAddAc)
 
 	history = keepHistory.history()
 
