@@ -53,6 +53,8 @@
 .name{
 	margin-top: -24%;
 	margin-left: 70%;
+}
+
 .pic2{
 	margin-top: 5%;
 	margin-right: 5%;
@@ -108,4 +110,18 @@
 .name{
 	margin-top: -24%;
 	margin-left: 70%;
+}
+.date-of-birth{
+	margin-top: 5%;
+	margin-left: 70%;
+}
+
+.birtholace{
+	margin-top: 6%;
+	margin-left: 70%;
+}
+
+.contact{
+	margin-top: 5.9%;
+	margin-left: 60%;
 }
