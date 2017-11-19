@@ -30,7 +30,6 @@
 
 				<div class="R">
 					<input name="click" type="image" value="home" src="static/home_icon.jpg" width="20%">&nbsp;&nbsp;&nbsp;
-					<input name="click" type="image" value="noti" src="static/nat.jpg" width="20%">&nbsp;&nbsp;&nbsp;
 				  </form>
 					<input class="out" name="click" type="image" value="logout" src="static/logout_icon.jpg" width="20%">
 
@@ -73,7 +72,7 @@
 
 		</script>
 
-		<img src="static/pictures/profile/{{picS}}" width="15%" height="15%" class="pic">
+		<img src="static/pictures/profile/{{picS}}" class="pic">
 
     <div class="in">
 
@@ -88,19 +87,19 @@
     <div class="data">
 
 			{% for profile in page %}
-      <div class="data-in">Profile</div>
+      <div class="data-in"><b>Profile</b></div>
 			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Name : {{profile.Name}}  {{profile.Surname}}</div>
 			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Date of birth : {{profile.Dateofbirth}}</div>
 			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Birthplate : {{profile.Birthplace}}</div>
 			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Nationality : {{profile.Nation}}</div>
 			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Congenital disease : {{profile.Disease}}</div>
-			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Contact</div>
-			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Phone : {{profile.Phonestudent}}</div>
-			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Email : {{profile.Email}}</div>
-			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Address : {{profile.Address}}</div>
-			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Emergency contact</div>
-			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Phone : {{profile.PhoneEmer}}</div>
-			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Relative : {{profile.Relative}}</div>
+			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Contact : </div>
+			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone : {{profile.Phonestudent}}</div>
+			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email : {{profile.Email}}</div>
+			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address : {{profile.Address}}</div>
+			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;Emergency contact : </div>
+			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone : {{profile.PhoneEmer}}</div>
+			<div class="data-in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Relative : {{profile.Relative}}</div>
 			{%endfor%}
     </div>
 

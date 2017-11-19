@@ -17,12 +17,11 @@
 	border: 5px;
 	height: 20px;
 	width: 60px;
-	background-color: #e8e8e8;
-	color: #2e3940;
+	background-color: #000014;
+	color: #FFF;
   font-size: 10px;
 }
 
 .in2:hover , .in2:active{
 	background-color: #c1c1c1;
-	color: #2e3940;
 }

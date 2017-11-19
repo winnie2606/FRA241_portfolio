@@ -33,7 +33,6 @@
 
 				<div class="R">
 					<input name="click" type="image" value="home" src="static/home_icon.jpg" width="20%">&nbsp;&nbsp;&nbsp;
-					<input name="click" type="image" value="noti" src="static/nat.jpg" width="20%">&nbsp;&nbsp;&nbsp;
 					</form>
 					<input class="out" name="click" type="image" value="logout" src="static/logout_icon.jpg" width="20%">
 
@@ -66,7 +65,7 @@
 					$(".popup").fadeIn('slow');
 				});
 			});
-			
+
 			$(document).ready(function(){
 				$('.a').on('click',function(){
 					$(".cover").fadeOut('slow');
@@ -80,8 +79,14 @@
 
 		<div align="center" class="selectfile">
 
-			Select your files.
-			<div align="center" ><input type = "file" name = "file" placeholder="SELECT FROM YOUR COMPUTER" style="width:30%;height:25px;"></div>
+			<div>Select File From Desktop ONLY!</div>
+			<div class="in3">
+
+				<input type = "file" name = "file" placeholder="SELECT FROM YOUR COMPUTER" class="file">
+				<input id="text1" type = "text" placeholder = "ex. 1/2559" name = "id" class = "in1">
+				<div class="term">TERM</div>
+
+			</div>
 
 		</div>
 

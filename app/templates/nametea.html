@@ -30,7 +30,6 @@
 
 				<div class="R">
 					<input name="click" type="image" value="home" src="static/home_icon.jpg" width="20%">&nbsp;&nbsp;&nbsp;
-					<input name="click" type="image" value="noti" src="static/nat.jpg" width="20%">&nbsp;&nbsp;&nbsp;
 					</form>
 
 					<input class="out" name="click" type="image" value="logout" src="static/logout_icon.jpg" width="20%">
@@ -64,7 +63,7 @@
 					$(".popup").fadeIn('slow');
 				});
 			});
-			
+
 			$(document).ready(function(){
 				$('.a').on('click',function(){
 					$(".cover").fadeOut('slow');
@@ -88,10 +87,10 @@
 <!--loop 3-->
 				{% for student in page %}
         <tr>
-					<td width="20%" height="30px" align="center">{{student.ID}}</td>
-					<td width="60%" height="30px">&nbsp;&nbsp;&nbsp;{{student.Name}} {{student.Surname}}</td>
+					<td style="background-color: #e8e8e8; color: #2e3940;" width="20%" height="30px" align="center">{{student.ID}}</td>
+					<td style="background-color: #e8e8e8; color: #2e3940;" width="60%" height="30px">&nbsp;&nbsp;&nbsp;{{student.Name}} {{student.Surname}}</td>
 					<form id="contact-form" action="/getView", method="POST">
-					<td width="20%" height="30px" align="center"><input type = "submit" name={{student.ID}} value = "VIEW" class = "in2" ></td>
+					<td style="background-color: #e8e8e8; color: #2e3940;" width="20%" height="30px" align="center"><input type = "submit" name={{student.ID}} value = "VIEW" class = "in2" ></td>
 				  </form>
 				</tr>
 				{% endfor %}
