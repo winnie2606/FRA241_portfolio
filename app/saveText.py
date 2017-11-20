@@ -1,40 +1,54 @@
 import os.path
+from reportlab.pdfgen import canvas
+from reportlab.lib.units import inch, cm
 
 class saveText():
 
     def create(self,ID,Profile,Activity = None):
 
-        save_path = 'C:/Users/' + str(os.getlogin()) + '/Desktop'
-        name_file = 'Protfolio_'+ str(ID) + '.txt'
-        fileText = os.path.join(save_path, name_file)
-        Text = open(fileText, "w")
-        Text.write('Protfolio\n\n')
+        name = 'Portfolio_'+ str(ID) + '.pdf'
+        Protfolio = canvas.Canvas(name)
+        Protfolio.drawString(40, 800 , 'Protfolio')
+        Protfolio.drawString(40, 780 , 'Profile')
 
-        Text.write('Profile\n')
         for profile in Profile:
-            Text.write('Name : ' + str(profile['name']) + "  " + str(profile['sur']) + "\n")
-            Text.write('Date of birth : ' + str(profile['dateofbirth']) + '\n')
-            Text.write('Nationality : ' + str(profile['nation']) + '\n' )
+            Protfolio.drawString(40, 765 , 'Name : ' + str(profile['name']) + "  " + str(profile['sur']))
+            Protfolio.drawString(40, 750 , 'Date of birth : ' + str(profile['dateofbirth']) )
+            Protfolio.drawString(40, 735 , 'Nationality : ' + str(profile['nation']))
+            size = 720
             if profile['contact'] != None :
-                Text.write('Contact\n')
-                Text.write(str(profile['phone']) + '\n')
-                Text.write(str(profile['email']) + '\n')
-                Text.write(str(profile['address']) + '\n')
+                Protfolio.drawString(40, size , 'Contact')
+                size -= 15
+                Protfolio.drawString(40, size , str(profile['phone']))
+                size -= 15
+                Protfolio.drawString(40, size , str(profile['email']))
+                size -= 15
+                Protfolio.drawString(40, size , str(profile['address']))
+                size -= 15
             if profile['dis'] != None:
-                Text.write(str(profile['dis']) + '\n')
+                Protfolio.drawString(40, size , str(profile['dis']))
+                size -= 15
             if profile['birthplace'] != None:
-                Text.write(str(profile['birthplace']) + '\n')
+                Protfolio.drawString(40, size , str(profile['birthplace']))
+                size -= 15
             if profile['gpax'] != None:
-                Text.write("GPAX : " + str(profile['gpax']) + '\n\n')
+                Protfolio.drawString(40, size , str(profile['gpax']))
+
+
+
 
         if Activity != [] :
             num = 0
             for Act in Activity:
+                size -= 20
                 num += 1
-                Text.write('-- Activity ' + str(num) + " --\n")
-                Text.write('Name Activity : ' + str(Act['Name_Activity']) + "\n")
-                Text.write('Type Activity : ' + str(Act['Type']) + "\n")
-                Text.write('Date Activity : ' + str(Act['Date_Activity']) + "\n\n")
+                Protfolio.drawString(40, size , '-- Activity ' + str(num) + " --")
+                size -= 15
+                Protfolio.drawString(40, size ,'Name Activity : ' + str(Act['Name_Activity']))
+                size -= 15
+                Protfolio.drawString(40, size , 'Type Activity : ' + str(Act['Type']))
+                size -= 15
+                Protfolio.drawString(40, size , 'Date Activity : ' + str(Act['Date_Activity']))
 
 
-        Text.close
+        Protfolio.save()

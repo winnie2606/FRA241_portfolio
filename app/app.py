@@ -322,7 +322,7 @@ def getAddAc():
 	getID = keepID.ID
 	name = keepID.Name
 	print(getAddAc)
-	
+
 	if getAddAc['photo'] != "":
 
 		save_path = 'C:/Users/' + str(os.getlogin()) + '/Desktop'
@@ -352,6 +352,11 @@ def getPrindataButton():   												#--------- save text -----------
 		print(activity)
 
 		saveText.create(getID,profile,activity)
+		ffile = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/Portfolio_' + str(getID) + '.pdf'
+		copyto = 'C:/Users/' + str(os.getlogin()) + '/Desktop/Portfolio_' + str(getID) + '.pdf'
+		copyfile(ffile,copyto)
+
+		os.remove(ffile)
 
 		history = keepHistory.history()
 		keepHistory.keep_page('homeStudent.html', None)

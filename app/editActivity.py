@@ -15,6 +15,7 @@ class editActivity :
         add = Add_Method(ID)
         re = return_Method(ID)
 
+        nameAct = nameAct.replace(" ","")
         if nameAct != "":
             add.Act_name(nameAct)
             if typeAct != "":
