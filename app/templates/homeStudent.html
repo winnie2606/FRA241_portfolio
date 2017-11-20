@@ -69,7 +69,7 @@
 					$(".popup").fadeIn('slow');
 				});
 			});
-			
+
 			$(document).ready(function(){
 				$('.a').on('click',function(){
 					$(".cover").fadeOut('slow');
@@ -81,8 +81,8 @@
 
 		<image src="static/pictures/profile/{{picS}}" width="20%" class='pic'>
 
-		<div class='Name'>NAME : {{name}}</div>
-		<div class='id'>ID : {{id_user}}</div>
+		<div class='Name'>{{name}}</div>
+		<div class='id'>{{id_user}}</div>
 
 		<form id="contact-form" action="/menubar", method="POST">
 		<input type="submit" name="click" value="PROFILE" class="link1">

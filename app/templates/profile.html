@@ -86,13 +86,13 @@
 
 		<div align="left" class="profile">
 			{%for profile in page %}
-			<div class="nationality">NATIONALITI : {{profile.Nation}}</div>
-			<div class="congenital-disease">CONGENITAL DISEASE : <br> {{profile.Disease}}</div>
-			<div class="data-contact">DATA CONTACT : {{profile.Relative}} {{profile.PhoneEmer}}</div>
-			<div class="name">NAME : {{profile.Name}} {{profile.Surname}}</div>
-			<div class="date-of-birth">DATE OF BIRTH : {{profile.Dateofbirth}}</div>
-			<div class="birtholace">BIRTHPLACE : {{profile.Birthplace}}</div>
-			<div class="contact">CONTACT : {{profile.Phonestudent}} <br> {{profile.Address}} <br> {{profile.Email}}</div><br><br><br>
+			<div class="nationality">Nationality : {{profile.Nation}}</div>
+			<div class="congenital-disease">Congenital Disease : <br> {{profile.Disease}}</div>
+			<div class="data-contact">Emergency Contact : {{profile.Relative}} {{profile.PhoneEmer}}</div>
+			<div class="name">Name : {{profile.Name}} {{profile.Surname}}</div>
+			<div class="date-of-birth">Date of Birth : {{profile.Dateofbirth}}</div>
+			<div class="birtholace">Birthplace : {{profile.Birthplace}}</div>
+			<div class="contact">Contact : {{profile.Phonestudent}} <br> {{profile.Address}} <br> {{profile.Email}}</div><br><br><br>
 			{% endfor %}
 		</div>
 		<form id="contact-form" action="/editInfo", method="POST">

@@ -135,16 +135,16 @@ session.add(sth5) #add sth into database.
 session.add(sth6) #add sth into database.
 session.add(sth7) #add sth into database.
 session.add(sth8) #add sth into database.
-sth = Activity(id_student = 59340500017,NameActivity = "Natthaphon",Description = "this is so fun.",Photo = "Natthaphon.jpg",Type = "Dynamics",Advisor = "Prof.Ton",Date_Activity = "14/12/60",File = "file of the Activity.",Confirm = "Not Confirm yet")
-sth1 = Activity(id_student = 59340500021,NameActivity = "Thipawan",Description = "Receive a lot of knowledges.",Photo = "Thipawan.jpg",Type = "Calculas",Advisor = "Prof.Somran",Date_Activity = "15/12/61",File = "file of the Activity1.",Confirm = "Confirm")
-sth2 = Activity(id_student = 59340500035,NameActivity = "Panchalee",Description = "It is will be useful.",Photo = "Panchalee.jpg",Type = "Digital",Advisor = "Prof.Pi",Date_Activity = "15/12/60",File = "file of the Activity2.",Confirm = "Confirm")
-sth3 = Activity(id_student = 59340500035,NameActivity = "Tabletennnis",Description = "Table tennis is good.",Photo = "Tabletennnis.jpg",Type = "Sport",Advisor = "Prof.__",Date_Activity = "29/05/60",File = "file of the Activity3.",Confirm = "Confirm")
-sth4 = Activity(id_student = 58340500011,NameActivity = "Project",Description = "This project is very hard.",Photo = "Project.jpg",Type = "Research",Advisor = "Prof.__",Date_Activity = "19/10/61",File = "file of the Activity4.",Confirm = "Not Confirm yet")
-sth5 = Activity(id_student = 57340500008,NameActivity = "FootballKMUTT",Description = "This is my favorite sport.",Photo = "FootballKMUTT.jpg",Type = "Research",Advisor = "Prof.__",Date_Activity = "20/10/61",File = "file of the Activity5.",Confirm = "Confirm ")
-sth6 = Activity(id_student = 57340500016,NameActivity = "Chorus",Description = "This is my favorite hobbit.",Photo = "Chorus.jpg",Type = "Research",Advisor = "Prof.__",Date_Activity = "21/10/61",File = "file of the Activity6.",Confirm = "Not Confirm yet")
-sth7 = Activity(id_student = 58340500014,NameActivity = "SuperRobot",Description = "This is my favorite hobbit.",Photo = "SuperRobot.jpg",Type = "Research",Advisor = "Prof.__",Date_Activity = "22/10/61",File = "file of the Activity7.",Confirm = "Not Confirm yet")
-sth8 = Activity(id_student = 60340500004,NameActivity = "CatRobot",Description = "This is my favorite animal.",Photo = "CatRobot.jpg",Type = "Research",Advisor = "Prof.__",Date_Activity = "23/10/61",File = "file of the Dynamic8.",Confirm = "Confirm")
-sth9 = Activity(id_student = 60340500050,NameActivity = "DesignUI",Description = "This is my favorite work.",Photo = "DesignUI.jpg",Type = "Research",Advisor = "Prof.__",Date_Activity = "24/10/61",File = "file of the Activity9.",Confirm = "Not Confirm yet")
+sth = Activity(id_student = 59340500017,NameActivity = "Natthaphon",Description = "this is so fun.",Photo = "Natthaphon.jpg",Type = "Dynamics",Advisor = "AJ.Ton",Date_Activity = "14/12/60",File = "file of the Activity.",Confirm = "Not Confirm yet")
+sth1 = Activity(id_student = 59340500021,NameActivity = "Thipawan",Description = "Receive a lot of knowledges.",Photo = "Thipawan.jpg",Type = "Calculas",Advisor = "AJ.Somran",Date_Activity = "15/12/61",File = "file of the Activity1.",Confirm = "Confirm")
+sth2 = Activity(id_student = 59340500035,NameActivity = "Panchalee",Description = "It is will be useful.",Photo = "Panchalee.jpg",Type = "Digital",Advisor = "AJ.Pi",Date_Activity = "15/12/60",File = "file of the Activity2.",Confirm = "Confirm")
+sth3 = Activity(id_student = 59340500035,NameActivity = "Tabletennnis",Description = "Table tennis is good.",Photo = "Tabletennnis.jpg",Type = "Sport",Advisor = "AJ.__",Date_Activity = "29/05/60",File = "file of the Activity3.",Confirm = "Confirm")
+sth4 = Activity(id_student = 58340500011,NameActivity = "Project",Description = "This project is very hard.",Photo = "Project.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "19/10/61",File = "file of the Activity4.",Confirm = "Not Confirm yet")
+sth5 = Activity(id_student = 57340500008,NameActivity = "FootballKMUTT",Description = "This is my favorite sport.",Photo = "FootballKMUTT.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "20/10/61",File = "file of the Activity5.",Confirm = "Confirm ")
+sth6 = Activity(id_student = 57340500016,NameActivity = "Chorus",Description = "This is my favorite hobbit.",Photo = "Chorus.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "21/10/61",File = "file of the Activity6.",Confirm = "Not Confirm yet")
+sth7 = Activity(id_student = 58340500014,NameActivity = "SuperRobot",Description = "This is my favorite hobbit.",Photo = "SuperRobot.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "22/10/61",File = "file of the Activity7.",Confirm = "Not Confirm yet")
+sth8 = Activity(id_student = 60340500004,NameActivity = "CatRobot",Description = "This is my favorite animal.",Photo = "CatRobot.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "23/10/61",File = "file of the Dynamic8.",Confirm = "Confirm")
+sth9 = Activity(id_student = 60340500050,NameActivity = "DesignUI",Description = "This is my favorite work.",Photo = "DesignUI.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "24/10/61",File = "file of the Activity9.",Confirm = "Not Confirm yet")
 
 session.add(sth) #add sth into database.
 session.add(sth1) #add sth into database.
@@ -178,19 +178,19 @@ session.add(sth) #add sth into database.
 session.add(sth1) #add sth into database.
 # session.commit() #commit data that increase.
 
-sth = Disease(id_student = 57340500008,Disease = "sick4.")
-sth1 = Disease(id_student = 57340500016,Disease = "sick3.")
+sth = Disease(id_student = 57340500008,Disease = "sick4")
+sth1 = Disease(id_student = 57340500016,Disease = "sick3")
 session.add(sth) #add sth into database.
 session.add(sth1) #add sth into database.
 # session.commit() #commit data that increase.
 
-sth = Disease(id_student = 58340500014,Disease = "sick2.")
-sth1 = Disease(id_student = 60340500004,Disease = "sick1.")
+sth = Disease(id_student = 58340500014,Disease = "sick2")
+sth1 = Disease(id_student = 60340500004,Disease = "sick1")
 session.add(sth) #add sth into database.
 session.add(sth1) #add sth into database.
 # session.commit() #commit data that increase.
 
-sth = Disease(id_student = 60340500050,Disease = "sick.")
+sth = Disease(id_student = 60340500050,Disease = "sick")
 session.add(sth) #add sth into database.
 # session.commit() #commit data that increase.
 
