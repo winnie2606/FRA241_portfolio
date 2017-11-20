@@ -322,13 +322,15 @@ def getAddAc():
 	getID = keepID.ID
 	name = keepID.Name
 	print(getAddAc)
+	
+	if getAddAc['photo'] != "":
 
-	save_path = 'C:/Users/' + str(os.getlogin()) + '/Desktop'
-	namephoto = getAddAc['photo']
-	inputfile = str(save_path) + '/' + str(namephoto)
-	print(namephoto)
-	copyto = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/static/pictures/activity/' + str(namephoto)
-	copyfile(inputfile,copyto)
+		save_path = 'C:/Users/' + str(os.getlogin()) + '/Desktop'
+		namephoto = getAddAc['photo']
+		inputfile = str(save_path) + '/' + str(namephoto)
+		print(namephoto)
+		copyto = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/static/pictures/activity/' + str(namephoto)
+		copyfile(inputfile,copyto)
 
 	editActivity.add(getID,getAddAc)
 

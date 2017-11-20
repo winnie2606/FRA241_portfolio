@@ -1,4 +1,4 @@
-	
+
 <!DOCTYPE html>
 
 <html>
@@ -66,7 +66,7 @@
 					$(".popup").fadeIn('slow');
 				});
 			});
-			
+
 			$(document).ready(function(){
 				$('.a').on('click',function(){
 					$(".cover").fadeOut('slow');
@@ -95,10 +95,13 @@
 			<div class="contact">CONTACT : {{profile.Phonestudent}} <br> {{profile.Address}} <br> {{profile.Email}}</div><br><br><br>
 			{% endfor %}
 		</div>
+		<form id="contact-form" action="/editInfo", method="POST">
+
+		<input type = "submit" name="click" value = "EDIT" class = "in2" >
 
 		<div class="clk">
 
-			<form id="contact-form" action="/editInfo", method="POST">
+
 			<input type = "submit" name="click" value = "EDIT" class = "in2" >
 		  </form>
 

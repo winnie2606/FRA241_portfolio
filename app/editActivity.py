@@ -23,6 +23,9 @@ class editActivity :
                 add.Act_date(dateAct,nameAct)
             if photoAct != "":
                 add.Act_photo(photoAct,nameAct)
+            elif photoAct == "":
+                photoAct = "en1.png"
+                add.Act_photo(photoAct,nameAct)
             if advisorAct != "":
                 add.Act_advisor(advisorAct,nameAct)
             if desAct != "":
