@@ -109,6 +109,7 @@ def menubar():
 	if getMenubar == 'ACADEMIC':
 		term = check.TERM(getID)
 		print (term)
+		term.append("All")
 		keepHistory.keep_page('AcademicStudent.html', pullData.Academic_term(getID),pullData.Academic_sum(getID))
 		return render_template('AcademicStudent.html', name=name, page=pullData.Academic_term(getID), page2=pullData.Academic_sum(getID), term = term )
 	if getMenubar == 'WORK&EXPERIENCE':
@@ -157,10 +158,26 @@ def selectTerm():
 	name = keepID.Name
 	check = Check()
 	term = check.TERM(getID)
-	print(getID)
-	print(term)
-	print(check)
-	print(pullData.Academic_term(getID,getSelectTerm))
+
+	#-----------------------------------------------------------------------------------------------------------------
+	if getSelectTerm == "All":
+		AllGrade = []
+		GPAX = []
+		for allTerm in term :
+			setG = {"Gragd":[],"GPA":[],"Term":""}
+			setG["Gragd"] = pullData.Academic_term(getID,allTerm)
+			setG["GPA"] = pullData.Academic_sum(getID,allTerm)
+			setG["Term"] = allTerm
+			AllGrade.append(setG)
+			if GPAX == []:
+				GPAX = pullData.Academic_sum(getID,allTerm)
+		term.append("All")
+		print(AllGrade)
+		print(GPAX)
+		return render_template('AcademicStudent-3-table.html', name=name,term = term,page= AllGrade, page2 = GPAX)
+
+
+	term.append("All")
 	return render_template('AcademicStudent.html', name=name, term=term, page=pullData.Academic_term(getID,getSelectTerm),page2=pullData.Academic_sum(getID,getSelectTerm), thisTerm = getSelectTerm)
 
 @app.route('/moreinfo', methods=['POST'])
