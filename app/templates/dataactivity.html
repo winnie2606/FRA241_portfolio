@@ -83,7 +83,10 @@
 			<div class="advisor">Advisor : {{page.Advisor}}</div>
 			<div class="type">Type : {{page.Type}}</div>
 			<div class="description">Description : {{page.Description}}</div>
-			<div class="more-info"><input type="submit" name="" value="File" class="more-info-link"></div>
+			<form id="contact-form" action="/downloadFile", method="POST">
+			<div class="more-info">File : <input type="submit" name="cilck" value={{page.File}} class="more-info-link"></div>
+			<div class=".......">{{page2}}</div>
+			</form>
 
 
 		</div>
@@ -92,7 +95,9 @@
 			<form id="contact-form" action="/editAcButton", method="POST">
 			<input type = "submit" name={{page.Name_Activity}} value = "EDIT" class = "in2" >
 		  </form>
+			<form id="contact-form" action="/deleteAc", method="POST">
 			<input type = "submit" name={{page.Name_Activity}} value = "DELETE" class = "in2" >
+			</form>
 
 		</div>
 

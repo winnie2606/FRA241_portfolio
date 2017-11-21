@@ -10,7 +10,7 @@ class editActivity :
         photoAct = dicAct['photo']
         advisorAct = dicAct['advisor']
         desAct = dicAct['des']
-        #fileAct = dicAct['fileDoc']
+        fileAct = dicAct['File']
 
         add = Add_Method(ID)
         re = return_Method(ID)
@@ -31,8 +31,8 @@ class editActivity :
                 add.Act_advisor(advisorAct,nameAct)
             if desAct != "":
                 add.Act_des(desAct,nameAct)
-            #if fileAct != "":
-                #add.Act_file(fileAct,nameAct)
+            if fileAct != "":
+                add.Act_file(fileAct,nameAct)
 
     def edit(self,ID,nameAct,dicAct):
 

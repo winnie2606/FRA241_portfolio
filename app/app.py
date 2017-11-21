@@ -190,9 +190,9 @@ def moreinfo():
 	for nameAct in getMoreinfo:
 		for Act in pullData.Activity(getID):
 			if Act["Name_Activity"] == nameAct :
-				keepHistory.keep_page('dataactivity.html',Act)
+				keepHistory.keep_page('dataactivity.html',Act,"")
 				print (Act)
-				return render_template('dataactivity.html', name=name, page= Act )
+				return render_template('dataactivity.html', name=name, page= Act , page2 = "")
 '''
 	if getMoreinfo == 'MORE INFO>>':
 		keepHistory.keep_page('dataactivity.html', pullData.Activity(getID))
@@ -341,12 +341,19 @@ def getAddAc():
 	print(getAddAc)
 
 	if getAddAc['photo'] != "":
-
 		save_path = 'C:/Users/' + str(os.getlogin()) + '/Desktop'
 		namephoto = getAddAc['photo']
 		inputfile = str(save_path) + '/' + str(namephoto)
 		print(namephoto)
 		copyto = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/static/pictures/activity/' + str(namephoto)
+		copyfile(inputfile,copyto)
+
+	if getAddAc['File'] != "":
+		save_path = 'C:/Users/' + str(os.getlogin()) + '/Desktop'
+		namefile = getAddAc['File']
+		inputfile = str(save_path) + '/' + str(namefile)
+		print(namefile)
+		copyto = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/static/Activity/' + str(namefile)
 		copyfile(inputfile,copyto)
 
 	editActivity.add(getID,getAddAc)
@@ -414,6 +421,7 @@ def getleave():
 @app.route('/deleteAc', methods=['POST'])
 def getDelete():
 	getDelete = dict(request.form.items())
+	print(getDelete)
 	getID = keepID.ID
 	name = keepID.Name
 	edit = Edit(getID)
@@ -423,6 +431,24 @@ def getDelete():
 	history = keepHistory.history()
 	Value = pullData.Activity(getID)
 	return render_template(history,id_user=getID, name=name, page = Value)
+
+@app.route('/downloadFile', methods=['POST'])
+def downloadFile():
+	getFile = request.form['cilck']
+	getID = keepID.ID
+	name = keepID.Name
+	print(getFile)
+
+
+	ffile = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/static/Activity/' + str(getFile)
+	copyto = 'C:/Users/' + str(os.getlogin()) + '/Desktop/' + str(getFile)
+	copyfile(ffile,copyto)
+
+	conf = 'Download ' + str(getFile) + ' Success'
+	keepHistory.keep_page( None , None)
+	history = keepHistory.history()
+	Value = keepHistory.Value_page()
+	return render_template(history,id_user=getID, name=name, page = Value , page2 = conf)
 
 
 '''end student'''
