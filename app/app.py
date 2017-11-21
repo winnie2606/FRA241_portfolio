@@ -497,6 +497,8 @@ def seect():
 		print('academic')
 		check = Check()
 		term = check.TERM(ID)
+		term.append("All")
+		print(term)
 		return render_template('teacherViewAcademic.html', name=name,term = term, picS = picS,page=pullData.Academic_term(getID) , page2=pullData.Academic_sum(getID) )
 	if select == 'WORK&EXPERIENCE':
 		print('activity')
@@ -515,6 +517,24 @@ def TeacherSelectTerm():
 	picS = re.photo()
 	check = Check()
 	term = check.TERM(ID)
+
+	if getSelectTerm == "All":
+		AllGrade = []
+		GPAX = []
+		for allTerm in term :
+			setG = {"Gragd":[],"GPA":[],"Term":""}
+			setG["Gragd"] = pullData.Academic_term(ID,allTerm)
+			setG["GPA"] = pullData.Academic_sum(ID,allTerm)
+			setG["Term"] = allTerm
+			AllGrade.append(setG)
+			if GPAX == []:
+				GPAX = pullData.Academic_sum(ID,allTerm)
+		term.append("All")
+		print(AllGrade)
+		print(GPAX)
+		return render_template('teacherViewAcademic-3-table.html', name=name,term = term, picS = picS,page= AllGrade, page2 = GPAX)
+
+	term.append("All")
 	return render_template('teacherViewAcademic.html', name=name,term = term, picS = picS,page=pullData.Academic_term(ID,getSelectTerm) , page2=pullData.Academic_sum(ID,getSelectTerm) ,SelectTerm=getSelectTerm )
 
 @app.route('/getFileGrade', methods=['POST'])
