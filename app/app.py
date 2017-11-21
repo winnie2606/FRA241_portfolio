@@ -594,6 +594,8 @@ def fileGrade():
 
 			inputFileGrade = Input_Academics(copyto, term)
 			inputFileGrade.input_Academic_and_edit_data()
+			who = inputFileGrade.other_student()
+			print(who)
 
 			os.remove(copyto)
 
