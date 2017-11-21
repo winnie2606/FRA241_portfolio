@@ -159,7 +159,6 @@ def selectTerm():
 	check = Check()
 	term = check.TERM(getID)
 
-	#-----------------------------------------------------------------------------------------------------------------
 	if getSelectTerm == "All":
 		AllGrade = []
 		GPAX = []
