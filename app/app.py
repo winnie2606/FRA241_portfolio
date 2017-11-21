@@ -412,6 +412,10 @@ def getMenubarTeacher():
 		history = keepHistory.history()
 		Value = keepHistory.Value_page()
 		Value2 = keepHistory.Value2_page()
+		if history == 'teacherViewProfile.html':
+			re = return_Method(Value2)
+			picS = re.photo()
+			return render_template(history,id_user=getID, name=name, page=Value, page2=Value2, picS = picS)
 		return render_template(history,id_user=getID, name=name, page=Value, page2=Value2)
 
 	if getmenubar == 'home':
