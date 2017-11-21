@@ -394,6 +394,20 @@ def getleave():
 			picS = keepID.picS
 			return render_template(history,id_user=getID, name=name, page = Value , picS = picS)
 
+@app.route('/deleteAc', methods=['POST'])
+def getDelete():
+	getDelete = dict(request.form.items())
+	getID = keepID.ID
+	name = keepID.Name
+	edit = Edit(getID)
+	for i in getDelete :
+		print(i)
+		edit.deleteAct(i)
+	history = keepHistory.history()
+	Value = pullData.Activity(getID)
+	return render_template(history,id_user=getID, name=name, page = Value)
+
+
 '''end student'''
 
 """--------------------------------------------------------------------------------------------------------------------------------------------------------------------------"""
