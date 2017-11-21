@@ -547,6 +547,12 @@ class Check:
                     box.append(item)
             return box
 
+        def all_student(self):
+            student = []
+            for m in session.query(*Profile.__table__.columns).all():
+                student.append(str(m[0]))
+            return student
+
         def gpax_student_id(self,studentID):
             query = session.query(Gpax)
             list_idstudent = []
