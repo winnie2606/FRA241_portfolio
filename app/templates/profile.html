@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html>
@@ -78,22 +77,24 @@
 
 	</br>
 
-		<div align="center" class="pic2">
+		<div align="left" class="pic2">
 
 			<img src="static/pictures/profile/{{picS}}" width="250" height="250">
 
 		</div>
 
-		<div align="left" class="profile">
+		<div align="left" class="profile" >
+		<div class="four">
 			{%for profile in page %}
-			<div class="nationality">Nationality : {{profile.Nation}}</div>
-			<div class="congenital-disease">Congenital Disease : <br> {{profile.Disease}}</div>
-			<div class="data-contact">Emergency Contact : {{profile.Relative}} {{profile.PhoneEmer}}</div>
-			<div class="name">Name : {{profile.Name}} {{profile.Surname}}</div>
-			<div class="date-of-birth">Date of Birth : {{profile.Dateofbirth}}</div>
-			<div class="birtholace">Birthplace : {{profile.Birthplace}}</div>
-			<div class="contact">Contact : {{profile.Phonestudent}} <br> {{profile.Address}} <br> {{profile.Email}}</div><br><br><br>
+			<b>Name :</b>  {{profile.Name}} {{profile.Surname}}<br>
+			<b>Date of Birth :</b>  {{profile.Dateofbirth}}<br>
+			<b>Birthplace :</b>  {{profile.Birthplace}}<br>
+			<b>Nationality : </b>  {{profile.Nation}}<br>
+			<b>Congenital Disease :</b>  {{profile.Disease}}<br>
+			<b>Emergency Contact :</b>  {{profile.Relative}} {{profile.PhoneEmer}}<br>
+			<b>Contact :</b>  {{profile.Phonestudent}} <br> {{profile.Address}} <br> {{profile.Email}}
 			{% endfor %}
+		</div>
 		</div>
 		<form id="contact-form" action="/editInfo", method="POST">
 
