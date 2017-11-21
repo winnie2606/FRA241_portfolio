@@ -82,6 +82,12 @@ class return_Method:
         for user in query.filter_by(id_student = "{}".format(self.data)):
             return user.Photo
 
+    def Act_id(self):
+        box = []
+        for user in Acque.filter_by(id_student = "{}".format(self.data)):
+            box.append(user.id)
+        return box
+
     def Act_name(self):
         box = []
         for user in Acque.filter_by(id_student = "{}".format(self.data)):
@@ -149,10 +155,10 @@ class return_data(return_Method):
         dataPro.append(dicPro)
         return dataPro
 
-    def DicAct(self,NameAct = None, Descrip = None, Photo = None, Type = None, Advisor = None, Date = None, File = None, Confirm = None ):
+    def DicAct(self,id = None, NameAct = None, Descrip = None, Photo = None, Type = None, Advisor = None, Date = None, File = None, Confirm = None ):
         dataAct = []
-        for item in range(len(NameAct)):
-            dicAct = {'Name_Activity' : NameAct[item], 'Description' : Descrip[item], 'Photo' : Photo[item], 'Type' : Type[item], 'Advisor' : Advisor[item], 'Date_Activity' : Date[item], 'File' : File[item], 'Confirm' : Confirm[item]}
+        for item in range(len(id)):
+            dicAct = {'id' : id[item],'Name_Activity' : NameAct[item], 'Description' : Descrip[item], 'Photo' : Photo[item], 'Type' : Type[item], 'Advisor' : Advisor[item], 'Date_Activity' : Date[item], 'File' : File[item], 'Confirm' : Confirm[item]}
             dataAct.append(dicAct)
         return dataAct
 
@@ -270,8 +276,14 @@ class Add_Method:
         session.add(addData)
         session.commit()
 
-    def Act_name(self,nameAct):
-        sth = Activity(id_student = "{}".format(self.id),NameActivity = "{}".format(nameAct))
+    def Act_name(self,nameAct):#333
+        box = []
+        for instance in session.query(Activity).order_by(Activity.id_student):
+            x = instance.id_student
+            if(x == int(self.id)) :
+                box.append(x)
+        id = (len(box))+1
+        sth = Activity(id = "{}".format(id),id_student = "{}".format(self.id),NameActivity = "{}".format(nameAct))
         session.add(sth)
         session.commit()
 
