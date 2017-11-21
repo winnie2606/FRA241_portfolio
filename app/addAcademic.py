@@ -138,4 +138,8 @@ class Input_Academics:
                 add.Academic_sum_credit(str(sum_list_sum_credit))
 
             count_row += 1
-        return list_False_student
+            self.Other_student = list_False_student
+        # return list_False_student
+
+    def other_student(self):
+        return self.Other_student
