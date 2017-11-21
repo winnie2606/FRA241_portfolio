@@ -1,9 +1,15 @@
 
 .farb{
-  font-size: 30px;
-  margin-left: 5%;
-  margin-top: 5%;
-  color: #FFF;
+  font-size: 25px;
+  height:45px;
+	width: 150px;
+	background-color:#0f0f27;
+  margin-left: -87.7%;
+  margin-top: 8%;
+  padding-top:2%;
+  color: #fff;
+  padding-top:1.5%;
+  border-radius:20px;
 }
 
 .table1{
@@ -24,4 +30,13 @@
 
 .in2:hover , .in2:active{
 	background-color: #c1c1c1;
+}
+
+.four {
+	width :1220px;
+	height: 5000px;
+	margin-left: 11%;
+  	margin-top: 0%;
+  	background-color: #000014;
+  	border-radius:20px;
 }
