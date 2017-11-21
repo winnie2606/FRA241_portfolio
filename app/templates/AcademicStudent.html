@@ -94,8 +94,11 @@
 		<div class="term" style="margin-left: -47%; font-size: 25px; color: #fff; margin-top: -2%;">{{thisTerm}}</div>
 
 		</div>
+
 		<div class="table1">
-			<table border="3" style="width:95%; height:250px; color:#FFF; border-color:#000014;" >
+
+			<table border="3" style="width:88%;color:#FFF; border-color:#000014;font-size:20px;" >
+
 				<tr>
 					<th style="background-color: #46445c; border-color:#000014;font-size:20px;" >ID SUBJECT</th>
 					<th style="background-color: #46445c; border-color:#000014;font-size:20px;">NAME SUBJECT</th>
@@ -104,41 +107,54 @@
 				</tr>
 				{%for academic in page %}
 				<tr>
-
-					<td align="center">{{academic.ID_Subject}}</td>
-					<td>&nbsp;&nbsp;&nbsp;{{academic.Name_Subject}}</td>
-					<td align="center">{{academic.Credit}}</td>
-					<td align="center">{{academic.Academic_Regcord}}</td>
-
+					<td style="background-color: #e8e8e8; color: #2e3940;" width="20%" height="30px" align="center">{{academic.ID_Subject}}</td>
+					<td style="background-color: #e8e8e8; color: #2e3940;" width="40%" height="30px">{{academic.Name_Subject}}</td>
+					<td style="background-color: #e8e8e8; color: #2e3940;" width="20%" height="30px" align="center">{{academic.Credit}}</td>
+					<td style="background-color: #e8e8e8; color: #2e3940;" width="20%" height="30px" align="center">{{academic.Academic_Regcord}}</td>
 				</tr>
 				{% endfor %}
-				</div>
+			</table>
 
-		</table>
+		</div>
+
 		<div class="table2">
-			<table style="width:95%; height:140px; color:#FFF;border-color:#000014;" border="3" >
+			<table border="3" style="width:88%;color:#FFF; border-color:#000014;font-size:20px;" >
+
 				<tr>
-					<th style="background-color: #46445c; border-color:#000014;font-size:20px;">RESULT</th>
+					<th style="background-color: #46445c; border-color:#000014;font-size:20px;" >RESULT</th>
 					<th style="background-color: #46445c; border-color:#000014;font-size:20px;">CREDITS REGISTERED</th>
 					<th style="background-color: #46445c; border-color:#000014;font-size:20px;">GPA/GPAX</th>
-
 				</tr>
 				{%for academic2 in page2%}
 				<tr>
-					<td style=" border-color:#000014;font-size:20px;">&nbsp;&nbsp;&nbsp;THIS SEMESTER</td>
-					<td align="center">{{academic2.This_semester}}</td>
-					<td align="center">{{academic2.GPA}}</td>
-
-
-				</tr>
-				<tr>
-					<td style=" border-color:#000014;font-size:20px;">&nbsp;&nbsp;&nbsp;CUMULATIVE</td>
-					<td align="center">{{academic2.Cumulative_credit}}</td>
-					<td align="center">{{academic2.GPAX}}</td>
+					<td style="background-color: #e8e8e8; color: #2e3940;" width="40%" height="30px">THIS SEMESTER</td>
+					<td style="background-color: #e8e8e8; color: #2e3940;" width="40%" height="30px" align="center">{{academic2.This_semester}}</td>
+					<td style="background-color: #e8e8e8; color: #2e3940;" width="20%" height="30px" align="center">{{academic2.GPA}}</td>
 				</tr>
 				{% endfor %}
-				</div>
-		</table>
+			</table>
+		</div>
+
+		<div align="center" class="table3">
+
+			<table border="3" style="width:88%;color:#FFF; border-color:#000014;font-size:20px;" >
+
+				<tr>
+					<th style="background-color: #46445c; border-color:#000014;font-size:20px;" >RESULT</th>
+					<th style="background-color: #46445c; border-color:#000014;font-size:20px;">CREDITS REGISTERED</th>
+					<th style="background-color: #46445c; border-color:#000014;font-size:20px;">GPA/GPAX</th>
+				</tr>
+
+				{% for academic2 in page2 %}
+				<tr>
+					<td style="background-color: #e8e8e8; color: #2e3940;" width="40%" height="30px">RESULT</td>
+					<td style="background-color: #e8e8e8; color: #2e3940;" width="40%" height="30px" align="center">{{academic2.Cumulative_credit}}</td>
+					<td style="background-color: #e8e8e8; color: #2e3940;" width="20%" height="30px" align="center">{{academic2.GPAX}}</td>
+				</tr>
+				{%endfor%}
+			</table>
+
+		</div>
 
 	</body>
 
