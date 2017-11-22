@@ -74,8 +74,9 @@
 			});
 
 		</script>
-
+		<form id="contact-form" action="/editInfo", method="POST">
 		<div class="clk"><input type = "submit" name="click" value = "EDIT" class = "in2" ></div>
+		</form>
 
 		<div class="Activity">PROFILE</div>
 		<img src="static/pictures/profile/{{picS}}" align="left" class="pic2">
@@ -95,11 +96,7 @@
 			{% endfor %}
 		</div>
 		</div>
-
-		<form id="contact-form" action="/editInfo", method="POST">
-
-		</form>
-
+		
 	</body>
 
 </html>

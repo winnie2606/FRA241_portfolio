@@ -413,8 +413,9 @@ def getPrindataButton():   												#--------- save text -----------
 		os.remove(ffile)
 
 		history = keepHistory.history()
+		picS = keepID.picS
 		keepHistory.keep_page('homeStudent.html', None)
-		return render_template('homeStudent.html', name=name, id_user=getID)
+		return render_template('homeStudent.html', name=name, id_user=getID, picS = picS)
 	if button  == 'EDIT':
 		print('edit')
 		return render_template('print_choose.html', name=name, page=pullData.Activity(getID))
