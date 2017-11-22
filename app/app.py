@@ -274,25 +274,26 @@ def getEditAc():
 	name = keepID.Name
 
 	print(getEditAc)
+	for i in getEditAc:
+		if getEditAc[i] == "SAVE":
+			act = i.split(",")
+			nameActivity = act[0]
+			idAct = act[1]
+			print(nameActivity)
+			print(idAct)
 
-	# for A in getEditAc :
-	# 	act = A.split(",")
-	# 	nameActivity = act[0]
-	# 	idAct = act[1]
-	# 	print(nameActivity)
-	# 	print(idAct)
+	# for nameAct in getEditAc:
+	# 	if nameAct != 'type' and nameAct != 'advisor'and nameAct != 'des' and nameAct != 'date':
+	# 		print(nameAct)
+	# 		Name_act = nameAct
 
-	for nameAct in getEditAc:
-		if nameAct != 'type' and nameAct != 'advisor'and nameAct != 'des' and nameAct != 'date':
-			print(nameAct)
-			Name_act = nameAct
-
-	editActivity.edit(getID,Name_act,getEditAc)
+	editActivity.edit(getID,nameActivity,getEditAc,idAct)
 
 	for Act in pullData.Activity(getID):
-		if Act["Name_Activity"] == Name_act :
-			history = keepHistory.history()
-			return render_template(history , name=name, page= Act)
+		if Act["Name_Activity"] == nameActivity :
+			if str(Act["id"]) == idAct :
+				history = keepHistory.history()
+				return render_template(history , name=name, page= Act)
 
 @app.route('/checkBox', methods=['POST'])
 def getCheckBox():
@@ -472,12 +473,16 @@ def downloadFile():
 	name = keepID.Name
 	print(getFile)
 
+	if getFile != 'None' :
+		ffile = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/static/Activity/' + str(getFile)
+		copyto = 'C:/Users/' + str(os.getlogin()) + '/Desktop/' + str(getFile)
+		copyfile(ffile,copyto)
 
-	ffile = 'C:/Users/' + str(os.getlogin()) + '/Documents/GitHub/FRA241_portfolio/app/static/Activity/' + str(getFile)
-	copyto = 'C:/Users/' + str(os.getlogin()) + '/Desktop/' + str(getFile)
-	copyfile(ffile,copyto)
+		conf = 'Download ' + str(getFile) + ' Success'
 
-	conf = 'Download ' + str(getFile) + ' Success'
+	else:
+		conf = "No File"
+
 	keepHistory.keep_page( None , None)
 	history = keepHistory.history()
 	Value = keepHistory.Value_page()

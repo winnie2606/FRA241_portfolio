@@ -301,6 +301,7 @@ class Add_Method:
         sth = Activity(id ="{}".format(id),id_student="{}".format(self.id),NameActivity = "{}".format(nameAct))
         session.add(sth)
         session.commit()
+        return id
 
     def Act_des(self,id,data,nameAct):
         addData = session.query(Activity).filter_by(id="{}".format(id),id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
