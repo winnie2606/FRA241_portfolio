@@ -276,55 +276,61 @@ class Add_Method:
         session.add(addData)
         session.commit()
 
-    def Act_name(self,nameAct):#333
+    def Act_name(self,nameAct):
         box = []
         for instance in session.query(Activity).order_by(Activity.id_student):
             x = instance.id_student
             if(x == int(self.id)) :
                 box.append(x)
         id = (len(box))+1
-        sth = Activity(id = "{}".format(id),id_student = "{}".format(self.id),NameActivity = "{}".format(nameAct))
+        sth = Activity(id ="{}".format(id),id_student="{}".format(self.id),NameActivity = "{}".format(nameAct))
         session.add(sth)
         session.commit()
 
-    def Act_des(self,data,nameAct):
-        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+    def EditAct_name(self,id,data,nameAct):
+        addData = session.query(Activity).filter_by(id="{}".format(id),id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+        addData.NameActivity = "{}".format(data)
+        session.add(addData)
+        session.commit()
+
+    def Act_des(self,id,data,nameAct):
+        addData = session.query(Activity).filter_by(id="{}".format(id),id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
         addData.Description = "{}".format(data)
         session.add(addData)
         session.commit()
 
-    def Act_photo(self,data,nameAct):
-        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+    def Act_photo(self,id,data,nameAct):
+        addData = session.query(Activity).filter_by(id="{}".format(id),id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
         addData.Photo = "{}".format(data)
         session.add(addData)
         session.commit()
 
-    def Act_type(self,data,nameAct):
-        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+    def Act_type(self,id,data,nameAct):
+        addData = session.query(Activity).filter_by(id="{}".format(id),id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
         addData.Type = "{}".format(data)
         session.add(addData)
         session.commit()
 
-    def Act_advisor(self,data,nameAct):
-        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+    def Act_advisor(self,id,data,nameAct):
+        addData = session.query(Activity).filter_by(id="{}".format(id),id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
         addData.Advisor = "{}".format(data)
         session.add(addData)
         session.commit()
 
-    def Act_date(self,data,nameAct):
-        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+    def Act_date(self,id,data,nameAct):
+        addData = session.query(Activity).filter_by(id="{}".format(id),id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
         addData.Date_Activity = "{}".format(data)
         session.add(addData)
         session.commit()
 
-    def Act_file(self,data,nameAct):
-        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+    def Act_file(self,id,data,nameAct):
+        addData = session.query(Activity).filter_by(id="{}".format(id),id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
         addData.File = "{}".format(data)
         session.add(addData)
         session.commit()
 
-    def Act_confirm(self,data,nameAct):
-        addData = session.query(Activity).filter_by(id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
+    def Act_confirm(self,id,data,nameAct):
+        addData = session.query(Activity).filter_by(id="{}".format(id),id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
         addData.Confirm = "{}".format(data)
         session.add(addData)
         session.commit()
