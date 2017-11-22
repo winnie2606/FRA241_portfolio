@@ -21,6 +21,7 @@ import shutil
 from shutil import copyfile
 import shutil
 from addAcademic import Input_Academics
+from sortTerm import*
 
 app = Flask(__name__)
 
@@ -30,7 +31,7 @@ pullData = pullData()
 editProfile = editProfile()
 editActivity = editActivity()
 saveText = saveText()
-
+sortTerm = sortTerm()
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------------'''
 """ Login """
@@ -158,6 +159,8 @@ def selectTerm():
 	name = keepID.Name
 	check = Check()
 	term = check.TERM(getID)
+
+	term = sortTerm.sortTerm(term)
 
 	if getSelectTerm == "All":
 		AllGrade = []
@@ -573,6 +576,8 @@ def TeacherSelectTerm():
 	picS = re.photo()
 	check = Check()
 	term = check.TERM(ID)
+
+	term = sortTerm.sortTerm(term)
 
 	if getSelectTerm == "All":
 		AllGrade = []

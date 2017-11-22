@@ -557,6 +557,7 @@ class Check:
             for item in list_idSub:
                 if item not in box:
                     box.append(item)
+
             return box
 
         def all_student(self):

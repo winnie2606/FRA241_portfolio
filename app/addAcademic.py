@@ -51,7 +51,7 @@ class Input_Academics:
 
 ################################################################
         count_row = 2
-        while(count_row < row - len(list_False_student)):
+        while(count_row < row):
             student_ID = all_student_ID[count_row]
             # print(student_ID)
 
