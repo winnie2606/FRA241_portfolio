@@ -24,7 +24,7 @@
 					<form id="contact-form" action="/menubar", method="POST">
 					<input type="image" name="click" value="back" src="static/back_icon.jpg" width="4.5%">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="PROFILE" class="link">&nbsp;&nbsp;&nbsp;
-					<input type="submit" name="click" value="ACADEMIC" class="link">&nbsp;&nbsp;&nbsp;
+					<input type="submit" name="click" value="ACADEMIC" class="link1">&nbsp;&nbsp;&nbsp;
 					<input type="submit" name="click" value="WORK&EXPERIENCE" class="link">
 
 				</div>
@@ -76,11 +76,8 @@
 
 		</script>
 
-		<div class="Academic" >
+			<div class="Academic2">ACADEMIC : GRADE</div>
 
-			<p>ACADEMIC : GRADE</p>
-			<div class="Academic2" ></div>
-		</div>
 		<div class="selectbar">
 					<form id="contact-form" action="/selectTerm", method="POST">
 						<select id="section"  name = "click" size="1" style="width:400px; font-size:25px;height:30px;color:#46445c; " >
@@ -91,11 +88,11 @@
 						<div class="in" style="margin-left: 45%; margin-top: -3%;"><input type="submit" value="select" class="in2" style="width: 100px; height: 30px;background-color: #46445c; border-color: #46445c; color: #fff; font-size: 18px;  "></div>
 					</form>
 
-		<div class="term" style="margin-left: -47%; font-size: 25px; color: #fff; margin-top: -2%;">{{thisTerm}}</div>
-
 		</div>
 
-		<div class="table1">
+		<div class="term" >{{thisTerm}}</div>
+
+		<div align="center" class="table1">
 
 			<table border="3" style="width:88%;color:#FFF; border-color:#000014;font-size:20px;" >
 
@@ -117,7 +114,7 @@
 
 		</div>
 
-		<div class="table2">
+		<div align="center" class="table2">
 			<table border="3" style="width:88%;color:#FFF; border-color:#000014;font-size:20px;" >
 
 				<tr>
@@ -138,7 +135,7 @@
 					<td style="background-color: #e8e8e8; color: #2e3940;" width="20%" height="30px" align="center">{{academic2.GPAX}}</td>
 				</tr>
 				{% endfor %}
-			</table>
+			</table><br><br>
 		</div>
 
 	</body>

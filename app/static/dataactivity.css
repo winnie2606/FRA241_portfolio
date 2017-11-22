@@ -8,67 +8,81 @@
 	background-color: #e8e8e8;
 	color: #2e3940;
 	box-shadow: -4px 5px #3c3e3d;
-	margin-bottom: 5%;
+	margin-bottom: 0%;
+	margin-top: 12%;
+	margin-left: 88%;
+	position: fixed;
 }
 
 .in2:hover , .in2:active{
 	background-color: #c1c1c1;
+}
+
+.in3 {
+	font-family: "Open Sans Condensed";
+	padding-left: 5px;
+	border-radius:20px;
+	border: 5px;
+	height: 30px;
+	width: 100px;
+	background-color: #e8e8e8;
 	color: #2e3940;
 	box-shadow: -4px 5px #3c3e3d;
+	margin-bottom: 5%;
+	margin-top: 12%;
+	margin-left: 79%;
+	position: fixed;
+}
+
+.in3:hover , .in3:active{
+	background-color: #c1c1c1;
 }
 
 .dataactivity-clk{
 	float: left;
 	position: fixed;
-	margin-top: 5%;
-	margin-left: 88%;
 }
 
 .en1{
-	margin-top: 2%;
-	margin-left: 4%;
+	margin-top: 0%;
+	margin-left: 10%;
+  width: 350px;
+  height: 250px;
 }
 
 .name-of-activity{
-	font-size: 30px;
+	font-size: 25px;
 	color: #FFF;
-	margin-top: -22%;
-	margin-left: 35%;
+	margin-top: -18%;
+	margin-left: 40%;
 }
 
 .date-of-activity{
-	font-size: 30px;
+	font-size: 25px;
 	color: #FFF;
-	margin-left: 35%;
-	margin-top: -1%;
+	margin-top: 1%;
+	margin-left: 40%;
 }
 
 .advisor{
-	font-size: 30px;
+	font-size: 25px;
 	color: #FFF;
 	margin-top: 1%;
-	margin-left: 35%;
+	margin-left: 40%;
 }
 
 .type{
-	font-size: 30px;
+	font-size: 25px;
 	color: #FFF;
 	margin-top: 1%;
-	margin-left: 35%;
+	margin-left: 40%;
 }
 
 .description{
-	font-size: 30px;
+	font-size: 25px;
 	color: #FFF;
 	margin-top: 1%;
-	margin-left: 35%;
-}
-
-.flies{
-	font-size: 30px;
-	color: #FFF;
-	margin-top: 1%;
-	margin-left: 35%;
+	margin-left: 40%;
 }
 
 .cheak{
@@ -83,9 +97,21 @@
   font-size: 24px;
   text-decoration: underline;
 	margin-top: 1%;
-	margin-left: 35%;
+	margin-left: 39.6%;
 }
 
 .more-info-link:hover , .more-info-link:active{
 	color: #40494e;
+}
+.Activity{
+	height:35px;
+	width: 10%;
+	margin-top: 0%;
+	margin-left: 5%;
+	background-color:#000014;
+	font-size: 25px;
+	color: #FFF;
+	padding-left: 15px;
+	padding-top: 12px;
+	margin-bottom: 3%;
 }

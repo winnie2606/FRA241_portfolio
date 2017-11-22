@@ -1,78 +1,84 @@
-.link1{
+.a1{
 	text-decoration: none;
-	background-color: #ff5345;
+	background-color: #000019;
 	color: #FFF;
 	border-radius:20px;
 	border: 5px;
 	float: left;
-	margin-top: -27.5%;
+	margin-top: -26%;
 	margin-left: 50%;
 	font-size: 34px;
 	width: 30%;
-	height: 100px;
+	height: 80px;
+	box-shadow: -1px 6px #3c3e3d;
 }
 
-.link1:hover , .link1:active{
-	color: #ae342a;
+.a1:hover , .a1:active{
+	color: #40494e;
+	box-shadow: -1px 6px #3c3e3d;
 }
 
 .link2{
 	text-decoration: none;
 	color: #FFF;
-	background-color: #ff7e16;
+	background-color: #000019;
 	border-radius:20px;
 	border: 5px;
 	float: left;
-	margin-top: -17%;
+	margin-top: -16%;
 	margin-left: 50%;
 	z-index: 2;
 	font-size: 34px;
 	width: 30%;
-	height: 100px;
+	height: 80px;
+	box-shadow: -1px 6px #3c3e3d;
 }
 
 .link2:hover , .link2:active{
-	color: #b04a11;
+	color: #40494e;
+	box-shadow: -1px 6px #3c3e3d;
 }
 
 .link3{
 	text-decoration: none;
 	color: #FFF;
-	background-color: #ffca26;
+	background-color: #000019;
 	border-radius:20px;
 	border: 5px;
 	float: left;
-	margin-top: -6.5%;
+	margin-top: -6%;
 	margin-left: 50%;
 	z-index: 2;
 	font-size: 34px;
 	width: 30%;
-	height: 100px;
+	height: 80px;
+	box-shadow: -1px 6px #3c3e3d;
 }
 
 .link3:hover , .link3:active{
-	color: #9c790f;
+	color: #40494e;
+	box-shadow: -1px 6px #3c3e3d;
 
 }
 .pic{
 	float: left;
-	margin-left:22%;
-	margin-top:2%;
+	margin-left:25%;
+	margin-top:4%;
 	width: 220px;
 	height: 250px;
 }
 .Name{
 	float: left;
 	margin-top:25%;
-	margin-left: -20%;
+	margin-left: -13%;
 	color: #FFF;
 	font-size: 25px;
 }
 
 .id{
 	float: left;
-	margin-top:27%;
-	margin-left: -20%;
+	margin-top:28%;
+	margin-left: -13%;
 	color: #FFF;
 	font-size: 25px;
 }
