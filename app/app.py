@@ -110,6 +110,7 @@ def menubar():
 	if getMenubar == 'ACADEMIC':
 		term = check.TERM(getID)
 		print (term)
+		term = sortTerm.sortTerm(term)
 		term.append("All")
 		keepHistory.keep_page('AcademicStudent.html', pullData.Academic_term(getID),pullData.Academic_sum(getID))
 		return render_template('AcademicStudent.html', name=name, page=pullData.Academic_term(getID), page2=pullData.Academic_sum(getID), term = term )
@@ -132,6 +133,8 @@ def menubar():
 	if getMenubar == 'back':
 		print(getMenubar)
 		term = check.TERM(getID)
+		term = sortTerm.sortTerm(term)
+		term.append("All")
 		keepHistory.print_listPage()
 		history = keepHistory.history()
 		Value = keepHistory.Value_page()
@@ -189,12 +192,19 @@ def moreinfo():
 	name = keepID.Name
 	print(getMoreinfo)
 
-	for nameAct in getMoreinfo:
+	for A in getMoreinfo:
+		Moreinfo = A.split(",")
+		nameActivity = Moreinfo[0]
+		idAct = Moreinfo[1]
+		print(nameActivity)
+		print(idAct)
 		for Act in pullData.Activity(getID):
-			if Act["Name_Activity"] == nameAct :
-				keepHistory.keep_page('dataactivity.html',Act,"")
-				print (Act)
-				return render_template('dataactivity.html', name=name, page= Act , page2 = "")
+			if Act["Name_Activity"] == nameActivity :
+				if Act["id"] == idAct:
+					keepHistory.keep_page('dataactivity.html',Act,"")
+					print (Act)
+					return render_template('dataactivity.html', name=name, page= Act , page2 = "")
+
 '''
 	if getMoreinfo == 'MORE INFO>>':
 		keepHistory.keep_page('dataactivity.html', pullData.Activity(getID))
@@ -218,11 +228,18 @@ def editAcButton():
 	getID = keepID.ID
 	name = keepID.Name
 
-	for nameAct in getEditAc:
+	for A in getEditAc :
+		act = A.split(",")
+		nameActivity = act[0]
+		idAct = act[1]
+		print(nameActivity)
+		print(idAct)
+
 		for Act in pullData.Activity(getID):
-			if Act["Name_Activity"] == nameAct :
-				keepHistory.keep_page('dataactivity.html',Act)
-				return render_template('edit-activity.html', name=name, page= Act["Name_Activity"] )
+			if Act["Name_Activity"] == nameActivity :
+				if Act["id"] == idAct:
+					keepHistory.keep_page('dataactivity.html',Act)
+					return render_template('edit-activity.html', name=name, page= Act["Name_Activity"], page2 = Act["id"])
 
 '''
 	if getEditAc == 'EDIT':
@@ -254,6 +271,13 @@ def getEditAc():
 	name = keepID.Name
 
 	print(getEditAc)
+
+	# for A in getEditAc :
+	# 	act = A.split(",")
+	# 	nameActivity = act[0]
+	# 	idAct = act[1]
+	# 	print(nameActivity)
+	# 	print(idAct)
 
 	for nameAct in getEditAc:
 		if nameAct != 'type' and nameAct != 'advisor'and nameAct != 'des' and nameAct != 'date':
@@ -427,9 +451,13 @@ def getDelete():
 	getID = keepID.ID
 	name = keepID.Name
 	edit = Edit(getID)
-	for i in getDelete :
-		print(i)
-		edit.deleteAct(i)
+	for A in getDelete :
+		act = A.split(",")
+		nameActivity = act[0]
+		idAct = act[1]
+		print(nameActivity)
+		print(idAct)
+		edit.deleteAct(idAct,nameActivity)
 	history = keepHistory.history()
 	Value = pullData.Activity(getID)
 	return render_template(history,id_user=getID, name=name, page = Value)
@@ -556,6 +584,7 @@ def seect():
 		print('academic')
 		check = Check()
 		term = check.TERM(ID)
+		term = sortTerm.sortTerm(term)
 		term.append("All")
 		print(term)
 		return render_template('teacherViewAcademic.html', name=name,term = term, picS = picS,page=pullData.Academic_term(getID) , page2=pullData.Academic_sum(getID) )

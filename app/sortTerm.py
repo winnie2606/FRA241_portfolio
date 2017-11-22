@@ -12,8 +12,8 @@ class sortTerm():
                 two.append(i)
         one.sort()
         two.sort()
-            #print(one)
-            #print(two)
+        print(one)
+        print(two)
         o = ""
         t = ""
         while (one != [] or two != []):
@@ -38,4 +38,5 @@ class sortTerm():
                 elif t != "" :
                     term.append(t)
                     t = ""
-            return term
+        print(term)
+        return term

@@ -184,8 +184,8 @@ class Edit:
         session.add(sth)
         session.commit()
 
-    def deleteAct(self,name): # delete function
-        spinach = session.query(Activity).filter_by(id_student = "{}".format(self.id), NameActivity = "{}".format(name)).one()
+    def deleteAct(self,id,name): # delete function
+        spinach = session.query(Activity).filter_by(id = "{}".format(id), id_student = "{}".format(self.id), NameActivity = "{}".format(name)).one()
         session.delete(spinach)
         session.commit()
 
