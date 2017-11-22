@@ -75,6 +75,14 @@
 			});
 
 		</script>
+
+		<form id="contact-form" action="/editAcButton", method="POST">
+		<input type = "submit" name={{page.Name_Activity}},{{page.id}} value = "EDIT" class = "in2" >
+		</form>
+		<form id="contact-form" action="/deleteAc", method="POST">
+		<input type = "submit" name={{page.Name_Activity}},{{page.id}} value = "DELETE" class = "in3" >
+		</form>
+
 		<div class="Activity">ACTIVITY</div>
 		<div class="group" >
 			<image src="static/pictures/activity/{{page.Photo}}" class="en1">
@@ -85,18 +93,11 @@
 			<div class="description">Description : {{page.Description}}</div>
 			<form id="contact-form" action="/downloadFile", method="POST">
 			<div class="more-info">File : <input type="submit" name="cilck" value={{page.File}} class="more-info-link"></div>
-			<div class=".......">{{page2}}</div>
+			<div class="more-info">{{page2}}</div>
 			</form>
-
 
 		</div>
 
-			<form id="contact-form" action="/editAcButton", method="POST">
-			<input type = "submit" name={{page.Name_Activity}},{{page.id}} value = "EDIT" class = "in2" >
-		  </form>
-			<form id="contact-form" action="/deleteAc", method="POST">
-			<input type = "submit" name={{page.Name_Activity}},{{page.id}} value = "DELETE" class = "in3" >
-			</form>
 	</body>
 
 </html>
