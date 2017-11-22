@@ -188,6 +188,21 @@ class Edit:
         spinach = session.query(Activity).filter_by(id = "{}".format(id), id_student = "{}".format(self.id), NameActivity = "{}".format(name)).one()
         session.delete(spinach)
         session.commit()
+        box_id=[]
+        box2 = []
+        for instance in session.query(Activity).order_by(Activity.id_student):
+            x = instance.id_student
+            y = instance.NameActivity
+            if(x == int(self.id) and (y == name)) :
+                box_id.append(instance.id)
+        for itemm in range(len(box_id)):
+            box2.append(itemm+1)
+        dicA = dict((key, value) for (key, value) in zip(box_id, box2))
+        for item in dicA:
+            addData = session.query(Activity).filter_by(id = "{}".format(item),id_student="{}".format(self.id),NameActivity = "{}".format(name)).one()
+            addData.id = "{}".format(dicA[item])
+            session.add(addData)
+            session.commit()
 
 class Add_Method:
 
@@ -285,12 +300,6 @@ class Add_Method:
         id = (len(box))+1
         sth = Activity(id ="{}".format(id),id_student="{}".format(self.id),NameActivity = "{}".format(nameAct))
         session.add(sth)
-        session.commit()
-
-    def EditAct_name(self,id,data,nameAct):
-        addData = session.query(Activity).filter_by(id="{}".format(id),id_student="{}".format(self.id),NameActivity = "{}".format(nameAct)).one()
-        addData.NameActivity = "{}".format(data)
-        session.add(addData)
         session.commit()
 
     def Act_des(self,id,data,nameAct):
