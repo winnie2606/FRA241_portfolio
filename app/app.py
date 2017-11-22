@@ -548,9 +548,22 @@ def frab():
 	name = keepID.Name
 	check = Check()
 	print (frab[5:])
-	dataFrab = check.FRAB(frab[5:])
-	print (dataFrab)
-	
+
+	A = check.FRAB(frab[5:])
+	print (A)
+	x = []
+	dataFrab = []
+	for i in A:
+	    x.append(i["ID"])
+
+	x.sort()
+	for i in x:
+	    for j in A :
+	        if j["ID"] == i:
+	            dataFrab.append(j)
+	            A.remove(j)
+	print(dataFrab)
+
 	keepHistory.keep_page('nametea.html', dataFrab , frab)
 	return render_template('nametea.html', name=name, page = dataFrab , page2=frab)
 
