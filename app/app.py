@@ -200,7 +200,10 @@ def moreinfo():
 		print(idAct)
 		for Act in pullData.Activity(getID):
 			if Act["Name_Activity"] == nameActivity :
-				if Act["id"] == idAct:
+				print(Act["Name_Activity"])
+				if str(Act["id"]) == idAct:
+					print(Act["id"])
+
 					keepHistory.keep_page('dataactivity.html',Act,"")
 					print (Act)
 					return render_template('dataactivity.html', name=name, page= Act , page2 = "")
@@ -237,7 +240,7 @@ def editAcButton():
 
 		for Act in pullData.Activity(getID):
 			if Act["Name_Activity"] == nameActivity :
-				if Act["id"] == idAct:
+				if str(Act["id"]) == idAct:
 					keepHistory.keep_page('dataactivity.html',Act)
 					return render_template('edit-activity.html', name=name, page= Act["Name_Activity"], page2 = Act["id"])
 
@@ -457,7 +460,7 @@ def getDelete():
 		idAct = act[1]
 		print(nameActivity)
 		print(idAct)
-		edit.deleteAct(idAct,nameActivity)
+		edit.deleteAct(int(idAct),nameActivity)
 	history = keepHistory.history()
 	Value = pullData.Activity(getID)
 	return render_template(history,id_user=getID, name=name, page = Value)
