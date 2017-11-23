@@ -148,6 +148,7 @@
 				{%endfor%}
 			</div>
 
+			{% for academic2 in page2 %}
 			<div class="term"><b>GPAX</b></div>
 
       <div align="center" class="table3">
@@ -160,15 +161,16 @@
 						<th style="background-color: #46445c; border-color:#000014;font-size:20px;">GPAX</th>
 					</tr>
 
-					{% for academic2 in page2 %}
+
 					<tr>
 						<td style="background-color: #e8e8e8; color: #2e3940;" width="40%" height="30px">RESULT</td>
 						<td style="background-color: #e8e8e8; color: #2e3940;" width="40%" height="30px" align="center">{{academic2.Cumulative_credit}}</td>
 						<td style="background-color: #e8e8e8; color: #2e3940;" width="20%" height="30px" align="center">{{academic2.GPAX}}</td>
 					</tr>
-					{%endfor%}
-	      </table>
 
+	      </table>
+				{%endfor%}
+				
 			</div>
 
     </div>

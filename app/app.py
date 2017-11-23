@@ -111,9 +111,21 @@ def menubar():
 		term = check.TERM(getID)
 		print (term)
 		term = sortTerm.sortTerm(term)
+		AllGrade = []
+		GPAX = []
+		for allTerm in term :
+			setG = {"Gragd":[],"GPA":[],"Term":""}
+			setG["Gragd"] = pullData.Academic_term(getID,allTerm)
+			setG["GPA"] = pullData.Academic_sum(getID,allTerm)
+			setG["Term"] = allTerm
+			AllGrade.append(setG)
+			if GPAX == []:
+				GPAX = pullData.Academic_sum(getID,allTerm)
 		term.append("All")
-		keepHistory.keep_page('AcademicStudent.html', pullData.Academic_term(getID),pullData.Academic_sum(getID))
-		return render_template('AcademicStudent.html', name=name, page=pullData.Academic_term(getID), page2=pullData.Academic_sum(getID), term = term )
+		print(AllGrade)
+		print(GPAX)
+		keepHistory.keep_page('AcademicStudent-3-table.html', AllGrade, GPAX)
+		return render_template('AcademicStudent-3-table.html', name=name,term = term,page= AllGrade, page2 = GPAX)
 	if getMenubar == 'WORK&EXPERIENCE':
 		keepHistory.keep_page('activity.html', pullData.Activity(getID))
 		print(pullData.Activity(getID))
@@ -608,9 +620,20 @@ def seect():
 		check = Check()
 		term = check.TERM(ID)
 		term = sortTerm.sortTerm(term)
+		AllGrade = []
+		GPAX = []
+		for allTerm in term :
+			setG = {"Gragd":[],"GPA":[],"Term":""}
+			setG["Gragd"] = pullData.Academic_term(ID,allTerm)
+			setG["GPA"] = pullData.Academic_sum(ID,allTerm)
+			setG["Term"] = allTerm
+			AllGrade.append(setG)
+			if GPAX == []:
+				GPAX = pullData.Academic_sum(ID,allTerm)
 		term.append("All")
-		print(term)
-		return render_template('teacherViewAcademic.html', name=name,term = term, picS = picS,page=pullData.Academic_term(getID) , page2=pullData.Academic_sum(getID) )
+		print(AllGrade)
+		print(GPAX)
+		return render_template('teacherViewAcademic-3-table.html', name=name,term = term, picS = picS,page= AllGrade, page2 = GPAX)
 	if select == 'WORK&EXPERIENCE':
 		print('activity')
 		activity = pullData.Activity(ID)
@@ -658,7 +681,7 @@ def fileGrade():
 	click = request.form['click']
 	filename = request.form['fileGrade']
 	term = request.form['term']
-	fileAdd = 'You was add : ' + str(filename)
+	fileAdd = str(filename) +" added."
 	print(filename)
 
 	if click == 'ADD':
