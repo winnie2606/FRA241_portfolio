@@ -233,7 +233,7 @@ def editInfo():
 	getID = keepID.ID
 	name = keepID.Name
 	if getEditInfo == 'EDIT':
-		keepHistory.keep_page('edit-your-infomation.html', None)
+		keepHistory.keep_page('profile.html', pullData.Profile(getID))  #hereeeeeeeeeeeeeeeeeeeee
 		return render_template('edit-your-infomation.html', name=name)
 
 @app.route('/editAcButton', methods=['POST'])
@@ -500,6 +500,17 @@ def downloadFile():
 	history = keepHistory.history()
 	Value = keepHistory.Value_page()
 	return render_template(history,id_user=getID, name=name, page = Value , page2 = conf)
+
+@app.route('/cancleEdit', methods=['POST'])
+def getCancle():
+	getCancle = request.form['click']
+	print(getCancle)
+	getID = keepID.ID
+	name = keepID.Name
+	Value = pullData.Profile(getID)
+	picS = keepID.picS
+	history = keepHistory.history()
+	return render_template(history,id_user=getID, name=name, page = Value , picS = picS)
 
 
 '''end student'''
