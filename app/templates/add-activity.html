@@ -8,7 +8,7 @@
 		<title>add Activity</title>
 
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='edit-activity.css')}}" />
-		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='bgaddactivity.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='bgeditactivity.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='popup.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='popupback.css')}}" />
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -25,10 +25,10 @@
 
 
 					<input class="back" type="image" name="click" value="back" src="static/back_icon.jpg" width="5.5%">&nbsp;&nbsp;&nbsp;
-					<form id="contact-form" action="/menubar", method="POST">
-					<input  type="submit" name="click" value="PROFILE" class="link" style="cursor:pointer">&nbsp;&nbsp;&nbsp;
-					<input  type="submit" name="click" value="ACADEMIC" class="link" style="cursor:pointer">&nbsp;&nbsp;&nbsp;
-					<input  type="submit" name="click" value="WORK&EXPERIENCE" class="link1" style="cursor:pointer">&nbsp;&nbsp;&nbsp;
+			
+					<input  class="back1" type="submit" name="click" value="PROFILE"  style="cursor:pointer">&nbsp;&nbsp;&nbsp;
+					<input  class="back2" type="submit" name="click" value="ACADEMIC"  style="cursor:pointer">&nbsp;&nbsp;&nbsp;
+					<input  class="back3" type="submit" name="click" value="WORK&EXPERIENCE"  style="cursor:pointer">&nbsp;&nbsp;&nbsp;
 
 				</div>
 
@@ -36,8 +36,8 @@
 
 				<div class="R" >
 					<div class="name">{{name}}</div>&nbsp;&nbsp;&nbsp;
-					<input  name="click" type="image" value="home_icon" src="static/home_icon.jpg" width="14.5%">&nbsp;&nbsp;&nbsp;
-					<input  name="click" type="image" value="print_icon" src="static/print_icon.jpg" width="14.5%">&nbsp;&nbsp;&nbsp;
+					<input class="back4" name="click" type="image" value="home_icon" src="static/home_icon.jpg" width="14.5%">&nbsp;&nbsp;&nbsp;
+					<input class="back5" name="click" type="image" value="print_icon" src="static/print_icon.jpg" width="14.5%">&nbsp;&nbsp;&nbsp;
 					</form>
 					<input class="out" name="click" type="image" value="logout_icon" src="static/logout_icon.jpg" width="14.5%">
 
@@ -46,8 +46,7 @@
 			</div>
 
 		</div>
-
-		<div class="containerback" style="margin-top: 5%;">
+<div class="containerback">
 
 			<div class="popupback">
 				<p>Do you want to leave without finishing ?</p>
@@ -79,8 +78,167 @@
 			});
 
 		</script>
+		<div class="containerback1">
 
-		<div class="container" style="margin-top: 7%;">
+			<div class="popupback1">
+				<p>Do you want to leave without finishing ?</p>
+				<div class="optionback1">
+          <form id="contact-form" action="/getleave", method="POST">
+					<input class="aback1" type = "button" name="popup" value = "NO" />
+					<input  class ="bback1" type = "submit" name="popup" value = "YES" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="coverback1">
+
+		</div>
+		<script type="../js/jquery-3.2.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$(".back1").on('click',function(){
+					$(".coverback").fadeIn('slow');
+					$(".popupback").fadeIn('slow');
+				});
+			});
+
+			$(document).ready(function(){
+				$('.aback1').on('click',function(){
+					$(".coverback").fadeOut('slow');
+					$(".popupback").fadeOut('slow');
+				});
+			});
+
+		</script>
+		<div class="containerback2">
+
+			<div class="popupback2">
+				<p>Do you want to leave without finishing ?</p>
+				<div class="optionback2">
+          <form id="contact-form" action="/getleave", method="POST">
+					<input class="aback2" type = "button" name="popup" value = "NO" />
+					<input  class ="bback2" type = "submit" name="popup" value = "YES" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="coverback2">
+
+		</div>
+		<script type="../js/jquery-3.2.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$(".back2").on('click',function(){
+					$(".coverback").fadeIn('slow');
+					$(".popupback").fadeIn('slow');
+				});
+			});
+
+			$(document).ready(function(){
+				$('.aback2').on('click',function(){
+					$(".coverback").fadeOut('slow');
+					$(".popupback").fadeOut('slow');
+				});
+			});
+
+		</script>
+		<div class="containerback3">
+
+			<div class="popupback3">
+				<p>Do you want to leave without finishing ?</p>
+				<div class="optionback3">
+          <form id="contact-form" action="/getleave", method="POST">
+					<input class="aback3" type = "button" name="popup" value = "NO" />
+					<input  class ="bback3" type = "submit" name="popup" value = "YES" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="coverback3">
+
+		</div>
+		<script type="../js/jquery-3.2.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$(".back3").on('click',function(){
+					$(".coverback").fadeIn('slow');
+					$(".popupback").fadeIn('slow');
+				});
+			});
+
+			$(document).ready(function(){
+				$('.aback3').on('click',function(){
+					$(".coverback").fadeOut('slow');
+					$(".popupback").fadeOut('slow');
+				});
+			});
+
+		</script>
+				<div class="containerback4">
+
+			<div class="popupback4">
+				<p>Do you want to leave without finishing ?</p>
+				<div class="optionback4">
+          <form id="contact-form" action="/getleave", method="POST">
+					<input class="aback4" type = "button" name="popup" value = "NO" />
+					<input  class ="bback4" type = "submit" name="popup" value = "YES" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="coverback4">
+
+		</div>
+		<script type="../js/jquery-3.2.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$(".back4").on('click',function(){
+					$(".coverback").fadeIn('slow');
+					$(".popupback").fadeIn('slow');
+				});
+			});
+
+			$(document).ready(function(){
+				$('.aback4').on('click',function(){
+					$(".coverback").fadeOut('slow');
+					$(".popupback").fadeOut('slow');
+				});
+			});
+
+		</script>
+		<div class="containerback5">
+
+			<div class="popupback5">
+				<p>Do you want to leave without finishing ?</p>
+				<div class="optionback5">
+          <form id="contact-form" action="/getleave", method="POST">
+					<input class="aback5" type = "button" name="popup" value = "NO" />
+					<input  class ="bback5" type = "submit" name="popup" value = "YES" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="coverback5">
+
+		</div>
+		<script type="../js/jquery-3.2.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$(".back5").on('click',function(){
+					$(".coverback").fadeIn('slow');
+					$(".popupback").fadeIn('slow');
+				});
+			});
+
+			$(document).ready(function(){
+				$('.aback5').on('click',function(){
+					$(".coverback").fadeOut('slow');
+					$(".popupback").fadeOut('slow');
+				});
+			});
+
+		</script>
+		<div class="container">
 
 			<div class="popup">
 				<p>Do you want to logout ?</p>
