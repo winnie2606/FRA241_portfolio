@@ -68,3 +68,33 @@ body {
 	font-size: 25px;
 	color: #FFF;
 }
+.back1:hover , .back1:active{
+	background-color: #000014;
+	color:#b8955c ;
+}
+.back1{
+	font-size: 22px;
+	background-color:hsla(290,100%,100%,0);
+	color: #FFF;
+	border: 5px;
+}
+.back2:hover , .back2:active{
+	background-color: #000014;
+	color:#b8955c ;
+}
+.back2{
+	font-size: 22px;
+	background-color:hsla(290,100%,100%,0);
+	color: #FFF;
+	border: 5px;
+}
+.back3:hover , .back3:active{
+	background-color: #000014;
+	color:#ffc266 ;
+}
+.back3{
+	font-size: 22px;
+	background-color:hsla(290,100%,100%,0);
+	color:#ffc266;
+	border: 5px;
+}	

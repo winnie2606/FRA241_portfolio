@@ -21,22 +21,21 @@
 			<div class="bar-in">
 
 				<div class="L">
-
-					<input class="back" type="image" name="click" value="back" src="static/back_icon.jpg" width="5.5%">&nbsp;&nbsp;&nbsp;
-					<form id="contact-form" action="/menubar", method="POST">
-					<input type="submit" name="click" value="PROFILE" class="link1">&nbsp;&nbsp;&nbsp;
-					<input type="submit" name="click" value="ACADEMIC" class="link">&nbsp;&nbsp;&nbsp;
-					<input type="submit" name="click" value="WORK&EXPERIENCE" class="link">
+					<input class="back" type="image" name="click" value="back" src="static/back_icon.jpg" width="4.5%" style="margin-top: 0.5%;">
+			<div class ="L1">
+					<input class="back1" type="submit" name="click" value="PROFILE" style="cursor:pointer">
+					<input class="back2" type="submit" name="click" value="ACADEMIC" style="cursor:pointer" >
+					<input class="back3" type="submit" name="click" value="WORK&EXPERIENCE" style="cursor:pointer" > 
+</div>
+				
 				</div>
-				</div>
-
 				<div class="R">
 
-					<div class="name-bar">{{name}}</div>&nbsp;&nbsp;&nbsp;
-					<input name="click" type="image" value="home_icon" src="static/home_icon.jpg" width="14.5%">&nbsp;&nbsp;&nbsp;
-					<input name="click" type="image" value="print_icon" src="static/print_icon.jpg" width="14.5%">&nbsp;&nbsp;&nbsp;
+					{{name}}&nbsp;&nbsp;&nbsp;
+					<input class="back4" name="click" type="image" value="home_icon" src="static/home_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
+					<input class="back5" name="click" type="image" value="print_icon" src="static/print_icon.jpg" width="8.5%">&nbsp;&nbsp;&nbsp;
 					</form>
-					<input class="out" name="click" type="image" value="logout_icon" src="static/logout_icon.jpg" width="14.5%">
+					<input class="out" name="click" type="image" value="logout_icon" src="static/logout_icon.jpg" width="8.5%">
 
 				</div>
 
@@ -68,6 +67,37 @@
 				});
 			});
 
+			$(document).ready(function(){
+				$(".back1").on('click',function(){
+					$(".coverback").fadeIn('slow');
+					$(".popupback").fadeIn('slow');
+				});
+			});
+			$(document).ready(function(){
+				$(".back2").on('click',function(){
+					$(".coverback").fadeIn('slow');
+					$(".popupback").fadeIn('slow');
+				});
+			});
+			$(document).ready(function(){
+				$(".back3").on('click',function(){
+					$(".coverback").fadeIn('slow');
+					$(".popupback").fadeIn('slow');
+				});
+			});
+		
+			$(document).ready(function(){
+				$(".back4").on('click',function(){
+					$(".coverback").fadeIn('slow');
+					$(".popupback").fadeIn('slow');
+				});
+			});
+			$(document).ready(function(){
+				$(".back5").on('click',function(){
+					$(".coverback").fadeIn('slow');
+					$(".popupback").fadeIn('slow');
+				});
+			});
 			$(document).ready(function(){
 				$('.aback').on('click',function(){
 					$(".coverback").fadeOut('slow');
@@ -131,12 +161,12 @@
 
 		</div>
 
-			<input type = "submit" value = "SAVE" class = "in2" >
+			<input type = "submit" value = "SAVE" class = "in2"  style="cursor:pointer">
 
 
 	</form>
 	<form id="contact-form" action="/cancleEdit", method="POST">
-	<input type = "submit" name= "click" value = "CANCLE" class = "cancle" >
+	<input type = "submit" name= "click" value = "CANCLE" class = "cancle"  style="cursor:pointer">
   </form>
 	</body>
 
