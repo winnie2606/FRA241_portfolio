@@ -22,7 +22,7 @@
 
 				<div class="L">
 					<input class="back" type="image" name="click" value="back" src="static/back_icon.jpg" width="4.5%" style="margin-top: 0.5%;">
-			
+
 					<input class="back1" type="submit" name="click" value="PROFILE" style="cursor:pointer">
 					<input class="back2" type="submit" name="click" value="ACADEMIC" style="cursor:pointer" >
 					<input class="back3" type="submit" name="click" value="WORK&EXPERIENCE" style="cursor:pointer" >
@@ -80,7 +80,7 @@
 			<div class="popupback1">
 				<p>Do you want to leave without finishing ?</p>
 				<div class="optionback1">
-          <form id="contact-form" action="/getleave", method="POST">
+          <form id="contact-form" action="/backProfile", method="POST">
 					<input class="aback1" type = "button" name="popup" value = "NO" />
 					<input  class ="bback1" type = "submit" name="popup" value = "YES" />
 					</form>
@@ -95,14 +95,14 @@
 			$(document).ready(function(){
 				$(".back1").on('click',function(){
 					$(".coverback").fadeIn('slow');
-					$(".popupback").fadeIn('slow');
+					$(".popupback1").fadeIn('slow');
 				});
 			});
 
 			$(document).ready(function(){
 				$('.aback1').on('click',function(){
 					$(".coverback").fadeOut('slow');
-					$(".popupback").fadeOut('slow');
+					$(".popupback1").fadeOut('slow');
 				});
 			});
 
@@ -112,7 +112,7 @@
 			<div class="popupback2">
 				<p>Do you want to leave without finishing ?</p>
 				<div class="optionback2">
-          <form id="contact-form" action="/getleave", method="POST">
+          <form id="contact-form" action="/backAcademic", method="POST">
 					<input class="aback2" type = "button" name="popup" value = "NO" />
 					<input  class ="bback2" type = "submit" name="popup" value = "YES" />
 					</form>
@@ -127,14 +127,14 @@
 			$(document).ready(function(){
 				$(".back2").on('click',function(){
 					$(".coverback").fadeIn('slow');
-					$(".popupback").fadeIn('slow');
+					$(".popupback2").fadeIn('slow');
 				});
 			});
 
 			$(document).ready(function(){
 				$('.aback2').on('click',function(){
 					$(".coverback").fadeOut('slow');
-					$(".popupback").fadeOut('slow');
+					$(".popupback2").fadeOut('slow');
 				});
 			});
 
@@ -144,7 +144,7 @@
 			<div class="popupback3">
 				<p>Do you want to leave without finishing ?</p>
 				<div class="optionback3">
-          <form id="contact-form" action="/getleave", method="POST">
+          <form id="contact-form" action="/backWorkEx", method="POST">
 					<input class="aback3" type = "button" name="popup" value = "NO" />
 					<input  class ="bback3" type = "submit" name="popup" value = "YES" />
 					</form>
@@ -159,14 +159,14 @@
 			$(document).ready(function(){
 				$(".back3").on('click',function(){
 					$(".coverback").fadeIn('slow');
-					$(".popupback").fadeIn('slow');
+					$(".popupback3").fadeIn('slow');
 				});
 			});
 
 			$(document).ready(function(){
 				$('.aback3').on('click',function(){
 					$(".coverback").fadeOut('slow');
-					$(".popupback").fadeOut('slow');
+					$(".popupback3").fadeOut('slow');
 				});
 			});
 
@@ -176,7 +176,7 @@
 			<div class="popupback4">
 				<p>Do you want to leave without finishing ?</p>
 				<div class="optionback4">
-          <form id="contact-form" action="/getleave", method="POST">
+          <form id="contact-form" action="/backHome", method="POST">
 					<input class="aback4" type = "button" name="popup" value = "NO" />
 					<input  class ="bback4" type = "submit" name="popup" value = "YES" />
 					</form>
@@ -192,14 +192,14 @@
 			$(document).ready(function(){
 				$(".back4").on('click',function(){
 					$(".coverback").fadeIn('slow');
-					$(".popupback").fadeIn('slow');
+					$(".popupback4").fadeIn('slow');
 				});
 			});
 
 			$(document).ready(function(){
 				$('.aback4').on('click',function(){
 					$(".coverback").fadeOut('slow');
-					$(".popupback").fadeOut('slow');
+					$(".popupback4").fadeOut('slow');
 				});
 			});
 
@@ -209,7 +209,7 @@
 			<div class="popupback5">
 				<p>Do you want to leave without finishing ?</p>
 				<div class="optionback5">
-          <form id="contact-form" action="/getleave", method="POST">
+          <form id="contact-form" action="/backPrint", method="POST">
 					<input class="aback5" type = "button" name="popup" value = "NO" />
 					<input  class ="bback5" type = "submit" name="popup" value = "YES" />
 					</form>
@@ -224,14 +224,14 @@
 			$(document).ready(function(){
 				$(".back5").on('click',function(){
 					$(".coverback").fadeIn('slow');
-					$(".popupback").fadeIn('slow');
+					$(".popupback5").fadeIn('slow');
 				});
 			});
 
 			$(document).ready(function(){
 				$('.aback5').on('click',function(){
 					$(".coverback").fadeOut('slow');
-					$(".popupback").fadeOut('slow');
+					$(".popupback5").fadeOut('slow');
 				});
 			});
 

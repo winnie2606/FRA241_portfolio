@@ -516,6 +516,79 @@ def getCancle():
 		Value = pullData.Activity(getID)
 	return render_template(history,id_user=getID, name=name, page = Value, page2 = Value2, picS = picS)
 
+@app.route('/backProfile', methods=['POST'])
+def backProfile():
+	getID = keepID.ID
+	name = keepID.Name
+	picS = keepID.picS
+	getbackProfile = request.form['popup']
+	print('getbackProfile')
+	if getbackProfile == 'YES':
+		keepHistory.keep_page('profile.html', pullData.Profile(getID))
+		return render_template('profile.html', name=name, page=pullData.Profile(getID), picS = picS)
+
+@app.route('/backAcademic', methods=['POST'])
+def backAcademic():
+	getID = keepID.ID
+	name = keepID.Name
+	picS = keepID.picS
+	check = Check()
+	getbackAcademic = request.form['popup']
+	print('getbackAcademic')
+	if getbackAcademic == 'YES':
+		term = check.TERM(getID)
+		print (term)
+		term = sortTerm.sortTerm(term)
+		AllGrade = []
+		GPAX = []
+		for allTerm in term :
+			setG = {"Gragd":[],"GPA":[],"Term":""}
+			setG["Gragd"] = pullData.Academic_term(getID,allTerm)
+			setG["GPA"] = pullData.Academic_sum(getID,allTerm)
+			setG["Term"] = allTerm
+			AllGrade.append(setG)
+			if GPAX == []:
+				GPAX = pullData.Academic_sum(getID,allTerm)
+		term.append("All")
+		print(AllGrade)
+		print(GPAX)
+		keepHistory.keep_page('AcademicStudent-3-table.html', AllGrade, GPAX)
+		return render_template('AcademicStudent-3-table.html', name=name,term = term,page= AllGrade, page2 = GPAX)
+
+@app.route('/backWorkEx', methods=['POST'])
+def backWorkEx():
+	getID = keepID.ID
+	name = keepID.Name
+	picS = keepID.picS
+	getbackWorkEx = request.form['popup']
+	print('getbackWorkEx')
+	if getbackWorkEx == 'YES':
+		keepHistory.keep_page('activity.html', pullData.Activity(getID))
+		print(pullData.Activity(getID))
+		return render_template('activity.html', name=name, page=pullData.Activity(getID))
+
+@app.route('/backHome', methods=['POST'])
+def backHome():
+	getID = keepID.ID
+	name = keepID.Name
+	picS = keepID.picS
+	getbackHome = request.form['popup']
+	print('getbackHome')
+	if getbackHome == 'YES':
+		keepHistory.keep_page('homeStudent.html', None)
+		return render_template('homeStudent.html', name=name, id_user=getID, picS = picS)
+
+@app.route('/backPrint', methods=['POST'])
+def backPrint():
+	getID = keepID.ID
+	name = keepID.Name
+	picS = keepID.picS
+	getbackPrint = request.form['popup']
+	print('getbackPrint')
+	if getbackPrint == 'YES':
+		keepHistory.keep_page('print_choose.html', pullData.Activity(getID))
+		return render_template('print_choose.html', name=name, page=pullData.Activity(getID))
+
 
 '''end student'''
 
