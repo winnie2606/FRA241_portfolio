@@ -22,9 +22,9 @@
 				<div class="L">
 					<form id="contact-form" action="/menubar", method="POST">
 					<input class="back" type="image" name="click" value="back" src="static/back_icon.jpg" width="4.5%">&nbsp;&nbsp;&nbsp;
-					<input type="submit" name="click" value="PROFILE" class="link">&nbsp;&nbsp;&nbsp;
-					<input type="submit" name="click" value="ACADEMIC" class="link">&nbsp;&nbsp;&nbsp;
-					<input type="submit" name="click" value="WORK&EXPERIENCE" class="link1">
+					<input type="submit" name="click" value="PROFILE" class="link" style="cursor:pointer">&nbsp;&nbsp;&nbsp;
+					<input type="submit" name="click" value="ACADEMIC" class="link" style="cursor:pointer">&nbsp;&nbsp;&nbsp;
+					<input type="submit" name="click" value="WORK&EXPERIENCE" class="link1" style="cursor:pointer">
 
 				</div>
 
@@ -76,10 +76,10 @@
 		</script>
 
 		<form id="contact-form" action="/editAcButton", method="POST">
-		<input type = "submit" name={{page.Name_Activity}},{{page.id}} value = "EDIT" class = "in2" >
+		<input type = "submit" name={{page.Name_Activity}},{{page.id}} value = "EDIT" class = "in2" style="cursor:pointer">
 		</form>
 		<form id="contact-form" action="/deleteAc", method="POST">
-		<input type = "submit" name={{page.Name_Activity}},{{page.id}} value = "DELETE" class = "in3" >
+		<input type = "submit" name={{page.Name_Activity}},{{page.id}} value = "DELETE" class = "in3" style="cursor:pointer">
 		</form>
 
 		<div class="Activity">ACTIVITY</div>
