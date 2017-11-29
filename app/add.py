@@ -232,16 +232,16 @@ session.add(sth49) #add sth into database.
 session.add(sth50) #add sth into database.
 
 
-sth = Activity(id = 1,id_student = 59340500017,NameActivity = "Natthaphon",Description = "this is so fun.",Photo = "Natthaphon.jpg",Type = "Dynamics",Advisor = "AJ.Ton",Date_Activity = "14/12/60",File = "Natthaphon.docx",Confirm = "Not Confirm yet")
-sth1 = Activity(id = 1,id_student = 59340500021,NameActivity = "Thipawan",Description = "Receive a lot of knowledges.",Photo = "Thipawan.jpg",Type = "Calculas",Advisor = "AJ.Somran",Date_Activity = "15/12/61",File = "Thipawan.pdf",Confirm = "Confirm")
-sth2 = Activity(id = 1,id_student = 59340500035,NameActivity = "Panchalee",Description = "It is will be useful.",Photo = "Panchalee.jpg",Type = "Digital",Advisor = "AJ.Pi",Date_Activity = "15/12/60",File = "Panchalee.txt",Confirm = "Confirm")
-sth3 = Activity(id = 1,id_student = 59340500035,NameActivity = "Tabletennnis",Description = "Table tennis is good.",Photo = "Tabletennnis.jpg",Type = "Sport",Advisor = "AJ.__",Date_Activity = "29/05/60",File = "Tabletennnis.docx",Confirm = "Confirm")
-sth4 = Activity(id = 1,id_student = 58340500011,NameActivity = "Project",Description = "This project is very hard.",Photo = "Project.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "19/10/61",File = "Project.pdf",Confirm = "Not Confirm yet")
-sth5 = Activity(id = 1,id_student = 57340500008,NameActivity = "FootballKMUTT",Description = "This is my favorite sport.",Photo = "FootballKMUTT.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "20/10/61",File = "FootballKMUTT.pdf",Confirm = "Confirm ")
-sth6 = Activity(id = 1,id_student = 57340500016,NameActivity = "Chorus",Description = "This is my favorite hobbit.",Photo = "Chorus.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "21/10/61",File = "Chorus.docx",Confirm = "Not Confirm yet")
-sth7 = Activity(id = 1,id_student = 58340500014,NameActivity = "SuperRobot",Description = "This is my favorite hobbit.",Photo = "SuperRobot.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "22/10/61",File = "SuperRobot.pptx",Confirm = "Not Confirm yet")
-sth8 = Activity(id = 1,id_student = 60340500004,NameActivity = "CatRobot",Description = "This is my favorite animal.",Photo = "CatRobot.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "23/10/61",File = "CatRobot.xlsx",Confirm = "Confirm")
-sth9 = Activity(id = 1,id_student = 60340500050,NameActivity = "DesignUI",Description = "This is my favorite work.",Photo = "DesignUI.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "24/10/61",File = "DesignUI.txt",Confirm = "Not Confirm yet")
+sth = Activity(id = 1,id_student = 59340500017,NameActivity = "Dynamics",Description = "Dynamics is very fun.",Photo = "Dynamics.jpg",Type = "Study",Advisor = "AJ.Ton",Date_Activity = "14/12/60",File = "Dynamics.docx",Confirm = "Not Confirm yet")
+sth1 = Activity(id = 1,id_student = 59340500021,NameActivity = "Calculus",Description = "Receive a lot of knowledges.",Photo = "Calculus.jpg",Type = "Study",Advisor = "AJ.Somran",Date_Activity = "15/12/61",File = "Calculus.pdf",Confirm = "Confirm")
+sth2 = Activity(id = 1,id_student = 59340500035,NameActivity = "Digital",Description = "Digital project is very useful.",Photo = "Digital.jpg",Type = "Project",Advisor = "AJ.Pi",Date_Activity = "15/12/60",File = "Digital.txt",Confirm = "Confirm")
+sth3 = Activity(id = 1,id_student = 59340500035,NameActivity = "Tabletennnis",Description = "I like to play table tennis in my free time.",Photo = "Tabletennnis.jpg",Type = "Sport",Advisor = "AJ.__",Date_Activity = "29/05/60",File = "Tabletennnis.docx",Confirm = "Confirm")
+sth4 = Activity(id = 1,id_student = 58340500011,NameActivity = "Project",Description = "I love to do project very much.",Photo = "Project.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "19/10/61",File = "Project.pdf",Confirm = "Not Confirm yet")
+sth5 = Activity(id = 1,id_student = 57340500008,NameActivity = "FootballKMUTT",Description = "Football is my favorite sport.",Photo = "FootballKMUTT.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "20/10/61",File = "FootballKMUTT.pdf",Confirm = "Confirm ")
+sth6 = Activity(id = 1,id_student = 57340500016,NameActivity = "Chorus",Description = "This is my favorite hobby.",Photo = "Chorus.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "21/10/61",File = "Chorus.docx",Confirm = "Not Confirm yet")
+sth7 = Activity(id = 1,id_student = 58340500014,NameActivity = "SuperRobot",Description = "My super robot is so cool.",Photo = "SuperRobot.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "22/10/61",File = "SuperRobot.pptx",Confirm = "Not Confirm yet")
+sth8 = Activity(id = 1,id_student = 60340500004,NameActivity = "CatRobot",Description = "I think my cat robot like a blue cat robot in Japanese cartoon.",Photo = "CatRobot.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "23/10/61",File = "CatRobot.xlsx",Confirm = "Confirm")
+sth9 = Activity(id = 1,id_student = 60340500050,NameActivity = "DesignUI",Description = "Design UI is very easy for me.",Photo = "DesignUI.jpg",Type = "Research",Advisor = "AJ.__",Date_Activity = "24/10/61",File = "DesignUI.txt",Confirm = "Not Confirm yet")
 
 session.add(sth) #add sth into database.
 session.add(sth1) #add sth into database.
