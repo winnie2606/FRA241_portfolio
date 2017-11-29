@@ -39,7 +39,7 @@
 
 .alphabet-academic{
 	float:left;
-	margin-top: 3%;
+	margin-top: 2.5%;
 	margin-left: 37%;
 	font-size: 30px;
 	color: #FFF;
@@ -64,7 +64,7 @@
 
 .alphabet-A{
 	float:left;
-	margin-top: 3.35%;
+	margin-top: 2.95%;
 	margin-left:  3%;
 	font-size: 25px;
 	color: #FFF;
@@ -87,7 +87,7 @@
 }
 
 .birth{
-	margin-top: 5%;
+	margin-top: 6.9%;
 }
 
 .nation{
@@ -124,7 +124,7 @@
 
 .box13{
 	float:left;
-	margin-top: -10%;
+	margin-top: -12%;
 	margin-left: 285%;
 	width: 20px;
 	height: 20px;
@@ -140,7 +140,7 @@
 
 .box15{
 	float:left;
-	margin-top: -10%;
+	margin-top: -12%;
 	margin-left: 285%;
 	width: 20px;
 	height: 20px;
@@ -148,7 +148,7 @@
 
 .box16{
 	float:left;
-	margin-top: -10%;
+	margin-top: -12%;
 	margin-left: 285%;
 	width: 20px;
 	height: 20px;
@@ -165,15 +165,15 @@
 .box2{
 	float:left;
 	margin-top: -40%;
-	margin-left: 840%;
+	margin-left: 876%;
 	width: 20px;
 	height: 20px;
 }
 
 .box3{
 	float:right;
-	margin-top: -30%;
-	margin-right: -351%;
+	margin-top: -30.5%;
+	margin-right: -412%;
 	width: 20px;
 	height: 20px;
 }
