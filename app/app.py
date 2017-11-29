@@ -507,10 +507,14 @@ def getCancle():
 	print(getCancle)
 	getID = keepID.ID
 	name = keepID.Name
-	Value = pullData.Profile(getID)
 	picS = keepID.picS
+	keepHistory.print_listPage()
 	history = keepHistory.history()
-	return render_template(history,id_user=getID, name=name, page = Value , picS = picS)
+	Value = keepHistory.Value_page()
+	Value2 = keepHistory.Value2_page()
+	if history == 'activity.html':
+		Value = pullData.Activity(getID)
+	return render_template(history,id_user=getID, name=name, page = Value, page2 = Value2, picS = picS)
 
 
 '''end student'''
