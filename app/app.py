@@ -328,16 +328,16 @@ def getCheckBox():
 		data['gpax'] = ''.join(s.get_GPAX())
 		print('select gpax')
 	if getCheck.get('contact') == 'on':
-		data['contact'] = "CONTACT"
-		data['phone'] = "PHONE : " + re.Phonestu()
-		data['address'] = "ADDRESS : " +  re.address()
-		data['email'] = "EMAIL : " + re.email()
+		data['contact'] = "Contact"
+		data['phone'] = "Phone : " + re.Phonestu()
+		data['address'] = "Address : " +  re.address()
+		data['email'] = "Email : " + re.email()
 		print('select contact')
 	if getCheck.get('congenital disease') == 'on':
-		data['dis'] = "CONGENITAL DISEASE : " + ','.join(re.disease())
+		data['dis'] = "Congenital Disease : " + ','.join(re.disease())
 		print('select congenital disease')
 	if getCheck.get('birthplace') == 'on':
-		data['birthplace'] = "BIRTH PLACE : " + re.birth()
+		data['birthplace'] = "Birth Place : " + re.birth()
 		print('select birthplace')
 
 	ProfileAndAcademic.append(data)
