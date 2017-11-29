@@ -126,7 +126,7 @@
 				</tr>
 				{%for academic2 in term.GPA %}
 				<tr>
-					<td style="background-color: #e8e8e8; color: #2e3940;" width="40%" height="30px">THIS SEMESTER</td>
+					<td style="background-color: #e8e8e8; color: #2e3940;" width="40%" height="30px">{{term.Term}}</td>
 					<td style="background-color: #e8e8e8; color: #2e3940;" width="40%" height="30px" align="center">{{academic2.This_semester}}</td>
 					<td style="background-color: #e8e8e8; color: #2e3940;" width="20%" height="30px" align="center">{{academic2.GPA}}</td>
 				</tr>				{% endfor %}

@@ -234,7 +234,7 @@ def editInfo():
 	name = keepID.Name
 	if getEditInfo == 'EDIT':
 		keepHistory.keep_page('profile.html', pullData.Profile(getID))  #hereeeeeeeeeeeeeeeeeeeee
-		return render_template('edit-your-infomation.html', name=name)
+		return render_template('edit-your-infomation.html', name=name , page = pullData.Profile(getID) )
 
 @app.route('/editAcButton', methods=['POST'])
 def editAcButton():
@@ -360,9 +360,9 @@ def selectall():
 	getID = keepID.ID
 	name = keepID.Name
 
-	if getSelectall == 'SELECTALL':
+	if getSelectall == 'SELECT ALL':
 		return render_template('print_choose_selectall.html', name=name, page=pullData.Activity(getID))
-	if getSelectall == 'UNSELECTALL':
+	if getSelectall == 'UNSELECT ALL':
 		return render_template('print_choose.html', name=name, page=pullData.Activity(getID))
 
 @app.route('/getAddAcButton', methods=['POST'])

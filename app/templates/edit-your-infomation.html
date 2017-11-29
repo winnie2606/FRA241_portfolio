@@ -271,21 +271,21 @@
 		<div class="Edityourinfomation" style="width: 280px;">Edit your information</div>
 
 		<div align="right" class="dataEdityourinfomation">
-
-			<div class="name">Name : <input id="text1" type = "text" name = "name" class = "in3"/></div>
-			<div class="surname">Surname : <input id="text1" type = "text" name = "surname" class = "in3"/></div>
-			<div class="nationality">Nationality : <input id="text1" type = "text" name = "nation" class = "in3"/></div>
-			<div class="date">Date of birth : <input id="text1" type = "text" name = "bd" class = "in3"/></div>
-			<div class="birtholace">Birthplace : <input id="text1" type = "text" name = "bp" class = "in3"/></div>
-			<div class="congenital">Congenital disease : <input id="text1" type = "text" name = "dis" class = "in3"/></div>
+			{%for profile in page %}
+			<div class="name">Name : <input id="text1" type = "text" name = "name" class = "in3" placeholder = "{{profile.Name}}"/></div>
+			<div class="surname">Surname : <input id="text1" type = "text" name = "surname" class = "in3" placeholder = "{{profile.Surname}}"/></div>
+			<div class="nationality">Nationality : <input id="text1" type = "text" name = "nation" class = "in3" placeholder = "{{profile.Nation}}"/></div>
+			<div class="date">Date of birth : <input id="text1" type = "text" name = "bd" class = "in3" placeholder = "{{profile.Dateofbirth}}"/></div>
+			<div class="birtholace">Birthplace : <input id="text1" type = "text" name = "bp" class = "in3" placeholder = "{{profile.Birthplace}}"/></div>
+			<div class="congenital">Congenital disease : <input id="text1" type = "text" name = "dis" class = "in3" placeholder = "{{profile.Disease}}"/></div>
 			<div class="emer-contact">Emergency Contact  </div>
-			<div class="emer-phone">Phone Number : <input id="text1" type = "text" name = "emerphone" class = "in3"/></div>
-			<div class="reletive">Relative : <input id="text1" type = "text" name = "reletive" class = "in3"/></div>
+			<div class="emer-phone">Phone Number : <input id="text1" type = "text" name = "emerphone" class = "in3" placeholder = "{{profile.PhoneEmer}}"/></div>
+			<div class="reletive">Relative : <input id="text1" type = "text" name = "reletive" class = "in3" placeholder = "{{profile.Relative}}"/></div>
 			<div class="contact">Contact </div>
-			<div class="phone">Phone Number : <input id="text1" type = "text" name = "phone" class = "in3"/></div>
-			<div class="email">Email : <input id="text1" type = "text" name = "email" class = "in3"/></div>
-			<div class="address">Address : <input id="text1" type = "text" name = "address" class = "in3"/></div>
-
+			<div class="phone">Phone Number : <input id="text1" type = "text" name = "phone" class = "in3" placeholder = "{{profile.Phonestudent}}"/></div>
+			<div class="email">Email : <input id="text1" type = "text" name = "email" class = "in3" placeholder = "{{profile.Email}}"/></div>
+			<div class="address">Address : <input id="text1" type = "text" name = "address" class = "in3" placeholder = "{{profile.Address}}"/></div>
+			{% endfor %}
 		</div>
 
 			<input type = "submit" value = "SAVE" class = "in2"  style="cursor:pointer">
@@ -293,7 +293,7 @@
 
 	</form>
 	<form id="contact-form" action="/cancleEdit", method="POST">
-	<input type = "submit" name= "click" value = "CANCLE" class = "cancle"  style="cursor:pointer">
+	<input type = "submit" name= "click" value = "CANCEL" class = "cancle"  style="cursor:pointer">
   </form>
 	</body>
 
